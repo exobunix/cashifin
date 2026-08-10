@@ -1410,12 +1410,12 @@ export default function CashifinLandingPage() {
                         </div>
                       ))}
                   </div>
-                  <div className="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between mt-4">
+                  <div className="sticky bottom-0 bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between mt-4 shadow-[0_-4px_16px_rgba(0,0,0,0.2)] z-25">
                     <div>
                       <span className="text-xs text-slate-400 font-bold">Estimated Quote</span>
                       <p className="text-lg font-black text-emerald-400">₹{currentQuote.toLocaleString()}</p>
                     </div>
-                    <button onClick={() => setWizardStep(5)} className="px-4 py-2 bg-emerald-500 text-white rounded-lg font-bold">Continue →</button>
+                    <button onClick={() => setWizardStep(5)} className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-bold transition">Continue →</button>
                   </div>
                 </div>
               )}
