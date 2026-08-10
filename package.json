@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Cashify-like full-stack electronic device resale platform",
   "private": true,
+  "packageManager": "npm@11.16.0",
   "workspaces": [
     "apps/*",
     "packages/*",

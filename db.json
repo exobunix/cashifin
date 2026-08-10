@@ -4200,6 +4200,17 @@
       "status": "Pending",
       "reference": "REF123456",
       "screenshot": "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500"
+    },
+    {
+      "id": "PAY-159083",
+      "partnerId": "PTN-101",
+      "partnerName": "Rohit Sharma",
+      "method": "Bank Transfer",
+      "amount": 50000,
+      "date": "10 Aug 2026",
+      "status": "Pending",
+      "reference": "32424235",
+      "screenshot": "blob:http://localhost:3003/9473f590-49dc-42f9-a6a7-e76881eb6a76"
     }
   ],
   "tickets": [
@@ -4214,6 +4225,18 @@
       "status": "Open",
       "screenshot": "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500",
       "paymentId": "PAY-1002"
+    },
+    {
+      "id": "TCK-159083",
+      "partnerId": "PTN-101",
+      "partnerName": "Rohit Sharma",
+      "subject": "Bank Transfer verification (₹50,000)",
+      "type": "Bank Transfer Payout",
+      "amount": 50000,
+      "date": "10 Aug 2026",
+      "status": "Open",
+      "screenshot": "blob:http://localhost:3003/9473f590-49dc-42f9-a6a7-e76881eb6a76",
+      "paymentId": "PAY-159083"
     }
   ]
 }
