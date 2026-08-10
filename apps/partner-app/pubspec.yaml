@@ -1,0 +1,28 @@
+name: partner_app
+description: Partner-facing app for the Cashify Platform.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.5
+  flutter_bloc: ^8.1.3
+  dio: ^5.2.0
+  shared_preferences: ^2.1.1
+  go_router: ^9.0.0
+  intl: ^0.18.1
+  flutter_secure_storage: ^8.0.0
+  google_maps_flutter: ^2.5.0
+  geolocator: ^10.1.0
+  socket_io_client: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,20 @@
+{
+  "name": "cashify-platform",
+  "version": "1.0.0",
+  "description": "Cashify-like full-stack electronic device resale platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.0"
+  }
+}

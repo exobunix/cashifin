@@ -1,0 +1,4067 @@
+{
+  "notifications": [
+    {
+      "id": "NTF-1786267327736-7zh",
+      "target": "admin",
+      "message": "New buyback order placed: ORD-27629 for Galaxy S24 Ultra (Samsung) at ₹78,000",
+      "read": true,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786267327775-9zy",
+      "target": "partner",
+      "message": "New buyback pickup assigned: ORD-27629 for Galaxy S24 Ultra (Samsung)",
+      "read": false,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786267327811-15e",
+      "target": "9967853364",
+      "message": "Your buyback order ORD-27629 has been successfully registered!",
+      "read": true,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786267699093-upd-cust",
+      "target": "+91 98765 43210",
+      "message": "Your order ORD-27629 status has been updated to: Picked Up",
+      "read": false,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786267699151-upd-part",
+      "target": "partner",
+      "message": "Order ORD-27629 status updated to: Picked Up",
+      "read": false,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271154229-adm",
+      "target": "admin",
+      "message": "New Refurbished purchase placed: ORD-54180 for iPhone 15 Pro Max (Superb) at ₹75,000",
+      "read": true,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271154270-cust",
+      "target": "+91 98765 43210",
+      "message": "Your Refurbished purchase ORD-54180 has been registered!",
+      "read": false,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271308965-x8g",
+      "target": "admin",
+      "message": "New buyback order placed: ORD-08892 for iPhone 12 (Apple) at ₹25,000",
+      "read": true,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271308999-cq6",
+      "target": "partner",
+      "message": "New buyback pickup assigned: ORD-08892 for iPhone 12 (Apple)",
+      "read": false,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271309035-gg1",
+      "target": "9967853364",
+      "message": "Your buyback order ORD-08892 has been successfully registered!",
+      "read": true,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271709781-upd-cust",
+      "target": "+91 98765 43210",
+      "message": "Your order ORD-54180 status has been updated to: Shipped",
+      "read": false,
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786271709846-upd-part",
+      "target": "partner",
+      "message": "Order ORD-54180 status updated to: Shipped",
+      "read": false,
+      "date": "9 Aug 2026"
+    }
+  ],
+  "categories": [
+    {
+      "id": "CAT-001",
+      "name": "Smartphones",
+      "slug": "smartphones",
+      "count": "14,245 Devices"
+    },
+    {
+      "id": "CAT-002",
+      "name": "Laptops",
+      "slug": "laptops",
+      "count": "3,842 Devices"
+    },
+    {
+      "id": "CAT-003",
+      "name": "Tablets",
+      "slug": "tablets",
+      "count": "1,950 Devices"
+    },
+    {
+      "id": "CAT-004",
+      "name": "Smartwatches",
+      "slug": "smartwatches",
+      "count": "1,245 Devices"
+    },
+    {
+      "id": "CAT-005",
+      "name": "TVs",
+      "slug": "tvs",
+      "count": "942 Devices"
+    },
+    {
+      "id": "CAT-006",
+      "name": "Gaming Consoles",
+      "slug": "consoles",
+      "count": "520 Devices"
+    },
+    {
+      "id": "CAT-007",
+      "name": "Audio & Speakers",
+      "slug": "audio",
+      "count": "2,350 Devices"
+    },
+    {
+      "id": "CAT-008",
+      "name": "Cameras & DSLRs",
+      "slug": "cameras",
+      "count": "890 Devices"
+    },
+    {
+      "id": "CAT-009",
+      "name": "Smart Home",
+      "slug": "smarthome",
+      "count": "1,150 Devices"
+    },
+    {
+      "id": "CAT-010",
+      "name": "watch",
+      "slug": "watch",
+      "imageUrl": ""
+    }
+  ],
+  "brands": [
+    {
+      "id": "BRD-001",
+      "name": "Apple",
+      "slug": "apple",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ]
+    },
+    {
+      "id": "BRD-002",
+      "name": "Samsung",
+      "slug": "samsung",
+      "categories": [
+        "Smartphones",
+        "Tablets",
+        "Smartwatches",
+        "TVs"
+      ]
+    },
+    {
+      "id": "BRD-003",
+      "name": "OnePlus",
+      "slug": "oneplus",
+      "categories": [
+        "Smartphones",
+        "TVs"
+      ]
+    },
+    {
+      "id": "BRD-004",
+      "name": "Google",
+      "slug": "google",
+      "categories": [
+        "Smartphones",
+        "Smartwatches",
+        "Smart Home"
+      ]
+    },
+    {
+      "id": "BRD-005",
+      "name": "Dell",
+      "slug": "dell",
+      "categories": [
+        "Laptops"
+      ]
+    },
+    {
+      "id": "BRD-006",
+      "name": "Lenovo",
+      "slug": "lenovo",
+      "categories": [
+        "Laptops",
+        "Tablets"
+      ]
+    },
+    {
+      "id": "BRD-007",
+      "name": "HP",
+      "slug": "hp",
+      "categories": [
+        "Laptops"
+      ]
+    },
+    {
+      "id": "BRD-008",
+      "name": "Asus",
+      "slug": "asus",
+      "categories": [
+        "Laptops"
+      ]
+    },
+    {
+      "id": "BRD-009",
+      "name": "Xiaomi",
+      "slug": "xiaomi",
+      "categories": [
+        "Smartphones",
+        "TVs",
+        "Smart Home"
+      ]
+    },
+    {
+      "id": "BRD-010",
+      "name": "Oppo",
+      "slug": "oppo",
+      "categories": [
+        "Smartphones"
+      ]
+    },
+    {
+      "id": "BRD-011",
+      "name": "Vivo",
+      "slug": "vivo",
+      "categories": [
+        "Smartphones"
+      ]
+    },
+    {
+      "id": "BRD-012",
+      "name": "Realme",
+      "slug": "realme",
+      "categories": [
+        "Smartphones",
+        "TVs"
+      ]
+    },
+    {
+      "id": "BRD-013",
+      "name": "Sony",
+      "slug": "sony",
+      "categories": [
+        "TVs",
+        "Gaming Consoles",
+        "Audio & Speakers"
+      ]
+    },
+    {
+      "id": "BRD-014",
+      "name": "LG",
+      "slug": "lg",
+      "categories": [
+        "TVs"
+      ]
+    },
+    {
+      "id": "BRD-015",
+      "name": "Microsoft",
+      "slug": "microsoft",
+      "categories": [
+        "Gaming Consoles",
+        "Laptops"
+      ]
+    },
+    {
+      "id": "BRD-016",
+      "name": "Motorola",
+      "slug": "motorola",
+      "categories": [
+        "Smartphones"
+      ]
+    },
+    {
+      "id": "BRD-017",
+      "name": "Nothing",
+      "slug": "nothing",
+      "categories": [
+        "Smartphones",
+        "Audio & Speakers"
+      ]
+    },
+    {
+      "id": "BRD-018",
+      "name": "iQOO",
+      "slug": "iqoo",
+      "categories": [
+        "Smartphones"
+      ]
+    },
+    {
+      "id": "BRD-019",
+      "name": "POCO",
+      "slug": "poco",
+      "categories": [
+        "Smartphones"
+      ]
+    },
+    {
+      "id": "BRD-020",
+      "name": "Bose",
+      "slug": "bose",
+      "categories": [
+        "Audio & Speakers"
+      ]
+    },
+    {
+      "id": "BRD-021",
+      "name": "JBL",
+      "slug": "jbl",
+      "categories": [
+        "Audio & Speakers"
+      ]
+    },
+    {
+      "id": "BRD-022",
+      "name": "Canon",
+      "slug": "canon",
+      "categories": [
+        "Cameras & DSLRs"
+      ]
+    },
+    {
+      "id": "BRD-023",
+      "name": "Nikon",
+      "slug": "nikon",
+      "categories": [
+        "Cameras & DSLRs"
+      ]
+    },
+    {
+      "id": "BRD-024",
+      "name": "Amazon",
+      "slug": "amazon",
+      "categories": [
+        "Smart Home"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "MDL-300",
+      "name": "iPhone 15 Pro Max",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹75,000",
+      "range": "₹18,500 - ₹82,000",
+      "status": "Published",
+      "rawBase": 75000,
+      "rawMin": 18500,
+      "rawMax": 82000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-301",
+      "name": "iPhone 15 Pro",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹68,000",
+      "range": "₹16,000 - ₹74,000",
+      "status": "Published",
+      "rawBase": 68000,
+      "rawMin": 16000,
+      "rawMax": 74000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-302",
+      "name": "iPhone 15 Plus",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹55,000",
+      "range": "₹13,000 - ₹60,000",
+      "status": "Published",
+      "rawBase": 55000,
+      "rawMin": 13000,
+      "rawMax": 60000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-303",
+      "name": "iPhone 15",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹48,000",
+      "range": "₹11,000 - ₹52,000",
+      "status": "Published",
+      "rawBase": 48000,
+      "rawMin": 11000,
+      "rawMax": 52000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-304",
+      "name": "iPhone 14 Pro Max",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹60,000",
+      "range": "₹14,000 - ₹65,000",
+      "status": "Published",
+      "rawBase": 60000,
+      "rawMin": 14000,
+      "rawMax": 65000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-305",
+      "name": "iPhone 14 Pro",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹54,000",
+      "range": "₹12,500 - ₹59,000",
+      "status": "Published",
+      "rawBase": 54000,
+      "rawMin": 12500,
+      "rawMax": 59000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-306",
+      "name": "iPhone 13",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹35,000",
+      "range": "₹8,000 - ₹38,000",
+      "status": "Published",
+      "rawBase": 35000,
+      "rawMin": 8000,
+      "rawMax": 38000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1632661676600-087b547c3791?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-307",
+      "name": "iPhone 12",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹25,000",
+      "range": "₹5,500 - ₹27,500",
+      "status": "Published",
+      "rawBase": 25000,
+      "rawMin": 5500,
+      "rawMax": 27500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-308",
+      "name": "iPhone SE 2022",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "basePrice": "₹18,000",
+      "range": "₹4,000 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4000,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1565538810844-1e119fa11fe2?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-309",
+      "name": "Galaxy S24 Ultra",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹78,000",
+      "range": "₹19,000 - ₹85,000",
+      "status": "Published",
+      "rawBase": 78000,
+      "rawMin": 19000,
+      "rawMax": 85000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-310",
+      "name": "Galaxy S24 Plus",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹58,000",
+      "range": "₹14,000 - ₹63,000",
+      "status": "Published",
+      "rawBase": 58000,
+      "rawMin": 14000,
+      "rawMax": 63000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-311",
+      "name": "Galaxy S24",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹48,000",
+      "range": "₹11,000 - ₹52,000",
+      "status": "Published",
+      "rawBase": 48000,
+      "rawMin": 11000,
+      "rawMax": 52000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-312",
+      "name": "Galaxy S23 Ultra",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹55,000",
+      "range": "₹13,000 - ₹60,000",
+      "status": "Published",
+      "rawBase": 55000,
+      "rawMin": 13000,
+      "rawMax": 60000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-313",
+      "name": "Galaxy S23 FE",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹28,000",
+      "range": "₹6,500 - ₹31,000",
+      "status": "Published",
+      "rawBase": 28000,
+      "rawMin": 6500,
+      "rawMax": 31000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-314",
+      "name": "Galaxy Z Fold 5",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹85,000",
+      "range": "₹20,000 - ₹92,000",
+      "status": "Published",
+      "rawBase": 85000,
+      "rawMin": 20000,
+      "rawMax": 92000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-315",
+      "name": "Galaxy Z Flip 5",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹42,000",
+      "range": "₹10,000 - ₹46,000",
+      "status": "Published",
+      "rawBase": 42000,
+      "rawMin": 10000,
+      "rawMax": 46000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-316",
+      "name": "Galaxy A54 5G",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹18,000",
+      "range": "₹4,000 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4000,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-317",
+      "name": "Galaxy M34 5G",
+      "brand": "Samsung",
+      "category": "Smartphones",
+      "basePrice": "₹11,000",
+      "range": "₹2,500 - ₹12,500",
+      "status": "Published",
+      "rawBase": 11000,
+      "rawMin": 2500,
+      "rawMax": 12500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-318",
+      "name": "OnePlus 12",
+      "brand": "OnePlus",
+      "category": "Smartphones",
+      "basePrice": "₹45,000",
+      "range": "₹11,000 - ₹49,000",
+      "status": "Published",
+      "rawBase": 45000,
+      "rawMin": 11000,
+      "rawMax": 49000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-319",
+      "name": "OnePlus 12R",
+      "brand": "OnePlus",
+      "category": "Smartphones",
+      "basePrice": "₹30,000",
+      "range": "₹7,000 - ₹33,000",
+      "status": "Published",
+      "rawBase": 30000,
+      "rawMin": 7000,
+      "rawMax": 33000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-320",
+      "name": "OnePlus 11 5G",
+      "brand": "OnePlus",
+      "category": "Smartphones",
+      "basePrice": "₹35,000",
+      "range": "₹8,000 - ₹38,000",
+      "status": "Published",
+      "rawBase": 35000,
+      "rawMin": 8000,
+      "rawMax": 38000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-321",
+      "name": "OnePlus Nord CE 4",
+      "brand": "OnePlus",
+      "category": "Smartphones",
+      "basePrice": "₹17,000",
+      "range": "₹3,800 - ₹19,000",
+      "status": "Published",
+      "rawBase": 17000,
+      "rawMin": 3800,
+      "rawMax": 19000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-322",
+      "name": "Pixel 8 Pro",
+      "brand": "Google",
+      "category": "Smartphones",
+      "basePrice": "₹58,000",
+      "range": "₹14,000 - ₹64,000",
+      "status": "Published",
+      "rawBase": 58000,
+      "rawMin": 14000,
+      "rawMax": 64000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327106026-d9521da673d1?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-323",
+      "name": "Pixel 8",
+      "brand": "Google",
+      "category": "Smartphones",
+      "basePrice": "₹42,000",
+      "range": "₹10,000 - ₹46,000",
+      "status": "Published",
+      "rawBase": 42000,
+      "rawMin": 10000,
+      "rawMax": 46000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327106026-d9521da673d1?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-324",
+      "name": "Pixel 7a",
+      "brand": "Google",
+      "category": "Smartphones",
+      "basePrice": "₹24,000",
+      "range": "₹5,500 - ₹26,000",
+      "status": "Published",
+      "rawBase": 24000,
+      "rawMin": 5500,
+      "rawMax": 26000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1598327106026-d9521da673d1?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-325",
+      "name": "Nothing Phone (2)",
+      "brand": "Nothing",
+      "category": "Smartphones",
+      "basePrice": "₹28,000",
+      "range": "₹6,500 - ₹31,000",
+      "status": "Published",
+      "rawBase": 28000,
+      "rawMin": 6500,
+      "rawMax": 31000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1692278075253-de5de019488a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-326",
+      "name": "Nothing Phone (2a)",
+      "brand": "Nothing",
+      "category": "Smartphones",
+      "basePrice": "₹18,000",
+      "range": "₹4,000 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4000,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1692278075253-de5de019488a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-327",
+      "name": "Motorola Edge 50 Pro",
+      "brand": "Motorola",
+      "category": "Smartphones",
+      "basePrice": "₹25,000",
+      "range": "₹5,500 - ₹27,500",
+      "status": "Published",
+      "rawBase": 25000,
+      "rawMin": 5500,
+      "rawMax": 27500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-328",
+      "name": "Moto G84 5G",
+      "brand": "Motorola",
+      "category": "Smartphones",
+      "basePrice": "₹12,000",
+      "range": "₹2,800 - ₹13,500",
+      "status": "Published",
+      "rawBase": 12000,
+      "rawMin": 2800,
+      "rawMax": 13500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-329",
+      "name": "iQOO 12 5G",
+      "brand": "iQOO",
+      "category": "Smartphones",
+      "basePrice": "₹38,000",
+      "range": "₹9,000 - ₹42,000",
+      "status": "Published",
+      "rawBase": 38000,
+      "rawMin": 9000,
+      "rawMax": 42000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-330",
+      "name": "iQOO Neo 9 Pro",
+      "brand": "iQOO",
+      "category": "Smartphones",
+      "basePrice": "₹27,000",
+      "range": "₹6,000 - ₹30,000",
+      "status": "Published",
+      "rawBase": 27000,
+      "rawMin": 6000,
+      "rawMax": 30000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-331",
+      "name": "POCO X6 Pro 5G",
+      "brand": "POCO",
+      "category": "Smartphones",
+      "basePrice": "₹18,000",
+      "range": "₹4,000 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4000,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-332",
+      "name": "POCO F5 5G",
+      "brand": "POCO",
+      "category": "Smartphones",
+      "basePrice": "₹16,000",
+      "range": "₹3,500 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3500,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-333",
+      "name": "Redmi Note 13 Pro+",
+      "brand": "Xiaomi",
+      "category": "Smartphones",
+      "basePrice": "₹22,000",
+      "range": "₹5,000 - ₹24,500",
+      "status": "Published",
+      "rawBase": 22000,
+      "rawMin": 5000,
+      "rawMax": 24500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-334",
+      "name": "Xiaomi 14 Ultra",
+      "brand": "Xiaomi",
+      "category": "Smartphones",
+      "basePrice": "₹72,000",
+      "range": "₹17,500 - ₹78,000",
+      "status": "Published",
+      "rawBase": 72000,
+      "rawMin": 17500,
+      "rawMax": 78000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-335",
+      "name": "Oppo Reno 11 Pro",
+      "brand": "Oppo",
+      "category": "Smartphones",
+      "basePrice": "₹24,000",
+      "range": "₹5,500 - ₹26,500",
+      "status": "Published",
+      "rawBase": 24000,
+      "rawMin": 5500,
+      "rawMax": 26500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-336",
+      "name": "Oppo Find N3 Flip",
+      "brand": "Oppo",
+      "category": "Smartphones",
+      "basePrice": "₹45,000",
+      "range": "₹11,000 - ₹50,000",
+      "status": "Published",
+      "rawBase": 45000,
+      "rawMin": 11000,
+      "rawMax": 50000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-337",
+      "name": "Vivo V30 Pro",
+      "brand": "Vivo",
+      "category": "Smartphones",
+      "basePrice": "₹28,000",
+      "range": "₹6,500 - ₹31,000",
+      "status": "Published",
+      "rawBase": 28000,
+      "rawMin": 6500,
+      "rawMax": 31000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-338",
+      "name": "Vivo X100 Pro",
+      "brand": "Vivo",
+      "category": "Smartphones",
+      "basePrice": "₹60,000",
+      "range": "₹14,000 - ₹66,000",
+      "status": "Published",
+      "rawBase": 60000,
+      "rawMin": 14000,
+      "rawMax": 66000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-339",
+      "name": "Realme 12 Pro+",
+      "brand": "Realme",
+      "category": "Smartphones",
+      "basePrice": "₹19,000",
+      "range": "₹4,200 - ₹21,000",
+      "status": "Published",
+      "rawBase": 19000,
+      "rawMin": 4200,
+      "rawMax": 21000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-340",
+      "name": "MacBook Pro M3 Max 16\"",
+      "brand": "Apple",
+      "category": "Laptops",
+      "basePrice": "₹1,80,000",
+      "range": "₹45,000 - ₹1,95,000",
+      "status": "Published",
+      "rawBase": 180000,
+      "rawMin": 45000,
+      "rawMax": 195000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-341",
+      "name": "MacBook Pro M3 Pro 14\"",
+      "brand": "Apple",
+      "category": "Laptops",
+      "basePrice": "₹1,25,000",
+      "range": "₹30,000 - ₹1,38,000",
+      "status": "Published",
+      "rawBase": 125000,
+      "rawMin": 30000,
+      "rawMax": 138000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-342",
+      "name": "MacBook Air M3 15\"",
+      "brand": "Apple",
+      "category": "Laptops",
+      "basePrice": "₹90,000",
+      "range": "₹21,000 - ₹98,000",
+      "status": "Published",
+      "rawBase": 90000,
+      "rawMin": 21000,
+      "rawMax": 98000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-343",
+      "name": "MacBook Air M2 13\"",
+      "brand": "Apple",
+      "category": "Laptops",
+      "basePrice": "₹65,000",
+      "range": "₹15,000 - ₹72,000",
+      "status": "Published",
+      "rawBase": 65000,
+      "rawMin": 15000,
+      "rawMax": 72000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-344",
+      "name": "Dell XPS 15 9530",
+      "brand": "Dell",
+      "category": "Laptops",
+      "basePrice": "₹85,000",
+      "range": "₹20,000 - ₹92,000",
+      "status": "Published",
+      "rawBase": 85000,
+      "rawMin": 20000,
+      "rawMax": 92000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-345",
+      "name": "Dell XPS 13 Plus",
+      "brand": "Dell",
+      "category": "Laptops",
+      "basePrice": "₹75,000",
+      "range": "₹18,000 - ₹82,000",
+      "status": "Published",
+      "rawBase": 75000,
+      "rawMin": 18000,
+      "rawMax": 82000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-346",
+      "name": "Dell Inspiron 14 2-in-1",
+      "brand": "Dell",
+      "category": "Laptops",
+      "basePrice": "₹38,000",
+      "range": "₹9,000 - ₹42,000",
+      "status": "Published",
+      "rawBase": 38000,
+      "rawMin": 9000,
+      "rawMax": 42000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-347",
+      "name": "Dell G15 Gaming Laptop",
+      "brand": "Dell",
+      "category": "Laptops",
+      "basePrice": "₹45,000",
+      "range": "₹10,500 - ₹50,000",
+      "status": "Published",
+      "rawBase": 45000,
+      "rawMin": 10500,
+      "rawMax": 50000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-348",
+      "name": "HP Spectre x360 14",
+      "brand": "HP",
+      "category": "Laptops",
+      "basePrice": "₹80,000",
+      "range": "₹19,000 - ₹88,000",
+      "status": "Published",
+      "rawBase": 80000,
+      "rawMin": 19000,
+      "rawMax": 88000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-349",
+      "name": "HP Envy x360 15",
+      "brand": "HP",
+      "category": "Laptops",
+      "basePrice": "₹48,000",
+      "range": "₹11,000 - ₹53,000",
+      "status": "Published",
+      "rawBase": 48000,
+      "rawMin": 11000,
+      "rawMax": 53000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-350",
+      "name": "HP Pavilion 15",
+      "brand": "HP",
+      "category": "Laptops",
+      "basePrice": "₹28,000",
+      "range": "₹6,500 - ₹31,000",
+      "status": "Published",
+      "rawBase": 28000,
+      "rawMin": 6500,
+      "rawMax": 31000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-351",
+      "name": "HP Omen 16",
+      "brand": "HP",
+      "category": "Laptops",
+      "basePrice": "₹65,000",
+      "range": "₹15,000 - ₹72,000",
+      "status": "Published",
+      "rawBase": 65000,
+      "rawMin": 15000,
+      "rawMax": 72000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-352",
+      "name": "ThinkPad X1 Carbon Gen 11",
+      "brand": "Lenovo",
+      "category": "Laptops",
+      "basePrice": "₹90,000",
+      "range": "₹21,000 - ₹99,000",
+      "status": "Published",
+      "rawBase": 90000,
+      "rawMin": 21000,
+      "rawMax": 99000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-353",
+      "name": "Lenovo Yoga 7i Gen 8",
+      "brand": "Lenovo",
+      "category": "Laptops",
+      "basePrice": "₹42,000",
+      "range": "₹9,800 - ₹46,500",
+      "status": "Published",
+      "rawBase": 42000,
+      "rawMin": 9800,
+      "rawMax": 46500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-354",
+      "name": "Lenovo IdeaPad Slim 3",
+      "brand": "Lenovo",
+      "category": "Laptops",
+      "basePrice": "₹22,000",
+      "range": "₹5,000 - ₹24,500",
+      "status": "Published",
+      "rawBase": 22000,
+      "rawMin": 5000,
+      "rawMax": 24500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-355",
+      "name": "Lenovo Legion Pro 5i",
+      "brand": "Lenovo",
+      "category": "Laptops",
+      "basePrice": "₹72,000",
+      "range": "₹17,000 - ₹79,000",
+      "status": "Published",
+      "rawBase": 72000,
+      "rawMin": 17000,
+      "rawMax": 79000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-356",
+      "name": "ROG Zephyrus G14",
+      "brand": "Asus",
+      "category": "Laptops",
+      "basePrice": "₹78,000",
+      "range": "₹18,500 - ₹86,000",
+      "status": "Published",
+      "rawBase": 78000,
+      "rawMin": 18500,
+      "rawMax": 86000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-357",
+      "name": "Asus ZenBook 14 OLED",
+      "brand": "Asus",
+      "category": "Laptops",
+      "basePrice": "₹52,000",
+      "range": "₹12,000 - ₹57,000",
+      "status": "Published",
+      "rawBase": 52000,
+      "rawMin": 12000,
+      "rawMax": 57000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-358",
+      "name": "Asus TUF Gaming A15",
+      "brand": "Asus",
+      "category": "Laptops",
+      "basePrice": "₹38,000",
+      "range": "₹8,800 - ₹42,000",
+      "status": "Published",
+      "rawBase": 38000,
+      "rawMin": 8800,
+      "rawMax": 42000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-359",
+      "name": "MSI Katana 15",
+      "brand": "MSI",
+      "category": "Laptops",
+      "basePrice": "₹46,000",
+      "range": "₹10,500 - ₹51,000",
+      "status": "Published",
+      "rawBase": 46000,
+      "rawMin": 10500,
+      "rawMax": 51000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-360",
+      "name": "iPad Pro M2 12.9\"",
+      "brand": "Apple",
+      "category": "Tablets",
+      "basePrice": "₹68,000",
+      "range": "₹16,000 - ₹74,000",
+      "status": "Published",
+      "rawBase": 68000,
+      "rawMin": 16000,
+      "rawMax": 74000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-361",
+      "name": "iPad Pro M2 11\"",
+      "brand": "Apple",
+      "category": "Tablets",
+      "basePrice": "₹52,000",
+      "range": "₹12,000 - ₹57,000",
+      "status": "Published",
+      "rawBase": 52000,
+      "rawMin": 12000,
+      "rawMax": 57000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-362",
+      "name": "iPad Air 5th Gen",
+      "brand": "Apple",
+      "category": "Tablets",
+      "basePrice": "₹35,000",
+      "range": "₹8,000 - ₹39,000",
+      "status": "Published",
+      "rawBase": 35000,
+      "rawMin": 8000,
+      "rawMax": 39000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-363",
+      "name": "iPad 10th Gen",
+      "brand": "Apple",
+      "category": "Tablets",
+      "basePrice": "₹24,000",
+      "range": "₹5,500 - ₹26,500",
+      "status": "Published",
+      "rawBase": 24000,
+      "rawMin": 5500,
+      "rawMax": 26500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-364",
+      "name": "iPad Mini 6th Gen",
+      "brand": "Apple",
+      "category": "Tablets",
+      "basePrice": "₹28,000",
+      "range": "₹6,500 - ₹31,000",
+      "status": "Published",
+      "rawBase": 28000,
+      "rawMin": 6500,
+      "rawMax": 31000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-365",
+      "name": "Galaxy Tab S9 Ultra",
+      "brand": "Samsung",
+      "category": "Tablets",
+      "basePrice": "₹62,000",
+      "range": "₹14,500 - ₹68,000",
+      "status": "Published",
+      "rawBase": 62000,
+      "rawMin": 14500,
+      "rawMax": 68000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-366",
+      "name": "Galaxy Tab S9 FE",
+      "brand": "Samsung",
+      "category": "Tablets",
+      "basePrice": "₹26,000",
+      "range": "₹6,000 - ₹29,000",
+      "status": "Published",
+      "rawBase": 26000,
+      "rawMin": 6000,
+      "rawMax": 29000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-367",
+      "name": "Galaxy Tab A8 10.5",
+      "brand": "Samsung",
+      "category": "Tablets",
+      "basePrice": "₹9,500",
+      "range": "₹2,000 - ₹10,500",
+      "status": "Published",
+      "rawBase": 9500,
+      "rawMin": 2000,
+      "rawMax": 10500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-368",
+      "name": "Lenovo Tab P11 Pro Gen 2",
+      "brand": "Lenovo",
+      "category": "Tablets",
+      "basePrice": "₹18,000",
+      "range": "₹4,000 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4000,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-369",
+      "name": "Xiaomi Pad 6",
+      "brand": "Xiaomi",
+      "category": "Tablets",
+      "basePrice": "₹16,000",
+      "range": "₹3,500 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3500,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-370",
+      "name": "Apple Watch Ultra 2",
+      "brand": "Apple",
+      "category": "Smartwatches",
+      "basePrice": "₹52,000",
+      "range": "₹12,000 - ₹57,000",
+      "status": "Published",
+      "rawBase": 52000,
+      "rawMin": 12000,
+      "rawMax": 57000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-371",
+      "name": "Apple Watch Series 9",
+      "brand": "Apple",
+      "category": "Smartwatches",
+      "basePrice": "₹24,000",
+      "range": "₹5,500 - ₹26,500",
+      "status": "Published",
+      "rawBase": 24000,
+      "rawMin": 5500,
+      "rawMax": 26500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-372",
+      "name": "Apple Watch SE Gen 2",
+      "brand": "Apple",
+      "category": "Smartwatches",
+      "basePrice": "₹14,000",
+      "range": "₹3,200 - ₹15,500",
+      "status": "Published",
+      "rawBase": 14000,
+      "rawMin": 3200,
+      "rawMax": 15500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-373",
+      "name": "Galaxy Watch 6 Classic",
+      "brand": "Samsung",
+      "category": "Smartwatches",
+      "basePrice": "₹19,000",
+      "range": "₹4,500 - ₹21,000",
+      "status": "Published",
+      "rawBase": 19000,
+      "rawMin": 4500,
+      "rawMax": 21000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-374",
+      "name": "Galaxy Watch 6",
+      "brand": "Samsung",
+      "category": "Smartwatches",
+      "basePrice": "₹14,000",
+      "range": "₹3,200 - ₹15,500",
+      "status": "Published",
+      "rawBase": 14000,
+      "rawMin": 3200,
+      "rawMax": 15500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-375",
+      "name": "Galaxy Watch 5 Pro",
+      "brand": "Samsung",
+      "category": "Smartwatches",
+      "basePrice": "₹16,000",
+      "range": "₹3,800 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3800,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-376",
+      "name": "Pixel Watch 2",
+      "brand": "Google",
+      "category": "Smartwatches",
+      "basePrice": "₹18,000",
+      "range": "₹4,200 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4200,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-377",
+      "name": "OnePlus Watch 2",
+      "brand": "OnePlus",
+      "category": "Smartwatches",
+      "basePrice": "₹15,000",
+      "range": "₹3,500 - ₹17,000",
+      "status": "Published",
+      "rawBase": 15000,
+      "rawMin": 3500,
+      "rawMax": 17000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-378",
+      "name": "Fitbit Sense 2",
+      "brand": "Google",
+      "category": "Smartwatches",
+      "basePrice": "₹11,000",
+      "range": "₹2,500 - ₹12,500",
+      "status": "Published",
+      "rawBase": 11000,
+      "rawMin": 2500,
+      "rawMax": 12500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-379",
+      "name": "Xiaomi Watch S3",
+      "brand": "Xiaomi",
+      "category": "Smartwatches",
+      "basePrice": "₹7,500",
+      "range": "₹1,500 - ₹8,500",
+      "status": "Published",
+      "rawBase": 7500,
+      "rawMin": 1500,
+      "rawMax": 8500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-380",
+      "name": "Sony Bravia XR A80K OLED 65\"",
+      "brand": "Sony",
+      "category": "TVs",
+      "basePrice": "₹95,000",
+      "range": "₹22,000 - ₹1,05,000",
+      "status": "Published",
+      "rawBase": 95000,
+      "rawMin": 22000,
+      "rawMax": 105000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-381",
+      "name": "Sony Bravia 55\" 4K Google TV",
+      "brand": "Sony",
+      "category": "TVs",
+      "basePrice": "₹32,000",
+      "range": "₹7,500 - ₹35,000",
+      "status": "Published",
+      "rawBase": 32000,
+      "rawMin": 7500,
+      "rawMax": 35000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-382",
+      "name": "Samsung Neo QLED 4K 55\"",
+      "brand": "Samsung",
+      "category": "TVs",
+      "basePrice": "₹48,000",
+      "range": "₹11,000 - ₹53,000",
+      "status": "Published",
+      "rawBase": 48000,
+      "rawMin": 11000,
+      "rawMax": 53000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-383",
+      "name": "Samsung Crystal 4K 43\"",
+      "brand": "Samsung",
+      "category": "TVs",
+      "basePrice": "₹18,000",
+      "range": "₹4,000 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4000,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-384",
+      "name": "LG C3 OLED 55\"",
+      "brand": "LG",
+      "category": "TVs",
+      "basePrice": "₹72,000",
+      "range": "₹17,000 - ₹79,000",
+      "status": "Published",
+      "rawBase": 72000,
+      "rawMin": 17000,
+      "rawMax": 79000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-385",
+      "name": "LG UR7500 4K 50\"",
+      "brand": "LG",
+      "category": "TVs",
+      "basePrice": "₹22,000",
+      "range": "₹5,000 - ₹24,500",
+      "status": "Published",
+      "rawBase": 22000,
+      "rawMin": 5000,
+      "rawMax": 24500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-386",
+      "name": "OnePlus TV U1S 55\"",
+      "brand": "OnePlus",
+      "category": "TVs",
+      "basePrice": "₹20,000",
+      "range": "₹4,500 - ₹22,000",
+      "status": "Published",
+      "rawBase": 20000,
+      "rawMin": 4500,
+      "rawMax": 22000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-387",
+      "name": "Xiaomi Smart TV X 50\"",
+      "brand": "Xiaomi",
+      "category": "TVs",
+      "basePrice": "₹16,000",
+      "range": "₹3,500 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3500,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-388",
+      "name": "Realme Smart TV 43\"",
+      "brand": "Realme",
+      "category": "TVs",
+      "basePrice": "₹11,000",
+      "range": "₹2,500 - ₹12,500",
+      "status": "Published",
+      "rawBase": 11000,
+      "rawMin": 2500,
+      "rawMax": 12500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-389",
+      "name": "Xiaomi Smart TV 5A 32\"",
+      "brand": "Xiaomi",
+      "category": "TVs",
+      "basePrice": "₹7,000",
+      "range": "₹1,500 - ₹8,000",
+      "status": "Published",
+      "rawBase": 7000,
+      "rawMin": 1500,
+      "rawMax": 8000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-390",
+      "name": "PlayStation 5 Slim 1TB",
+      "brand": "Sony",
+      "category": "Gaming Consoles",
+      "basePrice": "₹32,000",
+      "range": "₹7,500 - ₹35,000",
+      "status": "Published",
+      "rawBase": 32000,
+      "rawMin": 7500,
+      "rawMax": 35000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-391",
+      "name": "PlayStation 4 Pro 1TB",
+      "brand": "Sony",
+      "category": "Gaming Consoles",
+      "basePrice": "₹14,000",
+      "range": "₹3,200 - ₹15,500",
+      "status": "Published",
+      "rawBase": 14000,
+      "rawMin": 3200,
+      "rawMax": 15500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-392",
+      "name": "Xbox Series X 1TB",
+      "brand": "Microsoft",
+      "category": "Gaming Consoles",
+      "basePrice": "₹30,000",
+      "range": "₹7,000 - ₹33,000",
+      "status": "Published",
+      "rawBase": 30000,
+      "rawMin": 7000,
+      "rawMax": 33000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-393",
+      "name": "Xbox Series S 512GB",
+      "brand": "Microsoft",
+      "category": "Gaming Consoles",
+      "basePrice": "₹16,000",
+      "range": "₹3,800 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3800,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-394",
+      "name": "Nintendo Switch OLED",
+      "brand": "Microsoft",
+      "category": "Gaming Consoles",
+      "basePrice": "₹15,000",
+      "range": "₹3,500 - ₹17,000",
+      "status": "Published",
+      "rawBase": 15000,
+      "rawMin": 3500,
+      "rawMax": 17000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-395",
+      "name": "Nintendo Switch Lite",
+      "brand": "Microsoft",
+      "category": "Gaming Consoles",
+      "basePrice": "₹8,000",
+      "range": "₹1,800 - ₹9,000",
+      "status": "Published",
+      "rawBase": 8000,
+      "rawMin": 1800,
+      "rawMax": 9000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-396",
+      "name": "Sony WH-1000XM5 Headphones",
+      "brand": "Sony",
+      "category": "Audio & Speakers",
+      "basePrice": "₹16,000",
+      "range": "₹3,800 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3800,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-397",
+      "name": "Bose QuietComfort Ultra",
+      "brand": "Bose",
+      "category": "Audio & Speakers",
+      "basePrice": "₹18,000",
+      "range": "₹4,200 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4200,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-398",
+      "name": "Apple AirPods Pro Gen 2",
+      "brand": "Apple",
+      "category": "Audio & Speakers",
+      "basePrice": "₹11,000",
+      "range": "₹2,500 - ₹12,500",
+      "status": "Published",
+      "rawBase": 11000,
+      "rawMin": 2500,
+      "rawMax": 12500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1588449668365-d15e397f6787?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-399",
+      "name": "JBL Bar 500 Soundbar",
+      "brand": "JBL",
+      "category": "Audio & Speakers",
+      "basePrice": "₹19,000",
+      "range": "₹4,500 - ₹21,000",
+      "status": "Published",
+      "rawBase": 19000,
+      "rawMin": 4500,
+      "rawMax": 21000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-400",
+      "name": "JBL Flip 6 Portable Speaker",
+      "brand": "JBL",
+      "category": "Audio & Speakers",
+      "basePrice": "₹5,000",
+      "range": "₹1,100 - ₹5,600",
+      "status": "Published",
+      "rawBase": 5000,
+      "rawMin": 1100,
+      "rawMax": 5600,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-401",
+      "name": "Nothing Ear (a)",
+      "brand": "Nothing",
+      "category": "Audio & Speakers",
+      "basePrice": "₹4,000",
+      "range": "₹800 - ₹4,500",
+      "status": "Published",
+      "rawBase": 4000,
+      "rawMin": 800,
+      "rawMax": 4500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-402",
+      "name": "Canon EOS R6 Mark II",
+      "brand": "Canon",
+      "category": "Cameras & DSLRs",
+      "basePrice": "₹95,000",
+      "range": "₹22,000 - ₹1,05,000",
+      "status": "Published",
+      "rawBase": 95000,
+      "rawMin": 22000,
+      "rawMax": 105000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-403",
+      "name": "Canon EOS 1500D DSLR",
+      "brand": "Canon",
+      "category": "Cameras & DSLRs",
+      "basePrice": "₹16,000",
+      "range": "₹3,800 - ₹18,000",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 3800,
+      "rawMax": 18000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-404",
+      "name": "Nikon Z6 II Mirrorless",
+      "brand": "Nikon",
+      "category": "Cameras & DSLRs",
+      "basePrice": "₹80,000",
+      "range": "₹18,500 - ₹88,000",
+      "status": "Published",
+      "rawBase": 80000,
+      "rawMin": 18500,
+      "rawMax": 88000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-405",
+      "name": "Nikon D5600 DSLR",
+      "brand": "Nikon",
+      "category": "Cameras & DSLRs",
+      "basePrice": "₹18,000",
+      "range": "₹4,200 - ₹20,000",
+      "status": "Published",
+      "rawBase": 18000,
+      "rawMin": 4200,
+      "rawMax": 20000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-406",
+      "name": "Sony Alpha 7 IV Mirrorless",
+      "brand": "Sony",
+      "category": "Cameras & DSLRs",
+      "basePrice": "₹1,10,000",
+      "range": "₹25,000 - ₹1,22,000",
+      "status": "Published",
+      "rawBase": 110000,
+      "rawMin": 25000,
+      "rawMax": 122000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-407",
+      "name": "Sony ZV-E10 Vlog Camera",
+      "brand": "Sony",
+      "category": "Cameras & DSLRs",
+      "basePrice": "₹28,000",
+      "range": "₹6,500 - ₹31,000",
+      "status": "Published",
+      "rawBase": 28000,
+      "rawMin": 6500,
+      "rawMax": 31000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-408",
+      "name": "Amazon Echo Dot Gen 5",
+      "brand": "Amazon",
+      "category": "Smart Home",
+      "basePrice": "₹2,500",
+      "range": "₹500 - ₹2,800",
+      "status": "Published",
+      "rawBase": 2500,
+      "rawMin": 500,
+      "rawMax": 2800,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-409",
+      "name": "Amazon Echo Show 8",
+      "brand": "Amazon",
+      "category": "Smart Home",
+      "basePrice": "₹6,000",
+      "range": "₹1,200 - ₹6,600",
+      "status": "Published",
+      "rawBase": 6000,
+      "rawMin": 1200,
+      "rawMax": 6600,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-410",
+      "name": "Google Nest Hub Gen 2",
+      "brand": "Google",
+      "category": "Smart Home",
+      "basePrice": "₹4,500",
+      "range": "₹900 - ₹5,000",
+      "status": "Published",
+      "rawBase": 4500,
+      "rawMin": 900,
+      "rawMax": 5000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-411",
+      "name": "Google Nest Mini Gen 2",
+      "brand": "Google",
+      "category": "Smart Home",
+      "basePrice": "₹1,500",
+      "range": "₹300 - ₹1,700",
+      "status": "Published",
+      "rawBase": 1500,
+      "rawMin": 300,
+      "rawMax": 1700,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-412",
+      "name": "Xiaomi Smart Air Purifier 4",
+      "brand": "Xiaomi",
+      "category": "Smart Home",
+      "basePrice": "₹6,500",
+      "range": "₹1,500 - ₹7,200",
+      "status": "Published",
+      "rawBase": 6500,
+      "rawMin": 1500,
+      "rawMax": 7200,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-413",
+      "name": "Xiaomi Smart Robot Vacuum",
+      "brand": "Xiaomi",
+      "category": "Smart Home",
+      "basePrice": "₹12,000",
+      "range": "₹2,800 - ₹13,500",
+      "status": "Published",
+      "rawBase": 12000,
+      "rawMin": 2800,
+      "rawMax": 13500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x",
+      "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "order": 1,
+      "text": "Does the device turn on properly?",
+      "type": "Multi Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Dell",
+        "Lenovo",
+        "HP",
+        "Asus",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Sony",
+        "LG",
+        "Microsoft"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 13",
+        "Galaxy S23",
+        "iPhone 12"
+      ]
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "text": "Are there any visible cracks on the screen?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Tablets",
+        "Smartwatches",
+        "TVs"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Sony",
+        "LG",
+        "Lenovo"
+      ]
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "text": "Are all buttons and camera systems functional?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Tablets"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo"
+      ]
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "text": "is battery health more 90%?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Smart Watches",
+        "Tablets"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Lenovo",
+        "Google"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 14 Pro",
+        "iPhone 12",
+        "iPhone 13"
+      ]
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "text": "is your device screen working properly?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones"
+      ],
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 11"
+      ]
+    }
+  ],
+  "pricingRules": [
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Does the device turn on properly?\" is \"No\"",
+      "deduction": "Reduce 80%",
+      "category": "Smartphones, Laptops, Tablets, Smartwatches, Smart Watches",
+      "status": "Active",
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Dell",
+        "Xiaomi",
+        "Realme",
+        "Oppo"
+      ],
+      "models": [
+        "iPhone 15 Pro Max",
+        "Galaxy S24 Ultra",
+        "MacBook Pro M3",
+        "iPhone 11",
+        "iPhone 12",
+        "iPhone 14 Pro",
+        "iPhone 13",
+        "Galaxy S23",
+        "OnePlus 11",
+        "Dell XPS 13",
+        "MacBook Air M2"
+      ]
+    },
+    {
+      "id": "RULE-002",
+      "condition": "IF \"Are there any visible cracks on the screen?\" is \"Yes\"",
+      "deduction": "Reduce 30%",
+      "category": "Smartphones, Tablets",
+      "status": "Active",
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google"
+      ],
+      "models": [
+        "iPhone 15 Pro Max",
+        "Galaxy S24 Ultra"
+      ]
+    },
+    {
+      "id": "RULE-03",
+      "condition": "IF \"is battery health more 90%?\" is \"cracked , breaked \"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "RULE-04",
+      "condition": "IF \"is your device screen working properly?\" is \"cracked , not working propely\"",
+      "deduction": "Reduce 30%",
+      "category": "Smartphones",
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 11",
+        "iPhone 13",
+        "iPhone 14 Pro"
+      ],
+      "status": "Active"
+    }
+  ],
+  "bonusRules": [
+    {
+      "id": "BONUS-001",
+      "condition": "Original Box & Bill Available",
+      "bonus": "Add ₹1000",
+      "category": "All Devices",
+      "status": "Active"
+    }
+  ],
+  "users": [
+    {
+      "id": "USR-101",
+      "name": "Rahul Sharma",
+      "email": "rahul.s@gmail.com",
+      "phone": "+91 98765 43210",
+      "date": "12 May 2024",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-102",
+      "name": "Aditi Nair",
+      "email": "aditi.nair829@gmail.com",
+      "phone": "+91 7079623169",
+      "date": "11 Aug 2024",
+      "wallet": "₹0",
+      "status": "Active"
+    },
+    {
+      "id": "USR-103",
+      "name": "Pooja Yadav",
+      "email": "pooja.yadav607@gmail.com",
+      "phone": "+91 8179642573",
+      "date": "7 Apr 2026",
+      "wallet": "₹3,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-104",
+      "name": "Swati Bose",
+      "email": "swati.bose510@gmail.com",
+      "phone": "+91 9653054447",
+      "date": "15 Dec 2026",
+      "wallet": "₹4,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-105",
+      "name": "Tanvi Choudhary",
+      "email": "tanvi.choudhary233@gmail.com",
+      "phone": "+91 8084214646",
+      "date": "1 Apr 2026",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-106",
+      "name": "Ajay Singh",
+      "email": "ajay.singh829@gmail.com",
+      "phone": "+91 9098150977",
+      "date": "6 Feb 2026",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-107",
+      "name": "Preeti Roy",
+      "email": "preeti.roy597@gmail.com",
+      "phone": "+91 7819132746",
+      "date": "21 May 2026",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-108",
+      "name": "Megha Gupta",
+      "email": "megha.gupta916@gmail.com",
+      "phone": "+91 8576332623",
+      "date": "23 Jan 2024",
+      "wallet": "₹0",
+      "status": "Active"
+    },
+    {
+      "id": "USR-109",
+      "name": "Ankit Mishra",
+      "email": "ankit.mishra225@gmail.com",
+      "phone": "+91 8597671099",
+      "date": "17 Jan 2025",
+      "wallet": "₹0",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-110",
+      "name": "Ishan Bahl",
+      "email": "ishan.bahl888@gmail.com",
+      "phone": "+91 9368904043",
+      "date": "20 Mar 2025",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-111",
+      "name": "Sanjay Reddy",
+      "email": "sanjay.reddy201@gmail.com",
+      "phone": "+91 9461139026",
+      "date": "24 Nov 2024",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-112",
+      "name": "Preeti Gill",
+      "email": "preeti.gill811@gmail.com",
+      "phone": "+91 7637628411",
+      "date": "6 Jan 2026",
+      "wallet": "₹1,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-113",
+      "name": "Ankit Saxena",
+      "email": "ankit.saxena565@gmail.com",
+      "phone": "+91 7831433816",
+      "date": "24 Jun 2026",
+      "wallet": "₹2,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-114",
+      "name": "Nisha Kumar",
+      "email": "nisha.kumar936@gmail.com",
+      "phone": "+91 8574875564",
+      "date": "12 Jan 2024",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-115",
+      "name": "Pooja Prasad",
+      "email": "pooja.prasad973@gmail.com",
+      "phone": "+91 9412458749",
+      "date": "2 Oct 2025",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-116",
+      "name": "Divya Prasad",
+      "email": "divya.prasad517@gmail.com",
+      "phone": "+91 9264551251",
+      "date": "25 Nov 2026",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-117",
+      "name": "Amit Verma",
+      "email": "amit.verma334@gmail.com",
+      "phone": "+91 9547035530",
+      "date": "16 Mar 2025",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-118",
+      "name": "Rohan Singh",
+      "email": "rohan.singh145@gmail.com",
+      "phone": "+91 7049480025",
+      "date": "4 Apr 2024",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-119",
+      "name": "Ramesh Mehta",
+      "email": "ramesh.mehta841@gmail.com",
+      "phone": "+91 9972140175",
+      "date": "14 Oct 2026",
+      "wallet": "₹1,500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-120",
+      "name": "Jyoti Bahl",
+      "email": "jyoti.bahl194@gmail.com",
+      "phone": "+91 8786973622",
+      "date": "16 Jan 2025",
+      "wallet": "₹2,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-121",
+      "name": "Kiran Verma",
+      "email": "kiran.verma474@gmail.com",
+      "phone": "+91 9592113878",
+      "date": "8 May 2026",
+      "wallet": "₹0",
+      "status": "Active"
+    },
+    {
+      "id": "USR-122",
+      "name": "Suresh Bahl",
+      "email": "suresh.bahl676@gmail.com",
+      "phone": "+91 8774309110",
+      "date": "20 Aug 2025",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-123",
+      "name": "Sneha Roy",
+      "email": "sneha.roy532@gmail.com",
+      "phone": "+91 8424437773",
+      "date": "19 Aug 2025",
+      "wallet": "₹3,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-124",
+      "name": "Pooja Joshi",
+      "email": "pooja.joshi523@gmail.com",
+      "phone": "+91 7578655167",
+      "date": "9 May 2026",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-125",
+      "name": "Ankit Desai",
+      "email": "ankit.desai573@gmail.com",
+      "phone": "+91 8021180325",
+      "date": "3 Apr 2025",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-126",
+      "name": "Ramesh Das",
+      "email": "ramesh.das855@gmail.com",
+      "phone": "+91 7027012967",
+      "date": "2 Sep 2025",
+      "wallet": "₹7,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-127",
+      "name": "Vikranth Dubey",
+      "email": "vikranth.dubey438@gmail.com",
+      "phone": "+91 7039134796",
+      "date": "1 Jun 2024",
+      "wallet": "₹2,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-128",
+      "name": "Vijay Nair",
+      "email": "vijay.nair664@gmail.com",
+      "phone": "+91 9216457479",
+      "date": "2 May 2025",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-129",
+      "name": "Aarti Iyer",
+      "email": "aarti.iyer231@gmail.com",
+      "phone": "+91 7793404200",
+      "date": "7 Aug 2025",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-130",
+      "name": "Kiran Prasad",
+      "email": "kiran.prasad686@gmail.com",
+      "phone": "+91 8602376532",
+      "date": "10 Jul 2025",
+      "wallet": "₹2,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-131",
+      "name": "Manish Joshi",
+      "email": "manish.joshi483@gmail.com",
+      "phone": "+91 7491531288",
+      "date": "6 Jan 2026",
+      "wallet": "₹2,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-132",
+      "name": "Arjun Gupta",
+      "email": "arjun.gupta463@gmail.com",
+      "phone": "+91 7286569862",
+      "date": "27 Apr 2024",
+      "wallet": "₹5,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-133",
+      "name": "Komal Nair",
+      "email": "komal.nair737@gmail.com",
+      "phone": "+91 9352367825",
+      "date": "2 Sep 2025",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-134",
+      "name": "Manish Saxena",
+      "email": "manish.saxena654@gmail.com",
+      "phone": "+91 8460075973",
+      "date": "15 Mar 2026",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-135",
+      "name": "Harish Mehta",
+      "email": "harish.mehta610@gmail.com",
+      "phone": "+91 7547807518",
+      "date": "21 Jan 2025",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-136",
+      "name": "Jyoti Choudhary",
+      "email": "jyoti.choudhary525@gmail.com",
+      "phone": "+91 7155568421",
+      "date": "14 Nov 2025",
+      "wallet": "₹2,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-137",
+      "name": "Tanvi Kapoor",
+      "email": "tanvi.kapoor402@gmail.com",
+      "phone": "+91 8649380478",
+      "date": "26 Feb 2026",
+      "wallet": "₹2,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-138",
+      "name": "Ajay Sharma",
+      "email": "ajay.sharma896@gmail.com",
+      "phone": "+91 7617812449",
+      "date": "27 Oct 2025",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-139",
+      "name": "Tanvi Pandey",
+      "email": "tanvi.pandey249@gmail.com",
+      "phone": "+91 8830870232",
+      "date": "11 Jan 2024",
+      "wallet": "₹5,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-140",
+      "name": "Ritu Nair",
+      "email": "ritu.nair866@gmail.com",
+      "phone": "+91 8621786599",
+      "date": "14 Dec 2025",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-141",
+      "name": "Sneha Nair",
+      "email": "sneha.nair726@gmail.com",
+      "phone": "+91 7077443565",
+      "date": "17 Jan 2026",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-142",
+      "name": "Rajesh Joshi",
+      "email": "rajesh.joshi856@gmail.com",
+      "phone": "+91 9968415200",
+      "date": "21 Jan 2024",
+      "wallet": "₹3,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-143",
+      "name": "Ishan Nair",
+      "email": "ishan.nair118@gmail.com",
+      "phone": "+91 8040780801",
+      "date": "14 Dec 2024",
+      "wallet": "₹6,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-144",
+      "name": "Harish Gupta",
+      "email": "harish.gupta446@gmail.com",
+      "phone": "+91 9843236159",
+      "date": "12 Jun 2024",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-145",
+      "name": "Varun Rao",
+      "email": "varun.rao594@gmail.com",
+      "phone": "+91 7657155446",
+      "date": "10 Jul 2025",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-146",
+      "name": "Sanjay Gupta",
+      "email": "sanjay.gupta471@gmail.com",
+      "phone": "+91 7624313941",
+      "date": "19 Aug 2026",
+      "wallet": "₹4,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-147",
+      "name": "Amit Saxena",
+      "email": "amit.saxena232@gmail.com",
+      "phone": "+91 7377968217",
+      "date": "1 May 2025",
+      "wallet": "₹6,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-148",
+      "name": "Sanjay Trivedi",
+      "email": "sanjay.trivedi725@gmail.com",
+      "phone": "+91 7501408727",
+      "date": "8 Nov 2026",
+      "wallet": "₹500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-149",
+      "name": "Ramesh Desai",
+      "email": "ramesh.desai612@gmail.com",
+      "phone": "+91 9213235079",
+      "date": "24 Aug 2025",
+      "wallet": "₹5,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-150",
+      "name": "Varun Patel",
+      "email": "varun.patel373@gmail.com",
+      "phone": "+91 8086860439",
+      "date": "10 Jan 2026",
+      "wallet": "₹500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-151",
+      "name": "Preeti Joshi",
+      "email": "preeti.joshi657@gmail.com",
+      "phone": "+91 7796234319",
+      "date": "16 Feb 2024",
+      "wallet": "₹5,500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-152",
+      "name": "Rajesh Saxena",
+      "email": "rajesh.saxena961@gmail.com",
+      "phone": "+91 8583466334",
+      "date": "15 Feb 2024",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-153",
+      "name": "Kiran Gill",
+      "email": "kiran.gill794@gmail.com",
+      "phone": "+91 7108235378",
+      "date": "26 Jun 2025",
+      "wallet": "₹1,500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-154",
+      "name": "Jyoti Bose",
+      "email": "jyoti.bose888@gmail.com",
+      "phone": "+91 7181725949",
+      "date": "14 Sep 2026",
+      "wallet": "₹2,500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-155",
+      "name": "Tanvi Singh",
+      "email": "tanvi.singh931@gmail.com",
+      "phone": "+91 8693813322",
+      "date": "28 Apr 2024",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-156",
+      "name": "Arjun Nair",
+      "email": "arjun.nair155@gmail.com",
+      "phone": "+91 9612618391",
+      "date": "8 Jul 2024",
+      "wallet": "₹2,500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-157",
+      "name": "Vikranth Bose",
+      "email": "vikranth.bose285@gmail.com",
+      "phone": "+91 9156021472",
+      "date": "15 Jan 2026",
+      "wallet": "₹3,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-158",
+      "name": "Pooja Roy",
+      "email": "pooja.roy965@gmail.com",
+      "phone": "+91 8634827707",
+      "date": "13 Feb 2024",
+      "wallet": "₹2,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-159",
+      "name": "Sunita Nair",
+      "email": "sunita.nair519@gmail.com",
+      "phone": "+91 7468561173",
+      "date": "1 Apr 2025",
+      "wallet": "₹3,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-160",
+      "name": "Ankit Sharma",
+      "email": "ankit.sharma866@gmail.com",
+      "phone": "+91 9508083241",
+      "date": "16 Oct 2025",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-161",
+      "name": "Tarun Yadav",
+      "email": "tarun.yadav758@gmail.com",
+      "phone": "+91 8025511386",
+      "date": "5 Dec 2024",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-162",
+      "name": "Preeti Nair",
+      "email": "preeti.nair259@gmail.com",
+      "phone": "+91 8402084736",
+      "date": "1 Aug 2026",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-163",
+      "name": "Rahul Dubey",
+      "email": "rahul.dubey921@gmail.com",
+      "phone": "+91 9279973007",
+      "date": "13 Mar 2025",
+      "wallet": "₹3,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-164",
+      "name": "Vivek Kapoor",
+      "email": "vivek.kapoor840@gmail.com",
+      "phone": "+91 7662874427",
+      "date": "12 Aug 2024",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-165",
+      "name": "Vivek Rao",
+      "email": "vivek.rao113@gmail.com",
+      "phone": "+91 7289317899",
+      "date": "25 Jul 2025",
+      "wallet": "₹5,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-166",
+      "name": "Preeti Choudhary",
+      "email": "preeti.choudhary574@gmail.com",
+      "phone": "+91 9864678239",
+      "date": "10 Aug 2026",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-167",
+      "name": "Rohit Sharma",
+      "email": "rohit.sharma610@gmail.com",
+      "phone": "+91 9261163472",
+      "date": "5 May 2026",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-168",
+      "name": "Sanjay Reddy",
+      "email": "sanjay.reddy972@gmail.com",
+      "phone": "+91 9066285495",
+      "date": "28 Dec 2026",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-169",
+      "name": "Deepika Kapoor",
+      "email": "deepika.kapoor745@gmail.com",
+      "phone": "+91 8012209600",
+      "date": "16 Aug 2025",
+      "wallet": "₹4,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-170",
+      "name": "Swati Sharma",
+      "email": "swati.sharma376@gmail.com",
+      "phone": "+91 7613302995",
+      "date": "23 Nov 2025",
+      "wallet": "₹3,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-171",
+      "name": "Sunita Saxena",
+      "email": "sunita.saxena616@gmail.com",
+      "phone": "+91 7182103460",
+      "date": "1 Oct 2024",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-172",
+      "name": "Tanvi Kumar",
+      "email": "tanvi.kumar105@gmail.com",
+      "phone": "+91 7588330429",
+      "date": "6 Feb 2025",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-173",
+      "name": "Rohit Nair",
+      "email": "rohit.nair400@gmail.com",
+      "phone": "+91 8757222254",
+      "date": "13 Mar 2024",
+      "wallet": "₹5,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-174",
+      "name": "Sunita Pandey",
+      "email": "sunita.pandey288@gmail.com",
+      "phone": "+91 7132355106",
+      "date": "14 Jul 2025",
+      "wallet": "₹6,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-175",
+      "name": "Vijay Mishra",
+      "email": "vijay.mishra444@gmail.com",
+      "phone": "+91 7978126781",
+      "date": "13 Nov 2026",
+      "wallet": "₹500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-176",
+      "name": "Harish Bose",
+      "email": "harish.bose953@gmail.com",
+      "phone": "+91 8419567341",
+      "date": "20 May 2025",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-177",
+      "name": "Rohan Gill",
+      "email": "rohan.gill350@gmail.com",
+      "phone": "+91 9070522385",
+      "date": "17 Jul 2026",
+      "wallet": "₹5,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-178",
+      "name": "Vinod Yadav",
+      "email": "vinod.yadav586@gmail.com",
+      "phone": "+91 8956281100",
+      "date": "10 Jul 2026",
+      "wallet": "₹4,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-179",
+      "name": "Ankit Reddy",
+      "email": "ankit.reddy976@gmail.com",
+      "phone": "+91 9085063834",
+      "date": "27 Apr 2024",
+      "wallet": "₹6,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-180",
+      "name": "Akash Gupta",
+      "email": "akash.gupta239@gmail.com",
+      "phone": "+91 7228282478",
+      "date": "6 Oct 2024",
+      "wallet": "₹7,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-181",
+      "name": "Suresh Sharma",
+      "email": "suresh.sharma337@gmail.com",
+      "phone": "+91 7498289501",
+      "date": "13 Feb 2025",
+      "wallet": "₹5,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-182",
+      "name": "Karan Bose",
+      "email": "karan.bose437@gmail.com",
+      "phone": "+91 9331080635",
+      "date": "6 Jul 2025",
+      "wallet": "₹3,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-183",
+      "name": "Rohit Joshi",
+      "email": "rohit.joshi178@gmail.com",
+      "phone": "+91 9920675889",
+      "date": "28 Aug 2024",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-184",
+      "name": "Ramesh Roy",
+      "email": "ramesh.roy284@gmail.com",
+      "phone": "+91 8202138074",
+      "date": "16 Jun 2026",
+      "wallet": "₹2,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-185",
+      "name": "Harish Singh",
+      "email": "harish.singh755@gmail.com",
+      "phone": "+91 7566467036",
+      "date": "28 Jan 2025",
+      "wallet": "₹3,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-186",
+      "name": "Divya Dubey",
+      "email": "divya.dubey192@gmail.com",
+      "phone": "+91 7596343223",
+      "date": "27 Jun 2024",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-187",
+      "name": "Nisha Roy",
+      "email": "nisha.roy415@gmail.com",
+      "phone": "+91 7285817400",
+      "date": "9 Apr 2024",
+      "wallet": "₹4,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-188",
+      "name": "Pranav Saxena",
+      "email": "pranav.saxena644@gmail.com",
+      "phone": "+91 8483719104",
+      "date": "28 Dec 2024",
+      "wallet": "₹500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-189",
+      "name": "Shreya Verma",
+      "email": "shreya.verma922@gmail.com",
+      "phone": "+91 7311234585",
+      "date": "12 Aug 2024",
+      "wallet": "₹6,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-190",
+      "name": "Vivek Trivedi",
+      "email": "vivek.trivedi188@gmail.com",
+      "phone": "+91 7706403667",
+      "date": "22 Jan 2024",
+      "wallet": "₹2,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-191",
+      "name": "Aarti Kumar",
+      "email": "aarti.kumar959@gmail.com",
+      "phone": "+91 9920932458",
+      "date": "15 Dec 2025",
+      "wallet": "₹500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-192",
+      "name": "Preeti Bose",
+      "email": "preeti.bose108@gmail.com",
+      "phone": "+91 7900360060",
+      "date": "6 Aug 2025",
+      "wallet": "₹6,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-193",
+      "name": "Vijay Pandey",
+      "email": "vijay.pandey433@gmail.com",
+      "phone": "+91 9322055604",
+      "date": "10 Jun 2024",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-194",
+      "name": "Sneha Sharma",
+      "email": "sneha.sharma919@gmail.com",
+      "phone": "+91 7464878608",
+      "date": "9 Jun 2025",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-195",
+      "name": "Vinod Gill",
+      "email": "vinod.gill822@gmail.com",
+      "phone": "+91 9185795325",
+      "date": "2 Jan 2024",
+      "wallet": "₹3,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-196",
+      "name": "Megha Rao",
+      "email": "megha.rao157@gmail.com",
+      "phone": "+91 9562296627",
+      "date": "26 Aug 2024",
+      "wallet": "₹500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-197",
+      "name": "Rajesh Desai",
+      "email": "rajesh.desai976@gmail.com",
+      "phone": "+91 7632191726",
+      "date": "7 Sep 2025",
+      "wallet": "₹0",
+      "status": "Active"
+    },
+    {
+      "id": "USR-198",
+      "name": "Varun Choudhary",
+      "email": "varun.choudhary374@gmail.com",
+      "phone": "+91 9642904709",
+      "date": "2 Jan 2026",
+      "wallet": "₹1,000",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-199",
+      "name": "Dinesh Kapoor",
+      "email": "dinesh.kapoor995@gmail.com",
+      "phone": "+91 8507620942",
+      "date": "7 Dec 2024",
+      "wallet": "₹5,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-200",
+      "name": "Manish Khanna",
+      "email": "manish.khanna808@gmail.com",
+      "phone": "+91 8792122792",
+      "date": "11 Dec 2024",
+      "wallet": "₹1,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-201",
+      "name": "Karan Kapoor",
+      "email": "karan.kapoor772@gmail.com",
+      "phone": "+91 9665819488",
+      "date": "14 Dec 2026",
+      "wallet": "₹4,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-202",
+      "name": "Karan Saxena",
+      "email": "karan.saxena971@gmail.com",
+      "phone": "+91 8784036217",
+      "date": "7 Feb 2026",
+      "wallet": "₹5,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-203",
+      "name": "Ajay Bose",
+      "email": "ajay.bose737@gmail.com",
+      "phone": "+91 9142821599",
+      "date": "28 Sep 2025",
+      "wallet": "₹1,500",
+      "status": "Blocked"
+    },
+    {
+      "id": "USR-204",
+      "name": "Aditi Choudhary",
+      "email": "aditi.choudhary872@gmail.com",
+      "phone": "+91 9368935473",
+      "date": "3 May 2024",
+      "wallet": "₹6,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-205",
+      "name": "Ananya Rao",
+      "email": "ananya.rao635@gmail.com",
+      "phone": "+91 7427125994",
+      "date": "9 Jan 2024",
+      "wallet": "₹7,000",
+      "status": "Active"
+    },
+    {
+      "id": "USR-206",
+      "name": "Arjun Rao",
+      "email": "arjun.rao109@gmail.com",
+      "phone": "+91 8750590550",
+      "date": "11 Nov 2024",
+      "wallet": "₹2,500",
+      "status": "Active"
+    }
+  ],
+  "partners": [
+    {
+      "id": "PTN-101",
+      "name": "Rohit Sharma",
+      "location": "New Delhi (South)",
+      "rating": "4.9",
+      "orders": 256,
+      "status": "Online",
+      "wallet": "₹8,450",
+      "score": "100% (Approved)",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-102",
+      "name": "MobileHub Store",
+      "location": "New Delhi (South)",
+      "rating": "4.8",
+      "orders": 126,
+      "status": "Online",
+      "wallet": "₹8,320",
+      "score": "100% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved"
+    },
+    {
+      "id": "PTN-103",
+      "name": "SuperMobile Repair #72",
+      "location": "Gurgaon Central",
+      "rating": "4.3",
+      "orders": 235,
+      "status": "Online",
+      "wallet": "₹6,000",
+      "score": "92% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-104",
+      "name": "Komal Yadav",
+      "location": "Mumbai Western Suburbs",
+      "rating": "4.6",
+      "orders": 119,
+      "status": "Online",
+      "wallet": "₹9,000",
+      "score": "100% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-105",
+      "name": "Deepika Bahl",
+      "location": "Chennai Coastal",
+      "rating": "4.2",
+      "orders": 66,
+      "status": "Online",
+      "wallet": "₹8,000",
+      "score": "95% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-106",
+      "name": "Kiran Patel",
+      "location": "Gurgaon Central",
+      "rating": "4.7",
+      "orders": 14,
+      "status": "Online",
+      "wallet": "₹7,500",
+      "score": "91% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-107",
+      "name": "TechCycle Solutions #55",
+      "location": "Hyderabad Cyber City",
+      "rating": "4.7",
+      "orders": 178,
+      "status": "Online",
+      "wallet": "₹6,500",
+      "score": "94% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-108",
+      "name": "ElectroExchange Shop #40",
+      "location": "New Delhi (West)",
+      "rating": "4.6",
+      "orders": 222,
+      "status": "Online",
+      "wallet": "₹9,500",
+      "score": "87%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-109",
+      "name": "Sunita Kumar",
+      "location": "Chennai Coastal",
+      "rating": "4.8",
+      "orders": 116,
+      "status": "Online",
+      "wallet": "₹3,000",
+      "score": "100% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-110",
+      "name": "EcoAppraise Hub #22",
+      "location": "Kolkata North",
+      "rating": "4.8",
+      "orders": 272,
+      "status": "Online",
+      "wallet": "₹4,000",
+      "score": "95%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-111",
+      "name": "Abhay Prasad",
+      "location": "Noida Express",
+      "rating": "4.5",
+      "orders": 73,
+      "status": "Online",
+      "wallet": "₹3,500",
+      "score": "99% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-112",
+      "name": "MobileHub Store #23",
+      "location": "New Delhi (South)",
+      "rating": "4.8",
+      "orders": 246,
+      "status": "Online",
+      "wallet": "₹8,500",
+      "score": "96%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-113",
+      "name": "Deepika Nair",
+      "location": "Kolkata North",
+      "rating": "4.2",
+      "orders": 210,
+      "status": "Offline",
+      "wallet": "₹4,000",
+      "score": "97% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-114",
+      "name": "ElectroExchange Shop #98",
+      "location": "Kolkata North",
+      "rating": "4.7",
+      "orders": 251,
+      "status": "Online",
+      "wallet": "₹7,000",
+      "score": "86%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-115",
+      "name": "Megha Kapoor",
+      "location": "Mumbai Western Suburbs",
+      "rating": "4.4",
+      "orders": 85,
+      "status": "Online",
+      "wallet": "₹2,000",
+      "score": "89% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-116",
+      "name": "Ishan Roy",
+      "location": "Kolkata North",
+      "rating": "4.8",
+      "orders": 65,
+      "status": "Offline",
+      "wallet": "₹1,500",
+      "score": "96% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-117",
+      "name": "Ajay Rao",
+      "location": "Mumbai Western Suburbs",
+      "rating": "4.6",
+      "orders": 286,
+      "status": "Offline",
+      "wallet": "₹1,000",
+      "score": "94% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-118",
+      "name": "Komal Desai",
+      "location": "Chennai Coastal",
+      "rating": "4.4",
+      "orders": 263,
+      "status": "Online",
+      "wallet": "₹6,000",
+      "score": "95%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-119",
+      "name": "Suresh Trivedi",
+      "location": "Gurgaon Central",
+      "rating": "4.2",
+      "orders": 301,
+      "status": "Offline",
+      "wallet": "₹2,000",
+      "score": "96% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-120",
+      "name": "SmartAppraise Ltd #43",
+      "location": "Noida Express",
+      "rating": "4.3",
+      "orders": 95,
+      "status": "Online",
+      "wallet": "₹7,000",
+      "score": "99%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-121",
+      "name": "SuperMobile Repair #13",
+      "location": "Chennai Coastal",
+      "rating": "4.1",
+      "orders": 15,
+      "status": "Online",
+      "wallet": "₹3,500",
+      "score": "86% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-122",
+      "name": "ReValue Tech #40",
+      "location": "Pune Core",
+      "rating": "4.5",
+      "orders": 234,
+      "status": "Online",
+      "wallet": "₹6,500",
+      "score": "91%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-123",
+      "name": "GreenGadgets Hub #45",
+      "location": "Chennai Coastal",
+      "rating": "4.1",
+      "orders": 268,
+      "status": "Online",
+      "wallet": "₹10,000",
+      "score": "86%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-124",
+      "name": "Aarti Joshi",
+      "location": "Hyderabad Cyber City",
+      "rating": "4.6",
+      "orders": 127,
+      "status": "Online",
+      "wallet": "₹5,000",
+      "score": "91%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-125",
+      "name": "Arjun Patel",
+      "location": "New Delhi (South)",
+      "rating": "4.5",
+      "orders": 242,
+      "status": "Online",
+      "wallet": "₹3,000",
+      "score": "93% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-126",
+      "name": "EcoAppraise Hub #31",
+      "location": "Kolkata North",
+      "rating": "4.2",
+      "orders": 45,
+      "status": "Online",
+      "wallet": "₹10,500",
+      "score": "87%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-127",
+      "name": "Sanjay Singh",
+      "location": "Ahmedabad Central",
+      "rating": "4.6",
+      "orders": 99,
+      "status": "Online",
+      "wallet": "₹4,500",
+      "score": "93%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-128",
+      "name": "Alpha Recommerce #43",
+      "location": "Ahmedabad Central",
+      "rating": "4.1",
+      "orders": 107,
+      "status": "Offline",
+      "wallet": "₹8,500",
+      "score": "95%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-129",
+      "name": "MobileHub Store #79",
+      "location": "Noida (East)",
+      "rating": "4.6",
+      "orders": 214,
+      "status": "Online",
+      "wallet": "₹5,000",
+      "score": "85% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-130",
+      "name": "DeviceRescue Store #92",
+      "location": "Bangalore Tech Park",
+      "rating": "4.5",
+      "orders": 179,
+      "status": "Online",
+      "wallet": "₹9,000",
+      "score": "92%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-131",
+      "name": "Ananya Bose",
+      "location": "Pune Core",
+      "rating": "4.9",
+      "orders": 38,
+      "status": "Online",
+      "wallet": "₹1,500",
+      "score": "92%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-132",
+      "name": "Arjun Bahl",
+      "location": "Gurgaon Central",
+      "rating": "4.0",
+      "orders": 39,
+      "status": "Online",
+      "wallet": "₹10,500",
+      "score": "96% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    },
+    {
+      "id": "PTN-133",
+      "name": "DeviceRescue Store #11",
+      "location": "Hyderabad Cyber City",
+      "rating": "4.9",
+      "orders": 237,
+      "status": "Online",
+      "wallet": "₹4,500",
+      "score": "95%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-134",
+      "name": "Priya Sen",
+      "location": "Noida Express",
+      "rating": "4.5",
+      "orders": 168,
+      "status": "Offline",
+      "wallet": "₹9,500",
+      "score": "90%",
+      "aadhaarStatus": "Submitted",
+      "panStatus": "Submitted",
+      "policeStatus": "Reviewing",
+      "photoStatus": "Verified"
+    },
+    {
+      "id": "PTN-135",
+      "name": "Aditi Mehta",
+      "location": "Kolkata North",
+      "rating": "4.2",
+      "orders": 57,
+      "status": "Online",
+      "wallet": "₹10,000",
+      "score": "93% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
+      "photoStatus": "Approved"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2024-12546",
+      "customer": "Jane Doe",
+      "device": "iPhone 14 Pro Max (128GB)",
+      "price": "₹67,500",
+      "status": "Pending",
+      "partner": "Rohit Sharma",
+      "date": "20 Jun 2024"
+    },
+    {
+      "id": "ORD-35353",
+      "device": "PlayStation 5 Slim 1TB (Superb)",
+      "price": "₹32,000",
+      "customerName": "adarsh Deep Sachan",
+      "customerPhone": "+91 98765 43210",
+      "customerAddress": "B-45, Sector 62, Noida, UP",
+      "status": "Delivered",
+      "date": "8 Aug 2026"
+    },
+    {
+      "id": "ORD-27629",
+      "customer": "adarsh Deep Sachan",
+      "device": "Galaxy S24 Ultra (Samsung)",
+      "price": "₹78,000",
+      "status": "Picked Up",
+      "partner": "Rohit Sharma",
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "ORD-54180",
+      "device": "iPhone 15 Pro Max (Superb)",
+      "price": "₹75,000",
+      "customerName": "adarsh Deep Sachan",
+      "customerPhone": "+91 98765 43210",
+      "customerAddress": "B-45, Sector 62, Noida, UP",
+      "status": "Shipped",
+      "date": "9 Aug 2026"
+    },
+    {
+      "id": "ORD-08892",
+      "customer": "adarsh Deep Sachan",
+      "device": "iPhone 12 (Apple)",
+      "price": "₹25,000",
+      "status": "Pending",
+      "partner": "Rohit Sharma",
+      "date": "9 Aug 2026"
+    }
+  ],
+  "pickups": [
+    {
+      "orderId": "ORD-2024-12546",
+      "slot": "21 Jun 2024, 10:00 AM - 01:00 PM",
+      "address": "B-45, Connaught Place, New Delhi",
+      "distance": "4.2 KM",
+      "partner": "Rohit Sharma",
+      "status": "Scheduled"
+    },
+    {
+      "orderId": "ORD-27629",
+      "slot": "Tomorrow, 10:00 AM - 01:00 PM",
+      "address": "B-45, Sector 62, Noida, UP",
+      "distance": "3.8 KM",
+      "partner": "Rohit Sharma",
+      "status": "Scheduled"
+    },
+    {
+      "orderId": "ORD-08892",
+      "slot": "Tomorrow, 10:00 AM - 01:00 PM",
+      "address": "B-45, Sector 62, Noida, UP",
+      "distance": "3.8 KM",
+      "partner": "Rohit Sharma",
+      "status": "Scheduled"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "FAQ-001",
+      "q": "How does Cashifin calculate the price quote for my device?",
+      "a": "Our dynamic pricing engine appraises your device instantly based on its model brand, standard market depreciation rate, demand multipliers, and your answers to the diagnostics checks."
+    },
+    {
+      "id": "FAQ-002",
+      "q": "What happens if my device condition does not match my appraisal answers?",
+      "a": "During doorstep pickup, our representative performs a physical inspection. If the condition matches, you receive the full quoted amount instantly. If minor differences are found, a revised value is computed on-site."
+    },
+    {
+      "id": "FAQ-003",
+      "q": "Is it safe to sell my phone on Cashifin?",
+      "a": "Yes! We guarantee complete data security. Every device bought undergoes standard diagnostic wipe scripts to securely destroy any local cache, private files, and logins permanently."
+    }
+  ],
+  "benefits": [
+    {
+      "id": "BEN-001",
+      "title": "Instant Cash Payment",
+      "desc": "Get paid instantly via UPI, bank transfer, or cash on pickup.",
+      "icon": "💰"
+    },
+    {
+      "id": "BEN-002",
+      "title": "Free Home Pickup",
+      "desc": "Zero pickup or valuation fees. Our agent arrives at your preferred slot.",
+      "icon": "🛵"
+    },
+    {
+      "id": "BEN-003",
+      "title": "Secure Data Wipe",
+      "desc": "Rest easy knowing all private data is completely and securely erased.",
+      "icon": "🔒"
+    },
+    {
+      "id": "BEN-004",
+      "title": "Eco-Friendly Recycling",
+      "desc": "Help reduce e-waste. We recycle dead parts responsibly.",
+      "icon": "🌿"
+    }
+  ],
+  "articles": [
+    {
+      "id": "ART-001",
+      "title": "All Details About Apple Macbook Ultra Launching In 2026!",
+      "desc": "Being a MacBook fan, it gets pretty exciting when you get to know details about Apple MacBook launches...",
+      "date": "13th Mar 2026",
+      "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      "id": "ART-002",
+      "title": "iQOO Z11x vs OPPO K13: Confusion Solved, See Who Is Better Under 20K",
+      "desc": "We are just three months into 2026, and the budget range of the Indian phone market is getting heated up...",
+      "date": "13th Mar 2026",
+      "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=400&auto=format&fit=crop"
+    },
+    {
+      "id": "ART-003",
+      "title": "Oppo Find N6 Launch Date, Specs, Price, And More",
+      "desc": "If you are someone who loves staying ahead with the latest smartphone technology, the Oppo Find series is for you...",
+      "date": "13th Mar 2026",
+      "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "INV-001",
+      "modelId": "MDL-201",
+      "modelName": "iPhone 15 Pro Max",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "stock": 4,
+      "minStock": 5,
+      "location": "Warehouse Delhi-NCR",
+      "price": "₹75,000"
+    },
+    {
+      "id": "INV-002",
+      "modelId": "MDL-206",
+      "modelName": "MacBook Pro M3",
+      "brand": "Apple",
+      "category": "Laptops",
+      "stock": 5,
+      "minStock": 1,
+      "location": "Warehouse Mumbai",
+      "price": "₹95,000"
+    }
+  ],
+  "logos": [
+    {
+      "id": "logos_config",
+      "userLogo": "/logo.jpg",
+      "partnerLogo": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=80",
+      "adminLogo": "/logo.jpg"
+    }
+  ],
+  "banners": [
+    {
+      "id": "BAN-001",
+      "title": "Sell old phone",
+      "subtitle": "From your doorstep or at any of our 200 stores pan-India",
+      "btn": "Sell Now",
+      "bg": "bg-[#39b54a]"
+    },
+    {
+      "id": "BAN-002",
+      "title": "Upgrade to MacBook Pro",
+      "subtitle": "Get up to ₹80,000 exchange credit instantly for old laptops",
+      "btn": "Evaluate Laptop",
+      "bg": "bg-gradient-to-r from-blue-500 to-indigo-650"
+    },
+    {
+      "id": "BAN-003",
+      "title": "Eco-Recycle Green Initiative",
+      "subtitle": "Recycle dead batteries & electronics securely for extra reward cash",
+      "btn": "Recycle Now",
+      "bg": "bg-gradient-to-r from-emerald-600 to-teal-500"
+    }
+  ],
+  "stores": [
+    {
+      "id": "STR-001",
+      "name": "Cashifin Exclusive Store — Gurgaon Galleria",
+      "address": "Shop No. SF-24, 2nd Floor, Galleria Market, DLF Phase 4, Gurgaon, Haryana 122002",
+      "phone": "+91 98765 00101",
+      "timings": "11:00 AM - 09:00 PM",
+      "tags": [
+        "Instant Payouts",
+        "Refurbished Stock",
+        "Accessories Shop"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=200&auto=format&fit=crop",
+      "status": "Open Now"
+    },
+    {
+      "id": "STR-002",
+      "name": "Cashifin Exclusive Store — Noida Sector 18",
+      "address": "Plot No. P-12, Sector 18, Opp. Wave Cinema Mall, Noida, Uttar Pradesh 201301",
+      "phone": "+91 98765 00102",
+      "timings": "11:00 AM - 09:30 PM",
+      "tags": [
+        "Instant Payouts",
+        "Free Diagnostics",
+        "Exchange Bonus"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=200&auto=format&fit=crop",
+      "status": "Open Now"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "TST-001",
+      "name": "Mohit Sharma",
+      "city": "Noida",
+      "quote": "Cashifin gave me ₹38,000 for my old iPhone 13 Pro Max. Rohit Sharma visited, tested the device in 10 minutes, and paid instantly via UPI. Absolute bliss!",
+      "rating": "⭐⭐⭐⭐⭐"
+    },
+    {
+      "id": "TST-002",
+      "name": "Priya Patel",
+      "city": "Gurgaon",
+      "quote": "Extremely professional laptop valuation. Traded my old Dell Inspiron laptop and got ₹24,000 credit directly. Data wipe certificate was shared via email within 24 hours!",
+      "rating": "⭐⭐⭐⭐⭐"
+    },
+    {
+      "id": "TST-003",
+      "name": "Aditya Sen",
+      "city": "Delhi",
+      "quote": "Fabulous refurbished phone buying experience! Got a certified pre-owned Pixel 8 Pro at 50% discount. Works like absolute brand new. Strongly recommend Cashifin.",
+      "rating": "⭐⭐⭐⭐⭐"
+    }
+  ],
+  "footerContent": [
+    {
+      "id": "footer_config",
+      "aboutUs": "Cashifin is India's premier tech recommerce network built for digital life cycle circularity. Established in 2015, we disburse instant payouts transparently.",
+      "careers": "We are actively looking for logistics diagnostic checkers, React developer architects and pricing analysts. Contact careers@cashifin.com.",
+      "pressReleases": "Cashifin closed Series B funding of $12M in 2026 to expand physical experiential outlets globally.",
+      "contactUs": "Operations center support hotline: 1800-123-4567. Address: Sector 62, Noida, UP.",
+      "sellerAgreement": "By scheduling evaluations you legally certify device ownership and details criteria matching billing records.",
+      "privacyPolicy": "We encrypt all personal data variables securely and process ISO-compliant diagnostic formatting on logistics collections.",
+      "dataWipe": "Every transaction receives digital sanitization documentation matching NIST SP 800-88 standards."
+    }
+  ],
+  "whyChooseUs": [
+    {
+      "id": "WCU-001",
+      "tag": "💸 Payouts",
+      "title": "Top Valuations",
+      "desc": "Secure maximum appraised payout quotes based on our live diagnostics market benchmarks."
+    },
+    {
+      "id": "WCU-002",
+      "tag": "⚡ Speed",
+      "title": "Instant Doorstep Cash",
+      "desc": "Get paid instantly via UPI, bank transfer, or hand-to-hand wallet transfer on diagnostic signup verification."
+    },
+    {
+      "id": "WCU-003",
+      "tag": "📱 Scope",
+      "title": "Wide Device Support",
+      "desc": "We inspect and trade pre-owned phones, laptops, smartwatches, televisions, and gaming consoles."
+    },
+    {
+      "id": "WCU-004",
+      "tag": "🔒 Security",
+      "title": "Military-Grade Wipes",
+      "desc": "Complete reassurance: every collected hardware client item undergoes 3-pass disk sanitization standard."
+    },
+    {
+      "id": "WCU-005",
+      "tag": "🚚 Logistics",
+      "title": "Free Home Pickups",
+      "desc": "Enjoy zero evaluation costs or transportation fees. Our pickup agents visit your home for diagnostics."
+    }
+  ],
+  "howItWorks": [
+    {
+      "id": "HIW-001",
+      "step": "1",
+      "title": "Check Price",
+      "desc": "Select your device model and state conditions to get appraised valuation."
+    },
+    {
+      "id": "HIW-002",
+      "step": "2",
+      "title": "Schedule Pickup",
+      "desc": "Choose a convenient date and doorstep evaluation time slot."
+    },
+    {
+      "id": "HIW-003",
+      "step": "3",
+      "title": "Instant Pickup",
+      "desc": "Our trained pickup agent verifies conditions at your doorstep."
+    },
+    {
+      "id": "HIW-004",
+      "step": "4",
+      "title": "Instant Payment",
+      "desc": "Get your full payout immediately in your preferred payment mode."
+    }
+  ]
+}

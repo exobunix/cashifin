@@ -1,0 +1,2367 @@
+{
+  "categories": [
+    {
+      "id": "CAT-001",
+      "name": "Smartphones",
+      "slug": "smartphones",
+      "count": "14,245 Devices"
+    },
+    {
+      "id": "CAT-002",
+      "name": "Laptops",
+      "slug": "laptops",
+      "count": "3,842 Devices"
+    },
+    {
+      "id": "CAT-003",
+      "name": "Tablets",
+      "slug": "tablets",
+      "count": "1,950 Devices"
+    },
+    {
+      "id": "CAT-004",
+      "name": "Smart Watches",
+      "slug": "watches",
+      "count": "1,245 Devices"
+    }
+  ],
+  "brands": [
+    {
+      "id": "BRD-001",
+      "name": "Apple",
+      "slug": "apple",
+      "models": 45,
+      "category": "Smartphones / Laptops"
+    },
+    {
+      "id": "BRD-002",
+      "name": "Samsung",
+      "slug": "samsung",
+      "models": 82,
+      "category": "Smartphones / Tablets"
+    }
+  ],
+  "models": [
+    {
+      "id": "MDL-201",
+      "name": "iPhone 8",
+      "brand": "Apple",
+      "basePrice": "₹16,750",
+      "range": "₹4,188 - ₹19,263",
+      "status": "Published",
+      "rawBase": 16750,
+      "rawMin": 4188,
+      "rawMax": 19263,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-202",
+      "name": "iPhone 8 Pro",
+      "brand": "Apple",
+      "basePrice": "₹18,500",
+      "range": "₹4,625 - ₹21,275",
+      "status": "Published",
+      "rawBase": 18500,
+      "rawMin": 4625,
+      "rawMax": 21275,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-203",
+      "name": "iPhone 8 Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹20,250",
+      "range": "₹5,063 - ₹23,288",
+      "status": "Published",
+      "rawBase": 20250,
+      "rawMin": 5063,
+      "rawMax": 23288,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-204",
+      "name": "iPhone X",
+      "brand": "Apple",
+      "basePrice": "₹22,000",
+      "range": "₹5,500 - ₹25,300",
+      "status": "Published",
+      "rawBase": 22000,
+      "rawMin": 5500,
+      "rawMax": 25300,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-205",
+      "name": "iPhone X Pro",
+      "brand": "Apple",
+      "basePrice": "₹23,750",
+      "range": "₹5,938 - ₹27,312",
+      "status": "Published",
+      "rawBase": 23750,
+      "rawMin": 5938,
+      "rawMax": 27312,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-206",
+      "name": "iPhone X Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹25,500",
+      "range": "₹6,375 - ₹29,325",
+      "status": "Published",
+      "rawBase": 25500,
+      "rawMin": 6375,
+      "rawMax": 29325,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-207",
+      "name": "iPhone XR",
+      "brand": "Apple",
+      "basePrice": "₹27,250",
+      "range": "₹6,813 - ₹31,337",
+      "status": "Published",
+      "rawBase": 27250,
+      "rawMin": 6813,
+      "rawMax": 31337,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-208",
+      "name": "iPhone XR Pro",
+      "brand": "Apple",
+      "basePrice": "₹29,000",
+      "range": "₹7,250 - ₹33,350",
+      "status": "Published",
+      "rawBase": 29000,
+      "rawMin": 7250,
+      "rawMax": 33350,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-209",
+      "name": "iPhone XR Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹30,750",
+      "range": "₹7,688 - ₹35,363",
+      "status": "Published",
+      "rawBase": 30750,
+      "rawMin": 7688,
+      "rawMax": 35363,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-210",
+      "name": "iPhone XS",
+      "brand": "Apple",
+      "basePrice": "₹32,500",
+      "range": "₹8,125 - ₹37,375",
+      "status": "Published",
+      "rawBase": 32500,
+      "rawMin": 8125,
+      "rawMax": 37375,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-211",
+      "name": "iPhone XS Pro",
+      "brand": "Apple",
+      "basePrice": "₹34,250",
+      "range": "₹8,563 - ₹39,388",
+      "status": "Published",
+      "rawBase": 34250,
+      "rawMin": 8563,
+      "rawMax": 39388,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-212",
+      "name": "iPhone XS Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹36,000",
+      "range": "₹9,000 - ₹41,400",
+      "status": "Published",
+      "rawBase": 36000,
+      "rawMin": 9000,
+      "rawMax": 41400,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-213",
+      "name": "iPhone 11",
+      "brand": "Apple",
+      "basePrice": "₹37,750",
+      "range": "₹9,438 - ₹43,413",
+      "status": "Published",
+      "rawBase": 37750,
+      "rawMin": 9438,
+      "rawMax": 43413,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-214",
+      "name": "iPhone 11 Pro",
+      "brand": "Apple",
+      "basePrice": "₹39,500",
+      "range": "₹9,875 - ₹45,425",
+      "status": "Published",
+      "rawBase": 39500,
+      "rawMin": 9875,
+      "rawMax": 45425,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-215",
+      "name": "iPhone 11 Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹41,250",
+      "range": "₹10,313 - ₹47,437",
+      "status": "Published",
+      "rawBase": 41250,
+      "rawMin": 10313,
+      "rawMax": 47437,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-216",
+      "name": "iPhone 11 mini",
+      "brand": "Apple",
+      "basePrice": "₹43,000",
+      "range": "₹10,750 - ₹49,450",
+      "status": "Published",
+      "rawBase": 43000,
+      "rawMin": 10750,
+      "rawMax": 49450,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-217",
+      "name": "iPhone 11 Plus",
+      "brand": "Apple",
+      "basePrice": "₹44,750",
+      "range": "₹11,188 - ₹51,462",
+      "status": "Published",
+      "rawBase": 44750,
+      "rawMin": 11188,
+      "rawMax": 51462,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-218",
+      "name": "iPhone 12",
+      "brand": "Apple",
+      "basePrice": "₹46,500",
+      "range": "₹11,625 - ₹53,475",
+      "status": "Published",
+      "rawBase": 46500,
+      "rawMin": 11625,
+      "rawMax": 53475,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-219",
+      "name": "iPhone 12 Pro",
+      "brand": "Apple",
+      "basePrice": "₹48,250",
+      "range": "₹12,063 - ₹55,487",
+      "status": "Published",
+      "rawBase": 48250,
+      "rawMin": 12063,
+      "rawMax": 55487,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-220",
+      "name": "iPhone 12 Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹50,000",
+      "range": "₹12,500 - ₹57,500",
+      "status": "Published",
+      "rawBase": 50000,
+      "rawMin": 12500,
+      "rawMax": 57500,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-221",
+      "name": "iPhone 12 mini",
+      "brand": "Apple",
+      "basePrice": "₹51,750",
+      "range": "₹12,938 - ₹59,512",
+      "status": "Published",
+      "rawBase": 51750,
+      "rawMin": 12938,
+      "rawMax": 59512,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-222",
+      "name": "iPhone 12 Plus",
+      "brand": "Apple",
+      "basePrice": "₹53,500",
+      "range": "₹13,375 - ₹61,525",
+      "status": "Published",
+      "rawBase": 53500,
+      "rawMin": 13375,
+      "rawMax": 61525,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-223",
+      "name": "iPhone 13",
+      "brand": "Apple",
+      "basePrice": "₹55,250",
+      "range": "₹13,813 - ₹63,537",
+      "status": "Published",
+      "rawBase": 55250,
+      "rawMin": 13813,
+      "rawMax": 63537,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-224",
+      "name": "iPhone 13 Pro",
+      "brand": "Apple",
+      "basePrice": "₹57,000",
+      "range": "₹14,250 - ₹65,550",
+      "status": "Published",
+      "rawBase": 57000,
+      "rawMin": 14250,
+      "rawMax": 65550,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-225",
+      "name": "iPhone 13 Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹58,750",
+      "range": "₹14,688 - ₹67,563",
+      "status": "Published",
+      "rawBase": 58750,
+      "rawMin": 14688,
+      "rawMax": 67563,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-226",
+      "name": "iPhone 13 mini",
+      "brand": "Apple",
+      "basePrice": "₹60,500",
+      "range": "₹15,125 - ₹69,575",
+      "status": "Published",
+      "rawBase": 60500,
+      "rawMin": 15125,
+      "rawMax": 69575,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-227",
+      "name": "iPhone 13 Plus",
+      "brand": "Apple",
+      "basePrice": "₹62,250",
+      "range": "₹15,563 - ₹71,588",
+      "status": "Published",
+      "rawBase": 62250,
+      "rawMin": 15563,
+      "rawMax": 71588,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-228",
+      "name": "iPhone 14",
+      "brand": "Apple",
+      "basePrice": "₹64,000",
+      "range": "₹16,000 - ₹73,600",
+      "status": "Published",
+      "rawBase": 64000,
+      "rawMin": 16000,
+      "rawMax": 73600,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-229",
+      "name": "iPhone 14 Pro",
+      "brand": "Apple",
+      "basePrice": "₹65,750",
+      "range": "₹16,438 - ₹75,613",
+      "status": "Published",
+      "rawBase": 65750,
+      "rawMin": 16438,
+      "rawMax": 75613,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-230",
+      "name": "iPhone 14 Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹67,500",
+      "range": "₹16,875 - ₹77,625",
+      "status": "Published",
+      "rawBase": 67500,
+      "rawMin": 16875,
+      "rawMax": 77625,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-231",
+      "name": "iPhone 14 Plus",
+      "brand": "Apple",
+      "basePrice": "₹69,250",
+      "range": "₹17,313 - ₹79,638",
+      "status": "Published",
+      "rawBase": 69250,
+      "rawMin": 17313,
+      "rawMax": 79638,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-232",
+      "name": "iPhone 15",
+      "brand": "Apple",
+      "basePrice": "₹71,000",
+      "range": "₹17,750 - ₹81,650",
+      "status": "Published",
+      "rawBase": 71000,
+      "rawMin": 17750,
+      "rawMax": 81650,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-233",
+      "name": "iPhone 15 Pro",
+      "brand": "Apple",
+      "basePrice": "₹72,750",
+      "range": "₹18,188 - ₹83,663",
+      "status": "Published",
+      "rawBase": 72750,
+      "rawMin": 18188,
+      "rawMax": 83663,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-234",
+      "name": "iPhone 15 Pro Max",
+      "brand": "Apple",
+      "basePrice": "₹74,500",
+      "range": "₹18,625 - ₹85,675",
+      "status": "Published",
+      "rawBase": 74500,
+      "rawMin": 18625,
+      "rawMax": 85675,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-235",
+      "name": "iPhone 15 Plus",
+      "brand": "Apple",
+      "basePrice": "₹76,250",
+      "range": "₹19,063 - ₹87,688",
+      "status": "Published",
+      "rawBase": 76250,
+      "rawMin": 19063,
+      "rawMax": 87688,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-236",
+      "name": "Galaxy S10",
+      "brand": "Samsung",
+      "basePrice": "₹71,400",
+      "range": "₹17,850 - ₹82,110",
+      "status": "Published",
+      "rawBase": 71400,
+      "rawMin": 17850,
+      "rawMax": 82110,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-237",
+      "name": "Galaxy S10 Ultra",
+      "brand": "Samsung",
+      "basePrice": "₹73,050",
+      "range": "₹18,263 - ₹84,008",
+      "status": "Published",
+      "rawBase": 73050,
+      "rawMin": 18263,
+      "rawMax": 84008,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-238",
+      "name": "Galaxy S10 FE",
+      "brand": "Samsung",
+      "basePrice": "₹74,700",
+      "range": "₹18,675 - ₹85,905",
+      "status": "Published",
+      "rawBase": 74700,
+      "rawMin": 18675,
+      "rawMax": 85905,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-239",
+      "name": "Galaxy S10 Plus",
+      "brand": "Samsung",
+      "basePrice": "₹76,350",
+      "range": "₹19,088 - ₹87,803",
+      "status": "Published",
+      "rawBase": 76350,
+      "rawMin": 19088,
+      "rawMax": 87803,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-240",
+      "name": "Galaxy S20",
+      "brand": "Samsung",
+      "basePrice": "₹78,000",
+      "range": "₹19,500 - ₹89,700",
+      "status": "Published",
+      "rawBase": 78000,
+      "rawMin": 19500,
+      "rawMax": 89700,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-241",
+      "name": "Galaxy S20 Ultra",
+      "brand": "Samsung",
+      "basePrice": "₹79,650",
+      "range": "₹19,913 - ₹91,598",
+      "status": "Published",
+      "rawBase": 79650,
+      "rawMin": 19913,
+      "rawMax": 91598,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-242",
+      "name": "Galaxy S20 FE",
+      "brand": "Samsung",
+      "basePrice": "₹81,300",
+      "range": "₹20,325 - ₹93,495",
+      "status": "Published",
+      "rawBase": 81300,
+      "rawMin": 20325,
+      "rawMax": 93495,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-243",
+      "name": "Galaxy S20 Plus",
+      "brand": "Samsung",
+      "basePrice": "₹82,950",
+      "range": "₹20,738 - ₹95,392",
+      "status": "Published",
+      "rawBase": 82950,
+      "rawMin": 20738,
+      "rawMax": 95392,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-244",
+      "name": "Galaxy S21",
+      "brand": "Samsung",
+      "basePrice": "₹84,600",
+      "range": "₹21,150 - ₹97,290",
+      "status": "Published",
+      "rawBase": 84600,
+      "rawMin": 21150,
+      "rawMax": 97290,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-245",
+      "name": "Galaxy S21 Ultra",
+      "brand": "Samsung",
+      "basePrice": "₹86,250",
+      "range": "₹21,563 - ₹99,187",
+      "status": "Published",
+      "rawBase": 86250,
+      "rawMin": 21563,
+      "rawMax": 99187,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-246",
+      "name": "Galaxy S21 FE",
+      "brand": "Samsung",
+      "basePrice": "₹87,900",
+      "range": "₹21,975 - ₹1,01,085",
+      "status": "Published",
+      "rawBase": 87900,
+      "rawMin": 21975,
+      "rawMax": 101085,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-247",
+      "name": "Galaxy S21 Plus",
+      "brand": "Samsung",
+      "basePrice": "₹89,550",
+      "range": "₹22,388 - ₹1,02,982",
+      "status": "Published",
+      "rawBase": 89550,
+      "rawMin": 22388,
+      "rawMax": 102982,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-248",
+      "name": "Galaxy S22",
+      "brand": "Samsung",
+      "basePrice": "₹91,200",
+      "range": "₹22,800 - ₹1,04,880",
+      "status": "Published",
+      "rawBase": 91200,
+      "rawMin": 22800,
+      "rawMax": 104880,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-249",
+      "name": "Galaxy S22 Ultra",
+      "brand": "Samsung",
+      "basePrice": "₹92,850",
+      "range": "₹23,213 - ₹1,06,777",
+      "status": "Published",
+      "rawBase": 92850,
+      "rawMin": 23213,
+      "rawMax": 106777,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-250",
+      "name": "Galaxy S22 FE",
+      "brand": "Samsung",
+      "basePrice": "₹94,500",
+      "range": "₹23,625 - ₹1,08,675",
+      "status": "Published",
+      "rawBase": 94500,
+      "rawMin": 23625,
+      "rawMax": 108675,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-251",
+      "name": "Galaxy S22 Plus",
+      "brand": "Samsung",
+      "basePrice": "₹96,150",
+      "range": "₹24,038 - ₹1,10,572",
+      "status": "Published",
+      "rawBase": 96150,
+      "rawMin": 24038,
+      "rawMax": 110572,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-252",
+      "name": "Galaxy S23",
+      "brand": "Samsung",
+      "basePrice": "₹12,800",
+      "range": "₹3,200 - ₹14,720",
+      "status": "Published",
+      "rawBase": 12800,
+      "rawMin": 3200,
+      "rawMax": 14720,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-253",
+      "name": "Galaxy S23 Ultra",
+      "brand": "Samsung",
+      "basePrice": "₹14,450",
+      "range": "₹3,613 - ₹16,618",
+      "status": "Published",
+      "rawBase": 14450,
+      "rawMin": 3613,
+      "rawMax": 16618,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-254",
+      "name": "Galaxy S23 FE",
+      "brand": "Samsung",
+      "basePrice": "₹16,100",
+      "range": "₹4,025 - ₹18,515",
+      "status": "Published",
+      "rawBase": 16100,
+      "rawMin": 4025,
+      "rawMax": 18515,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-255",
+      "name": "Galaxy S23 Plus",
+      "brand": "Samsung",
+      "basePrice": "₹17,750",
+      "range": "₹4,438 - ₹20,413",
+      "status": "Published",
+      "rawBase": 17750,
+      "rawMin": 4438,
+      "rawMax": 20413,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-256",
+      "name": "Galaxy S24",
+      "brand": "Samsung",
+      "basePrice": "₹19,400",
+      "range": "₹4,850 - ₹22,310",
+      "status": "Published",
+      "rawBase": 19400,
+      "rawMin": 4850,
+      "rawMax": 22310,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-257",
+      "name": "Galaxy S24 Ultra",
+      "brand": "Samsung",
+      "basePrice": "₹21,050",
+      "range": "₹5,263 - ₹24,207",
+      "status": "Published",
+      "rawBase": 21050,
+      "rawMin": 5263,
+      "rawMax": 24207,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-258",
+      "name": "Galaxy S24 FE",
+      "brand": "Samsung",
+      "basePrice": "₹22,700",
+      "range": "₹5,675 - ₹26,105",
+      "status": "Published",
+      "rawBase": 22700,
+      "rawMin": 5675,
+      "rawMax": 26105,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-259",
+      "name": "Galaxy S24 Plus",
+      "brand": "Samsung",
+      "basePrice": "₹24,350",
+      "range": "₹6,088 - ₹28,002",
+      "status": "Published",
+      "rawBase": 24350,
+      "rawMin": 6088,
+      "rawMax": 28002,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-260",
+      "name": "OnePlus 7",
+      "brand": "OnePlus",
+      "basePrice": "₹29,000",
+      "range": "₹7,250 - ₹33,350",
+      "status": "Published",
+      "rawBase": 29000,
+      "rawMin": 7250,
+      "rawMax": 33350,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-261",
+      "name": "OnePlus 7 Pro",
+      "brand": "OnePlus",
+      "basePrice": "₹30,550",
+      "range": "₹7,638 - ₹35,133",
+      "status": "Published",
+      "rawBase": 30550,
+      "rawMin": 7638,
+      "rawMax": 35133,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-262",
+      "name": "OnePlus 8",
+      "brand": "OnePlus",
+      "basePrice": "₹32,100",
+      "range": "₹8,025 - ₹36,915",
+      "status": "Published",
+      "rawBase": 32100,
+      "rawMin": 8025,
+      "rawMax": 36915,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-263",
+      "name": "OnePlus 8 Pro",
+      "brand": "OnePlus",
+      "basePrice": "₹33,650",
+      "range": "₹8,413 - ₹38,698",
+      "status": "Published",
+      "rawBase": 33650,
+      "rawMin": 8413,
+      "rawMax": 38698,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-264",
+      "name": "OnePlus 8T",
+      "brand": "OnePlus",
+      "basePrice": "₹35,200",
+      "range": "₹8,800 - ₹40,480",
+      "status": "Published",
+      "rawBase": 35200,
+      "rawMin": 8800,
+      "rawMax": 40480,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-265",
+      "name": "OnePlus 9",
+      "brand": "OnePlus",
+      "basePrice": "₹36,750",
+      "range": "₹9,188 - ₹42,263",
+      "status": "Published",
+      "rawBase": 36750,
+      "rawMin": 9188,
+      "rawMax": 42263,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-266",
+      "name": "OnePlus 9 Pro",
+      "brand": "OnePlus",
+      "basePrice": "₹38,300",
+      "range": "₹9,575 - ₹44,045",
+      "status": "Published",
+      "rawBase": 38300,
+      "rawMin": 9575,
+      "rawMax": 44045,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-267",
+      "name": "OnePlus 9R",
+      "brand": "OnePlus",
+      "basePrice": "₹39,850",
+      "range": "₹9,963 - ₹45,828",
+      "status": "Published",
+      "rawBase": 39850,
+      "rawMin": 9963,
+      "rawMax": 45828,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-268",
+      "name": "OnePlus 10 Pro",
+      "brand": "OnePlus",
+      "basePrice": "₹41,400",
+      "range": "₹10,350 - ₹47,610",
+      "status": "Published",
+      "rawBase": 41400,
+      "rawMin": 10350,
+      "rawMax": 47610,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-269",
+      "name": "OnePlus 10R",
+      "brand": "OnePlus",
+      "basePrice": "₹42,950",
+      "range": "₹10,738 - ₹49,392",
+      "status": "Published",
+      "rawBase": 42950,
+      "rawMin": 10738,
+      "rawMax": 49392,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-270",
+      "name": "OnePlus 11",
+      "brand": "OnePlus",
+      "basePrice": "₹44,500",
+      "range": "₹11,125 - ₹51,175",
+      "status": "Published",
+      "rawBase": 44500,
+      "rawMin": 11125,
+      "rawMax": 51175,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-271",
+      "name": "OnePlus 11R",
+      "brand": "OnePlus",
+      "basePrice": "₹46,050",
+      "range": "₹11,513 - ₹52,957",
+      "status": "Published",
+      "rawBase": 46050,
+      "rawMin": 11513,
+      "rawMax": 52957,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-272",
+      "name": "OnePlus 12",
+      "brand": "OnePlus",
+      "basePrice": "₹47,600",
+      "range": "₹11,900 - ₹54,740",
+      "status": "Published",
+      "rawBase": 47600,
+      "rawMin": 11900,
+      "rawMax": 54740,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-273",
+      "name": "Pixel 4",
+      "brand": "Google",
+      "basePrice": "₹49,150",
+      "range": "₹12,288 - ₹56,522",
+      "status": "Published",
+      "rawBase": 49150,
+      "rawMin": 12288,
+      "rawMax": 56522,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-274",
+      "name": "Pixel 4a",
+      "brand": "Google",
+      "basePrice": "₹50,700",
+      "range": "₹12,675 - ₹58,305",
+      "status": "Published",
+      "rawBase": 50700,
+      "rawMin": 12675,
+      "rawMax": 58305,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-275",
+      "name": "Pixel 5",
+      "brand": "Google",
+      "basePrice": "₹52,250",
+      "range": "₹13,063 - ₹60,087",
+      "status": "Published",
+      "rawBase": 52250,
+      "rawMin": 13063,
+      "rawMax": 60087,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-276",
+      "name": "Pixel 5a",
+      "brand": "Google",
+      "basePrice": "₹53,800",
+      "range": "₹13,450 - ₹61,870",
+      "status": "Published",
+      "rawBase": 53800,
+      "rawMin": 13450,
+      "rawMax": 61870,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-277",
+      "name": "Pixel 6",
+      "brand": "Google",
+      "basePrice": "₹55,350",
+      "range": "₹13,838 - ₹63,652",
+      "status": "Published",
+      "rawBase": 55350,
+      "rawMin": 13838,
+      "rawMax": 63652,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-278",
+      "name": "Pixel 6a",
+      "brand": "Google",
+      "basePrice": "₹56,900",
+      "range": "₹14,225 - ₹65,435",
+      "status": "Published",
+      "rawBase": 56900,
+      "rawMin": 14225,
+      "rawMax": 65435,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-279",
+      "name": "Pixel 7",
+      "brand": "Google",
+      "basePrice": "₹58,450",
+      "range": "₹14,613 - ₹67,218",
+      "status": "Published",
+      "rawBase": 58450,
+      "rawMin": 14613,
+      "rawMax": 67218,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-280",
+      "name": "Pixel 7a",
+      "brand": "Google",
+      "basePrice": "₹60,000",
+      "range": "₹15,000 - ₹69,000",
+      "status": "Published",
+      "rawBase": 60000,
+      "rawMin": 15000,
+      "rawMax": 69000,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-281",
+      "name": "Pixel 8",
+      "brand": "Google",
+      "basePrice": "₹61,550",
+      "range": "₹15,388 - ₹70,783",
+      "status": "Published",
+      "rawBase": 61550,
+      "rawMin": 15388,
+      "rawMax": 70783,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-282",
+      "name": "Pixel 8 Pro",
+      "brand": "Google",
+      "basePrice": "₹63,100",
+      "range": "₹15,775 - ₹72,565",
+      "status": "Published",
+      "rawBase": 63100,
+      "rawMin": 15775,
+      "rawMax": 72565,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-283",
+      "name": "Mi 10",
+      "brand": "Xiaomi",
+      "basePrice": "₹64,650",
+      "range": "₹16,163 - ₹74,348",
+      "status": "Published",
+      "rawBase": 64650,
+      "rawMin": 16163,
+      "rawMax": 74348,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-284",
+      "name": "Mi 11",
+      "brand": "Xiaomi",
+      "basePrice": "₹66,200",
+      "range": "₹16,550 - ₹76,130",
+      "status": "Published",
+      "rawBase": 66200,
+      "rawMin": 16550,
+      "rawMax": 76130,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-285",
+      "name": "Mi 11 Ultra",
+      "brand": "Xiaomi",
+      "basePrice": "₹67,750",
+      "range": "₹16,938 - ₹77,913",
+      "status": "Published",
+      "rawBase": 67750,
+      "rawMin": 16938,
+      "rawMax": 77913,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-286",
+      "name": "Redmi Note 10",
+      "brand": "Xiaomi",
+      "basePrice": "₹69,300",
+      "range": "₹17,325 - ₹79,695",
+      "status": "Published",
+      "rawBase": 69300,
+      "rawMin": 17325,
+      "rawMax": 79695,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-287",
+      "name": "Redmi Note 11",
+      "brand": "Xiaomi",
+      "basePrice": "₹70,850",
+      "range": "₹17,713 - ₹81,478",
+      "status": "Published",
+      "rawBase": 70850,
+      "rawMin": 17713,
+      "rawMax": 81478,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-288",
+      "name": "Redmi Note 12 Pro",
+      "brand": "Xiaomi",
+      "basePrice": "₹72,400",
+      "range": "₹18,100 - ₹83,260",
+      "status": "Published",
+      "rawBase": 72400,
+      "rawMin": 18100,
+      "rawMax": 83260,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-289",
+      "name": "Xiaomi 12 Pro",
+      "brand": "Xiaomi",
+      "basePrice": "₹73,950",
+      "range": "₹18,488 - ₹85,043",
+      "status": "Published",
+      "rawBase": 73950,
+      "rawMin": 18488,
+      "rawMax": 85043,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-290",
+      "name": "Xiaomi 13 Pro",
+      "brand": "Xiaomi",
+      "basePrice": "₹75,500",
+      "range": "₹18,875 - ₹86,825",
+      "status": "Published",
+      "rawBase": 75500,
+      "rawMin": 18875,
+      "rawMax": 86825,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-291",
+      "name": "Xiaomi 13 Ultra",
+      "brand": "Xiaomi",
+      "basePrice": "₹77,050",
+      "range": "₹19,263 - ₹88,608",
+      "status": "Published",
+      "rawBase": 77050,
+      "rawMin": 19263,
+      "rawMax": 88608,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-292",
+      "name": "Realme 8",
+      "brand": "Realme",
+      "basePrice": "₹78,600",
+      "range": "₹19,650 - ₹90,390",
+      "status": "Published",
+      "rawBase": 78600,
+      "rawMin": 19650,
+      "rawMax": 90390,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-293",
+      "name": "Realme 9 Pro",
+      "brand": "Realme",
+      "basePrice": "₹80,150",
+      "range": "₹20,038 - ₹92,173",
+      "status": "Published",
+      "rawBase": 80150,
+      "rawMin": 20038,
+      "rawMax": 92173,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-294",
+      "name": "Realme 10 Pro",
+      "brand": "Realme",
+      "basePrice": "₹81,700",
+      "range": "₹20,425 - ₹93,955",
+      "status": "Published",
+      "rawBase": 81700,
+      "rawMin": 20425,
+      "rawMax": 93955,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-295",
+      "name": "Realme 11 Pro+",
+      "brand": "Realme",
+      "basePrice": "₹83,250",
+      "range": "₹20,813 - ₹95,737",
+      "status": "Published",
+      "rawBase": 83250,
+      "rawMin": 20813,
+      "rawMax": 95737,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-296",
+      "name": "Realme GT Neo 3",
+      "brand": "Realme",
+      "basePrice": "₹84,800",
+      "range": "₹21,200 - ₹97,520",
+      "status": "Published",
+      "rawBase": 84800,
+      "rawMin": 21200,
+      "rawMax": 97520,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-297",
+      "name": "Realme GT 2 Pro",
+      "brand": "Realme",
+      "basePrice": "₹11,350",
+      "range": "₹2,838 - ₹13,052",
+      "status": "Published",
+      "rawBase": 11350,
+      "rawMin": 2838,
+      "rawMax": 13052,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-298",
+      "name": "Reno 6 Pro",
+      "brand": "Oppo",
+      "basePrice": "₹12,900",
+      "range": "₹3,225 - ₹14,835",
+      "status": "Published",
+      "rawBase": 12900,
+      "rawMin": 3225,
+      "rawMax": 14835,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-299",
+      "name": "Reno 7 Pro",
+      "brand": "Oppo",
+      "basePrice": "₹14,450",
+      "range": "₹3,613 - ₹16,618",
+      "status": "Published",
+      "rawBase": 14450,
+      "rawMin": 3613,
+      "rawMax": 16618,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-300",
+      "name": "Reno 8 Pro",
+      "brand": "Oppo",
+      "basePrice": "₹16,000",
+      "range": "₹4,000 - ₹18,400",
+      "status": "Published",
+      "rawBase": 16000,
+      "rawMin": 4000,
+      "rawMax": 18400,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-301",
+      "name": "Reno 10 Pro+",
+      "brand": "Oppo",
+      "basePrice": "₹17,550",
+      "range": "₹4,388 - ₹20,183",
+      "status": "Published",
+      "rawBase": 17550,
+      "rawMin": 4388,
+      "rawMax": 20183,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-302",
+      "name": "Find N2 Flip",
+      "brand": "Oppo",
+      "basePrice": "₹19,100",
+      "range": "₹4,775 - ₹21,965",
+      "status": "Published",
+      "rawBase": 19100,
+      "rawMin": 4775,
+      "rawMax": 21965,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-303",
+      "name": "Oppo F21 Pro",
+      "brand": "Oppo",
+      "basePrice": "₹20,650",
+      "range": "₹5,163 - ₹23,747",
+      "status": "Published",
+      "rawBase": 20650,
+      "rawMin": 5163,
+      "rawMax": 23747,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-304",
+      "name": "Vivo V23 Pro",
+      "brand": "Vivo",
+      "basePrice": "₹22,200",
+      "range": "₹5,550 - ₹25,530",
+      "status": "Published",
+      "rawBase": 22200,
+      "rawMin": 5550,
+      "rawMax": 25530,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-305",
+      "name": "Vivo V25 Pro",
+      "brand": "Vivo",
+      "basePrice": "₹23,750",
+      "range": "₹5,938 - ₹27,312",
+      "status": "Published",
+      "rawBase": 23750,
+      "rawMin": 5938,
+      "rawMax": 27312,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-306",
+      "name": "Vivo V27 Pro",
+      "brand": "Vivo",
+      "basePrice": "₹25,300",
+      "range": "₹6,325 - ₹29,095",
+      "status": "Published",
+      "rawBase": 25300,
+      "rawMin": 6325,
+      "rawMax": 29095,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-307",
+      "name": "Vivo V29 Pro",
+      "brand": "Vivo",
+      "basePrice": "₹26,850",
+      "range": "₹6,713 - ₹30,877",
+      "status": "Published",
+      "rawBase": 26850,
+      "rawMin": 6713,
+      "rawMax": 30877,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-308",
+      "name": "Vivo X80 Pro",
+      "brand": "Vivo",
+      "basePrice": "₹28,400",
+      "range": "₹7,100 - ₹32,660",
+      "status": "Published",
+      "rawBase": 28400,
+      "rawMin": 7100,
+      "rawMax": 32660,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    },
+    {
+      "id": "MDL-309",
+      "name": "Vivo X90 Pro",
+      "brand": "Vivo",
+      "basePrice": "₹29,950",
+      "range": "₹7,488 - ₹34,443",
+      "status": "Published",
+      "rawBase": 29950,
+      "rawMin": 7488,
+      "rawMax": 34443,
+      "demandMult": "1.00x",
+      "supplyMult": "1.00x"
+    }
+  ],
+  "users": [
+    {
+      "id": "USR-101",
+      "name": "Rahul Sharma",
+      "email": "rahul.s@gmail.com",
+      "phone": "+91 98765 43210",
+      "date": "12 May 2024",
+      "wallet": "₹1,500",
+      "status": "Active"
+    },
+    {
+      "id": "USR-102",
+      "name": "Priya Patel",
+      "email": "priya.p@yahoo.com",
+      "phone": "+91 99887 76655",
+      "date": "18 May 2024",
+      "wallet": "₹0",
+      "status": "Active"
+    }
+  ],
+  "partners": [
+    {
+      "id": "PTN-101",
+      "name": "Rohit Sharma",
+      "location": "New Delhi (South)",
+      "rating": "4.9",
+      "orders": 256,
+      "status": "Online",
+      "wallet": "₹8,450",
+      "score": "98%"
+    },
+    {
+      "id": "PTN-102",
+      "name": "Amit Kumar",
+      "location": "Mumbai (West)",
+      "rating": "4.8",
+      "orders": 210,
+      "status": "Online",
+      "wallet": "₹5,200",
+      "score": "95%"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2024-12546",
+      "customer": "Jane Doe",
+      "device": "iPhone 14 Pro Max (128GB)",
+      "price": "₹67,500",
+      "status": "Pending",
+      "partner": "Rohit Sharma",
+      "date": "20 Jun 2024"
+    }
+  ],
+  "pickups": [
+    {
+      "orderId": "ORD-2024-12546",
+      "slot": "21 Jun 2024, 10:00 AM - 01:00 PM",
+      "address": "B-45, Connaught Place, New Delhi",
+      "distance": "4.2 KM",
+      "partner": "Rohit Sharma",
+      "status": "Scheduled"
+    }
+  ],
+  "pricingRules": [
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    },
+    {
+      "id": "RULE-001",
+      "condition": "IF \"Is the device turning on properly?\" is \"Screen Broken / Cracks on any Smartphones\"",
+      "deduction": "Reduce 25%",
+      "category": "Smartphones",
+      "status": "Active",
+      "brands": [
+        "Apple"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 14 Pro"
+      ]
+    }
+  ],
+  "bonusRules": [
+    {
+      "id": "BONUS-001",
+      "condition": "Original Box Available",
+      "bonus": "Add ₹300",
+      "category": "All Devices",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-002",
+      "condition": "Original Invoice Available",
+      "bonus": "Add ₹250",
+      "category": "All Devices",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-003",
+      "condition": "Under Manufacture Warranty",
+      "bonus": "Add ₹1,200",
+      "category": "All Devices",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-004",
+      "condition": "Festival Promotion Active",
+      "bonus": "Add 5% Extra",
+      "category": "Smartphones / Laptops",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-005",
+      "condition": "High Demand Multiplier (Apple)",
+      "bonus": "Add 8% Extra",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-006",
+      "condition": "Original Charging Cable Provided",
+      "bonus": "Add ₹150",
+      "category": "Smartphones / Tablets",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-007",
+      "condition": "Brand Power Adapter Included",
+      "bonus": "Add ₹200",
+      "category": "Smartphones / Laptops",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-008",
+      "condition": "Samsung Exchange Upgrade Bonus",
+      "bonus": "Add ₹1,000",
+      "category": "Samsung Models",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-009",
+      "condition": "Earth-Day Green Recycle Premium",
+      "bonus": "Add 2% Extra",
+      "category": "All Devices",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-010",
+      "condition": "Apple Care Protection Plan Active",
+      "bonus": "Add ₹1,500",
+      "category": "Apple Models",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-011",
+      "condition": "Stylus Pen returned with tablet",
+      "bonus": "Add ₹400",
+      "category": "Tablets",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-012",
+      "condition": "Laptops with original sleeve/bag",
+      "bonus": "Add ₹180",
+      "category": "Laptops",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-013",
+      "condition": "Corporate Bulk Buyback Incentive",
+      "bonus": "Add 4% Extra",
+      "category": "Laptops / Tablets",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-014",
+      "condition": "Smartwatch Extra strap provided",
+      "bonus": "Add ₹100",
+      "category": "Smart Watches",
+      "status": "Active"
+    },
+    {
+      "id": "BONUS-015",
+      "condition": "First-time customer signup bonus",
+      "bonus": "Add ₹200",
+      "category": "All Categories",
+      "status": "Active"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "FORM-01",
+      "name": "Standard Depreciation",
+      "formula": "expectedPrice * Math.pow(0.97, ageMonths)",
+      "type": "Depreciation"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "order": 1,
+      "text": "Is the device turning on properly?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 12",
+        "iPhone 13"
+      ]
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "text": "Screen Condition",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Tablets"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 12",
+        "iPhone 13"
+      ]
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "text": "Body Condition",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 12"
+      ]
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "text": "Battery Health",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Tablets"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "Google"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 12"
+      ]
+    }
+  ]
+}
