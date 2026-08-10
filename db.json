@@ -83,6 +83,41 @@
       "message": "Order ORD-54180 status updated to: Shipped",
       "read": false,
       "date": "9 Aug 2026"
+    },
+    {
+      "id": "NTF-1786344434297-adm",
+      "target": "admin",
+      "message": "New Refurbished purchase placed: ORD-34250 for iPhone 15 Pro Max (Superb) at ₹75,000",
+      "read": true,
+      "date": "10 Aug 2026"
+    },
+    {
+      "id": "NTF-1786344434333-cust",
+      "target": "+91 98765 43210",
+      "message": "Your Refurbished purchase ORD-34250 has been registered!",
+      "read": false,
+      "date": "10 Aug 2026"
+    },
+    {
+      "id": "NTF-1786344530915-nmx",
+      "target": "admin",
+      "message": "New buyback order placed: ORD-30842 for iPhone 14 Pro (Apple) at ₹54,000",
+      "read": true,
+      "date": "10 Aug 2026"
+    },
+    {
+      "id": "NTF-1786344530946-mcc",
+      "target": "partner",
+      "message": "New buyback pickup assigned: ORD-30842 for iPhone 14 Pro (Apple)",
+      "read": false,
+      "date": "10 Aug 2026"
+    },
+    {
+      "id": "NTF-1786344530978-dvu",
+      "target": "9967853364",
+      "message": "Your buyback order ORD-30842 has been successfully registered!",
+      "read": true,
+      "date": "10 Aug 2026"
     }
   ],
   "categories": [
@@ -2068,6 +2103,19 @@
       "demandMult": "1.00x",
       "supplyMult": "1.00x",
       "imageUrl": "https://images.unsplash.com/photo-1518444065409-e91402633a75?q=80&w=150&auto=format&fit=crop"
+    },
+    {
+      "id": "MDL-415",
+      "name": "iphone 15 pro max 256 gb ",
+      "brand": "Apple",
+      "category": "Smartphones",
+      "imageUrl": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=150&auto=format&fit=crop",
+      "basePrice": "₹90,000",
+      "range": "₹25,000 - ₹110,000",
+      "status": "Published",
+      "rawBase": 90000,
+      "rawMin": 25000,
+      "rawMax": 110000
     }
   ],
   "questions": [
@@ -2206,6 +2254,28 @@
       "models": [
         "iPhone 11"
       ]
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "text": "volume key working or not?",
+      "type": "Multi Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung"
+      ],
+      "models": [
+        "iPhone 11",
+        "iPhone 12",
+        "iPhone 14 Pro",
+        "iPhone 13"
+      ]
     }
   ],
   "pricingRules": [
@@ -2285,6 +2355,25 @@
         "iPhone 11",
         "iPhone 13",
         "iPhone 14 Pro"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "RULE-05",
+      "condition": "IF \"volume key working or not?\" is \"break, key is missing \"",
+      "deduction": "Reduce 5%",
+      "category": "Smartphones",
+      "brands": [
+        "Apple",
+        "Samsung"
+      ],
+      "models": [
+        "iPhone 12",
+        "iPhone 11",
+        "iPhone 13",
+        "Galaxy S23",
+        "iPhone 14 Pro",
+        "OnePlus 11"
       ],
       "status": "Active"
     }
@@ -3360,10 +3449,10 @@
       "orders": 222,
       "status": "Online",
       "wallet": "₹9,500",
-      "score": "87%",
-      "aadhaarStatus": "Submitted",
-      "panStatus": "Submitted",
-      "policeStatus": "Reviewing",
+      "score": "100% (Approved)",
+      "aadhaarStatus": "Approved",
+      "panStatus": "Approved",
+      "policeStatus": "Approved",
       "photoStatus": "Verified"
     },
     {
@@ -3792,6 +3881,25 @@
       "status": "Pending",
       "partner": "Rohit Sharma",
       "date": "9 Aug 2026"
+    },
+    {
+      "id": "ORD-34250",
+      "device": "iPhone 15 Pro Max (Superb)",
+      "price": "₹75,000",
+      "customerName": "adarsh Deep Sachan",
+      "customerPhone": "+91 98765 43210",
+      "customerAddress": "B-45, Sector 62, Noida, UP",
+      "status": "Pending Verification",
+      "date": "10 Aug 2026"
+    },
+    {
+      "id": "ORD-30842",
+      "customer": "adarsh Deep Sachan",
+      "device": "iPhone 14 Pro (Apple)",
+      "price": "₹54,000",
+      "status": "Pending",
+      "partner": "Rohit Sharma",
+      "date": "10 Aug 2026"
     }
   ],
   "pickups": [
@@ -3813,6 +3921,14 @@
     },
     {
       "orderId": "ORD-08892",
+      "slot": "Tomorrow, 10:00 AM - 01:00 PM",
+      "address": "B-45, Sector 62, Noida, UP",
+      "distance": "3.8 KM",
+      "partner": "Rohit Sharma",
+      "status": "Scheduled"
+    },
+    {
+      "orderId": "ORD-30842",
       "slot": "Tomorrow, 10:00 AM - 01:00 PM",
       "address": "B-45, Sector 62, Noida, UP",
       "distance": "3.8 KM",
@@ -4062,6 +4178,42 @@
       "step": "4",
       "title": "Instant Payment",
       "desc": "Get your full payout immediately in your preferred payment mode."
+    }
+  ],
+  "partner_payments": [
+    {
+      "id": "PAY-1001",
+      "partnerId": "PTN-101",
+      "partnerName": "Rohit Sharma",
+      "method": "Gateway",
+      "amount": 5000,
+      "date": "10 Aug 2026",
+      "status": "Success"
+    },
+    {
+      "id": "PAY-1002",
+      "partnerId": "PTN-101",
+      "partnerName": "Rohit Sharma",
+      "method": "Bank Transfer",
+      "amount": 12000,
+      "date": "10 Aug 2026",
+      "status": "Pending",
+      "reference": "REF123456",
+      "screenshot": "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "TCK-202",
+      "partnerId": "PTN-101",
+      "partnerName": "Rohit Sharma",
+      "subject": "Bank Transfer verification (₹12,000)",
+      "type": "Bank Transfer Payout",
+      "amount": 12000,
+      "date": "10 Aug 2026",
+      "status": "Open",
+      "screenshot": "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500",
+      "paymentId": "PAY-1002"
     }
   ]
 }

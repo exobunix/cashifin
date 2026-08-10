@@ -45,6 +45,13 @@ const defaultDb = {
   ],
   formulas: [
     { id: 'FORM-01', name: 'Standard Depreciation', formula: 'expectedPrice * Math.pow(0.97, ageMonths)', type: 'Depreciation' }
+  ],
+  partner_payments: [
+    { id: 'PAY-1001', partnerId: 'PTN-101', partnerName: 'Rohit Sharma', method: 'Gateway', amount: 5000, date: '10 Aug 2026', status: 'Success' },
+    { id: 'PAY-1002', partnerId: 'PTN-101', partnerName: 'Rohit Sharma', method: 'Bank Transfer', amount: 12000, date: '10 Aug 2026', status: 'Pending', reference: 'REF123456', screenshot: 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500' }
+  ],
+  tickets: [
+    { id: 'TCK-202', partnerId: 'PTN-101', partnerName: 'Rohit Sharma', subject: 'Bank Transfer verification (₹12,000)', type: 'Bank Transfer Payout', amount: 12000, date: '10 Aug 2026', status: 'Open', screenshot: 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500', paymentId: 'PAY-1002' }
   ]
 };
 

@@ -1,6 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb } from '../../../lib/db';
 
+function corsHeaders() {
+  const headers = new Headers();
+  headers.set('Access-Control-Allow-Origin', '*');
+  headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH, DELETE');
+  headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  return headers;
+}
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders() });
+}
+
 export async function GET(
   req: NextRequest,
   { params }: { params: { entity: string } }
@@ -9,9 +21,9 @@ export async function GET(
   const db: any = readDb();
 
   if (db[entity]) {
-    return NextResponse.json(db[entity]);
+    return NextResponse.json(db[entity], { headers: corsHeaders() });
   }
-  return NextResponse.json({ error: 'Entity not found' }, { status: 404 });
+  return NextResponse.json({ error: 'Entity not found' }, { status: 404, headers: corsHeaders() });
 }
 
 export async function POST(
@@ -22,7 +34,7 @@ export async function POST(
   const db: any = readDb();
 
   if (!db[entity]) {
-    return NextResponse.json({ error: 'Entity not found' }, { status: 404 });
+    return NextResponse.json({ error: 'Entity not found' }, { status: 404, headers: corsHeaders() });
   }
 
   try {
@@ -49,8 +61,8 @@ export async function POST(
     }
 
     writeDb(db);
-    return NextResponse.json({ success: true, data: db[entity] });
+    return NextResponse.json({ success: true, data: db[entity] }, { headers: corsHeaders() });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return NextResponse.json({ error: e.message }, { status: 500, headers: corsHeaders() });
   }
 }
