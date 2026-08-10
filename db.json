@@ -2122,8 +2122,8 @@
     {
       "id": 1,
       "order": 1,
-      "text": "Does the device turn on properly?",
-      "type": "Multi Select",
+      "text": "Front Camera not working?",
+      "type": "Single Select",
       "impact": "Medium",
       "required": true,
       "status": "Active",
@@ -2138,81 +2138,24 @@
         "Samsung",
         "OnePlus",
         "Google",
-        "Dell",
-        "Lenovo",
-        "HP",
-        "Asus",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
         "Xiaomi",
         "Oppo",
         "Vivo",
         "Realme",
-        "Sony",
-        "LG",
-        "Microsoft"
-      ],
-      "models": [
-        "iPhone 11",
-        "iPhone 13",
-        "Galaxy S23",
-        "iPhone 12"
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
       ]
     },
     {
       "id": 2,
       "order": 2,
-      "text": "Are there any visible cracks on the screen?",
-      "type": "Single Select",
-      "impact": "High",
-      "required": true,
-      "status": "Active",
-      "categories": [
-        "Smartphones",
-        "Tablets",
-        "Smartwatches",
-        "TVs"
-      ],
-      "brands": [
-        "Apple",
-        "Samsung",
-        "OnePlus",
-        "Google",
-        "Xiaomi",
-        "Oppo",
-        "Vivo",
-        "Realme",
-        "Sony",
-        "LG",
-        "Lenovo"
-      ]
-    },
-    {
-      "id": 3,
-      "order": 3,
-      "text": "Are all buttons and camera systems functional?",
-      "type": "Single Select",
-      "impact": "Medium",
-      "required": true,
-      "status": "Active",
-      "categories": [
-        "Smartphones",
-        "Tablets"
-      ],
-      "brands": [
-        "Apple",
-        "Samsung",
-        "OnePlus",
-        "Google",
-        "Xiaomi",
-        "Oppo",
-        "Vivo",
-        "Realme",
-        "Lenovo"
-      ]
-    },
-    {
-      "id": 4,
-      "order": 4,
-      "text": "is battery health more 90%?",
+      "text": "Back Camera not working?",
       "type": "Single Select",
       "impact": "High",
       "required": true,
@@ -2220,161 +2163,1233 @@
       "categories": [
         "Smartphones",
         "Laptops",
-        "Smart Watches",
-        "Tablets"
+        "Tablets",
+        "Smartwatches"
       ],
-      "brands": [
-        "Apple",
-        "Samsung",
-        "OnePlus",
-        "Lenovo",
-        "Google"
-      ],
-      "models": [
-        "iPhone 11",
-        "iPhone 14 Pro",
-        "iPhone 12",
-        "iPhone 13"
-      ]
-    },
-    {
-      "id": 5,
-      "order": 5,
-      "text": "is your device screen working properly?",
-      "type": "Single Select",
-      "impact": "High",
-      "required": true,
-      "status": "Active",
-      "categories": [
-        "Smartphones"
-      ],
-      "brands": [
-        "Apple"
-      ],
-      "models": [
-        "iPhone 11"
-      ]
-    },
-    {
-      "id": 6,
-      "order": 6,
-      "text": "volume key working or not?",
-      "type": "Multi Select",
-      "impact": "Low",
-      "required": true,
-      "status": "Active",
-      "categories": [
-        "Smartphones"
-      ],
-      "brands": [
-        "Apple",
-        "Samsung"
-      ],
-      "models": [
-        "iPhone 11",
-        "iPhone 12",
-        "iPhone 14 Pro",
-        "iPhone 13"
-      ]
-    }
-  ],
-  "pricingRules": [
-    {
-      "id": "RULE-001",
-      "condition": "IF \"Does the device turn on properly?\" is \"No\"",
-      "deduction": "Reduce 80%",
-      "category": "Smartphones, Laptops, Tablets, Smartwatches, Smart Watches",
-      "status": "Active",
       "brands": [
         "Apple",
         "Samsung",
         "OnePlus",
         "Google",
-        "Dell",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
         "Xiaomi",
+        "Oppo",
+        "Vivo",
         "Realme",
-        "Oppo"
-      ],
-      "models": [
-        "iPhone 15 Pro Max",
-        "Galaxy S24 Ultra",
-        "MacBook Pro M3",
-        "iPhone 11",
-        "iPhone 12",
-        "iPhone 14 Pro",
-        "iPhone 13",
-        "Galaxy S23",
-        "OnePlus 11",
-        "Dell XPS 13",
-        "MacBook Air M2"
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
       ]
     },
     {
-      "id": "RULE-002",
-      "condition": "IF \"Are there any visible cracks on the screen?\" is \"Yes\"",
-      "deduction": "Reduce 30%",
-      "category": "Smartphones, Tablets",
+      "id": 3,
+      "order": 3,
+      "text": "Volume Button not working?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
       "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
       "brands": [
         "Apple",
         "Samsung",
         "OnePlus",
-        "Google"
-      ],
-      "models": [
-        "iPhone 15 Pro Max",
-        "Galaxy S24 Ultra"
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
       ]
     },
     {
-      "id": "RULE-03",
-      "condition": "IF \"is battery health more 90%?\" is \"cracked , breaked \"",
+      "id": 4,
+      "order": 4,
+      "text": "Finger Touch/Face ID not working?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "text": "WiFi not working?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "text": "Speaker Faulty?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "text": "Silent Button not working?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 8,
+      "order": 8,
+      "text": "Face Sensor not working?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 9,
+      "order": 9,
+      "text": "Power Button not working?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 10,
+      "order": 10,
+      "text": "Charging Port not working?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 11,
+      "order": 11,
+      "text": "Audio Receiver not working?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 12,
+      "order": 12,
+      "text": "Camera Glass Broken?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 13,
+      "order": 13,
+      "text": "Microphone not working?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 14,
+      "order": 14,
+      "text": "Bluetooth not working?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 15,
+      "order": 15,
+      "text": "Vibrator is not working?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 16,
+      "order": 16,
+      "text": "Proximity Sensor not working?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 17,
+      "order": 17,
+      "text": "Battery in Service (Health < 80%)?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 18,
+      "order": 18,
+      "text": "Battery Health 80-85%?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 19,
+      "order": 19,
+      "text": "Screen Scratches?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 20,
+      "order": 20,
+      "text": "Screen Cracks / Broken?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 21,
+      "order": 21,
+      "text": "Back Panel Scratched / Cracked?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 22,
+      "order": 22,
+      "text": "Body Frame Bent / Dented?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 23,
+      "order": 23,
+      "text": "Original Charger Missing?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 24,
+      "order": 24,
+      "text": "Original Box Missing?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 25,
+      "order": 25,
+      "text": "Sim Tray Missing / Damaged?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 26,
+      "order": 26,
+      "text": "Device Glass Back Missing?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 27,
+      "order": 27,
+      "text": "Screen Color Discoloration?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 28,
+      "order": 28,
+      "text": "WiFi/Gps Signal Weak?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 29,
+      "order": 29,
+      "text": "Audio Jack Defective?",
+      "type": "Single Select",
+      "impact": "Low",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Smartphones",
+        "Laptops",
+        "Tablets",
+        "Smartwatches"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 30,
+      "order": 30,
+      "text": "Touchpad Defective?",
+      "type": "Single Select",
+      "impact": "Medium",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Laptops"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 31,
+      "order": 31,
+      "text": "Keyboard Keys Missing?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Laptops"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    },
+    {
+      "id": 32,
+      "order": 32,
+      "text": "Hard Disk / SSD Bad Sectors?",
+      "type": "Single Select",
+      "impact": "High",
+      "required": true,
+      "status": "Active",
+      "categories": [
+        "Laptops"
+      ],
+      "brands": [
+        "Apple",
+        "Samsung",
+        "OnePlus",
+        "Google",
+        "Nothing",
+        "Motorola",
+        "iQOO",
+        "POCO",
+        "Xiaomi",
+        "Oppo",
+        "Vivo",
+        "Realme",
+        "Lenovo",
+        "HP",
+        "Dell",
+        "Asus"
+      ]
+    }
+  ],
+  "pricingRules": [
+    {
+      "id": "RULE-01",
+      "condition": "IF \"Front Camera not working?\" is \"Cracked\"",
       "deduction": "Reduce 10%",
       "category": "Smartphones",
-      "brands": [
-        "Apple"
-      ],
-      "models": [
-        "iPhone 12"
-      ],
+      "status": "Active"
+    },
+    {
+      "id": "RULE-02",
+      "condition": "IF \"Back Camera not working?\" is \"Cracked\"",
+      "deduction": "Reduce 12%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-03",
+      "condition": "IF \"Volume Button not working?\" is \"Cracked\"",
+      "deduction": "Reduce 5%",
+      "category": "Smartphones",
       "status": "Active"
     },
     {
       "id": "RULE-04",
-      "condition": "IF \"is your device screen working properly?\" is \"cracked , not working propely\"",
-      "deduction": "Reduce 30%",
+      "condition": "IF \"Finger Touch/Face ID not working?\" is \"Cracked\"",
+      "deduction": "Reduce 15%",
       "category": "Smartphones",
-      "brands": [
-        "Apple",
-        "Samsung",
-        "OnePlus",
-        "Google"
-      ],
-      "models": [
-        "iPhone 12",
-        "iPhone 11",
-        "iPhone 13",
-        "iPhone 14 Pro"
-      ],
       "status": "Active"
     },
     {
       "id": "RULE-05",
-      "condition": "IF \"volume key working or not?\" is \"break, key is missing \"",
+      "condition": "IF \"WiFi not working?\" is \"Cracked\"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-06",
+      "condition": "IF \"Speaker Faulty?\" is \"Cracked\"",
+      "deduction": "Reduce 8%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-07",
+      "condition": "IF \"Silent Button not working?\" is \"Cracked\"",
       "deduction": "Reduce 5%",
       "category": "Smartphones",
-      "brands": [
-        "Apple",
-        "Samsung"
-      ],
-      "models": [
-        "iPhone 12",
-        "iPhone 11",
-        "iPhone 13",
-        "Galaxy S23",
-        "iPhone 14 Pro",
-        "OnePlus 11"
-      ],
+      "status": "Active"
+    },
+    {
+      "id": "RULE-08",
+      "condition": "IF \"Face Sensor not working?\" is \"Cracked\"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-09",
+      "condition": "IF \"Power Button not working?\" is \"Cracked\"",
+      "deduction": "Reduce 8%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-10",
+      "condition": "IF \"Charging Port not working?\" is \"Cracked\"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-11",
+      "condition": "IF \"Audio Receiver not working?\" is \"Cracked\"",
+      "deduction": "Reduce 8%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-12",
+      "condition": "IF \"Camera Glass Broken?\" is \"Cracked\"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-13",
+      "condition": "IF \"Microphone not working?\" is \"Cracked\"",
+      "deduction": "Reduce 8%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-14",
+      "condition": "IF \"Bluetooth not working?\" is \"Cracked\"",
+      "deduction": "Reduce 6%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-15",
+      "condition": "IF \"Vibrator is not working?\" is \"Cracked\"",
+      "deduction": "Reduce 5%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-16",
+      "condition": "IF \"Proximity Sensor not working?\" is \"Cracked\"",
+      "deduction": "Reduce 6%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-17",
+      "condition": "IF \"Battery in Service (Health < 80%)?\" is \"Cracked\"",
+      "deduction": "Reduce 15%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-18",
+      "condition": "IF \"Battery Health 80-85%?\" is \"Cracked\"",
+      "deduction": "Reduce 8%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-19",
+      "condition": "IF \"Screen Scratches?\" is \"Cracked\"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-20",
+      "condition": "IF \"Screen Cracks / Broken?\" is \"Cracked\"",
+      "deduction": "Reduce 30%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-21",
+      "condition": "IF \"Back Panel Scratched / Cracked?\" is \"Cracked\"",
+      "deduction": "Reduce 12%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-22",
+      "condition": "IF \"Body Frame Bent / Dented?\" is \"Cracked\"",
+      "deduction": "Reduce 15%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-23",
+      "condition": "IF \"Original Charger Missing?\" is \"Cracked\"",
+      "deduction": "Reduce 5%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-24",
+      "condition": "IF \"Original Box Missing?\" is \"Cracked\"",
+      "deduction": "Reduce 4%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-25",
+      "condition": "IF \"Sim Tray Missing / Damaged?\" is \"Cracked\"",
+      "deduction": "Reduce 3%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-26",
+      "condition": "IF \"Device Glass Back Missing?\" is \"Cracked\"",
+      "deduction": "Reduce 10%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-27",
+      "condition": "IF \"Screen Color Discoloration?\" is \"Cracked\"",
+      "deduction": "Reduce 20%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-28",
+      "condition": "IF \"WiFi/Gps Signal Weak?\" is \"Cracked\"",
+      "deduction": "Reduce 6%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-29",
+      "condition": "IF \"Audio Jack Defective?\" is \"Cracked\"",
+      "deduction": "Reduce 5%",
+      "category": "Smartphones",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-30",
+      "condition": "IF \"Touchpad Defective?\" is \"Cracked\"",
+      "deduction": "Reduce 12%",
+      "category": "Laptops",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-31",
+      "condition": "IF \"Keyboard Keys Missing?\" is \"Cracked\"",
+      "deduction": "Reduce 15%",
+      "category": "Laptops",
+      "status": "Active"
+    },
+    {
+      "id": "RULE-32",
+      "condition": "IF \"Hard Disk / SSD Bad Sectors?\" is \"Cracked\"",
+      "deduction": "Reduce 20%",
+      "category": "Laptops",
       "status": "Active"
     }
   ],
