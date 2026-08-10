@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readDb, writeDb } from '../../../lib/db';
+import mongoose from 'mongoose';
+
+// Fallback URI if environment variable is not defined
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://adarshsachan7071_db_user:toj0g2ENBYpIwXRG@cashifin.axlotxp.mongodb.net/?appName=cashifin';
+
+async function connectToMongo() {
+  if (mongoose.connection.readyState >= 1) return;
+  await mongoose.connect(MONGODB_URI);
+}
 
 function corsHeaders() {
   const headers = new Headers();
@@ -18,12 +26,14 @@ export async function GET(
   { params }: { params: { entity: string } }
 ) {
   const entity = params.entity;
-  const db: any = readDb();
-
-  if (db[entity]) {
-    return NextResponse.json(db[entity], { headers: corsHeaders() });
+  try {
+    await connectToMongo();
+    const collection = mongoose.connection.db.collection(entity);
+    const data = await collection.find({}).toArray();
+    return NextResponse.json(data, { headers: corsHeaders() });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500, headers: corsHeaders() });
   }
-  return NextResponse.json({ error: 'Entity not found' }, { status: 404, headers: corsHeaders() });
 }
 
 export async function POST(
@@ -31,38 +41,37 @@ export async function POST(
   { params }: { params: { entity: string } }
 ) {
   const entity = params.entity;
-  const db: any = readDb();
-
-  if (!db[entity]) {
-    return NextResponse.json({ error: 'Entity not found' }, { status: 404, headers: corsHeaders() });
-  }
-
   try {
+    await connectToMongo();
+    const collection = mongoose.connection.db.collection(entity);
     const body = await req.json();
     const action = body.action || 'create';
 
     if (action === 'create') {
       const newItem = body.item;
-      db[entity].push(newItem);
+      await collection.insertOne(newItem);
     } else if (action === 'update') {
       const updatedItem = body.item;
-      db[entity] = db[entity].map((item: any) => {
-        const matchesId = updatedItem.id !== undefined && item.id === updatedItem.id;
-        const matchesCode = updatedItem.code !== undefined && item.code === updatedItem.code;
-        return (matchesId || matchesCode) ? updatedItem : item;
-      });
+      const filter: any = {};
+      if (updatedItem.id !== undefined) filter.id = updatedItem.id;
+      else if (updatedItem.code !== undefined) filter.code = updatedItem.code;
+      
+      const { _id, ...updateFields } = updatedItem;
+      await collection.updateOne(filter, { $set: updateFields });
     } else if (action === 'delete') {
       const idToDelete = body.id;
-      db[entity] = db[entity].filter((item: any) => {
-        const matchesId = item.id !== undefined && item.id === idToDelete;
-        const matchesCode = item.code !== undefined && item.code === idToDelete;
-        return !(matchesId || matchesCode);
-      });
+      const filter: any = {
+        $or: [
+          { id: idToDelete },
+          { code: idToDelete }
+        ]
+      };
+      await collection.deleteOne(filter);
     }
 
-    writeDb(db);
-    return NextResponse.json({ success: true, data: db[entity] }, { headers: corsHeaders() });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500, headers: corsHeaders() });
+    const data = await collection.find({}).toArray();
+    return NextResponse.json({ success: true, data }, { headers: corsHeaders() });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500, headers: corsHeaders() });
   }
 }

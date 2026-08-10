@@ -38,8 +38,11 @@ export default function Wallet() {
   const fetchWalletData = async () => {
     setIsLoading(true);
     try {
+      const API_BASE = typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
+        ? 'https://cashifin-admin-panel.vercel.app/api'
+        : 'http://localhost:3001/api';
       // Fetch partner details to get the wallet balance
-      const partnerRes = await fetch('http://localhost:3001/api/partners');
+      const partnerRes = await fetch(`${API_BASE}/partners`);
       const partnersList = await partnerRes.json();
       const currentPartner = partnersList.find((p: any) => p.id === 'PTN-101') || partnersList[0];
       
@@ -51,7 +54,7 @@ export default function Wallet() {
       }
 
       // Fetch partner payments / transactions
-      const paymentsRes = await fetch('http://localhost:3001/api/partner_payments');
+      const paymentsRes = await fetch(`${API_BASE}/partner_payments`);
       const paymentsList = await paymentsRes.json();
       
       // Filter payments belonging to PTN-101
@@ -140,7 +143,11 @@ export default function Wallet() {
         const payId = `PAY-${Date.now().toString().slice(-6)}`;
         const dateStr = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
         
-        await fetch('http://localhost:3001/api/partner_payments', {
+        const API_BASE = typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
+          ? 'https://cashifin-admin-panel.vercel.app/api'
+          : 'http://localhost:3001/api';
+
+        await fetch(`${API_BASE}/partner_payments`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -162,7 +169,7 @@ export default function Wallet() {
           ...partnerData,
           wallet: `₹${newBalanceVal.toLocaleString()}`
         };
-        await fetch('http://localhost:3001/api/partners', {
+        await fetch(`${API_BASE}/partners`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -202,8 +209,12 @@ export default function Wallet() {
       // Use fallback default screenshot if none uploaded
       const finalScreenshot = screenshotUrl || 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?q=80&w=500';
 
+      const API_BASE = typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')
+        ? 'https://cashifin-admin-panel.vercel.app/api'
+        : 'http://localhost:3001/api';
+
       // 1. Create Pending Bank Transfer Payment record
-      await fetch('http://localhost:3001/api/partner_payments', {
+      await fetch(`${API_BASE}/partner_payments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -223,7 +234,7 @@ export default function Wallet() {
       });
 
       // 2. Create support ticket for verification
-      await fetch('http://localhost:3001/api/tickets', {
+      await fetch(`${API_BASE}/tickets`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
