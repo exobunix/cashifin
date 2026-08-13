@@ -518,33 +518,44 @@ export default function CashifinLandingPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
-      {/* 1. Global Navigation Bar Header */}
-      <div className="bg-white border-b border-slate-100 px-4 md:px-12 lg:px-20 py-3 flex items-center justify-between shadow-3xs sticky top-0 z-40 w-full">
-        <div className="flex items-center space-x-2 cursor-pointer" onClick={() => window.location.reload()}>
-          <img src={logoConfig.userLogo || '/logo.jpg'} alt="CASHIFIN" className="h-24 w-auto rounded-lg object-contain py-1" style={{ height: '96px', width: 'auto' }} />
+      {/* 1. Global Navigation Bar Header (Sellify Style) */}
+      <div className="bg-white border-b border-slate-100 px-4 md:px-12 lg:px-20 py-4 flex items-center justify-between sticky top-0 z-40 w-full">
+        {/* Sellify Inspired Logo */}
+        <div className="flex items-center space-x-1 cursor-pointer select-none" onClick={() => window.location.reload()}>
+          <span className="text-2xl font-black text-sellifyTeal-500">≫</span>
+          <span className="text-xl font-black tracking-wider text-[#0c213a]">SELLIFY</span>
         </div>
 
         {/* Global Search Bar */}
-        <div className="hidden md:flex items-center bg-slate-50 border border-slate-200/80 px-4 py-2.5 rounded-xl w-[450px] shadow-3xs hover:bg-white hover:border-[#39b54a]/60 transition">
-          <SearchIcon />
+        <div className="hidden md:flex items-center bg-slate-50 border border-slate-200/80 px-4 py-2 rounded-full w-[350px] transition hover:bg-white hover:border-sellifyTeal-500">
           <input 
             type="text" 
-            placeholder="Search for mobiles, accessories & More" 
-            className="bg-transparent border-none text-xs ml-2.5 focus:outline-none w-full font-semibold"
+            placeholder="Search..." 
+            className="bg-transparent border-none text-xs focus:outline-none w-full font-medium text-slate-700"
           />
+          <SearchIcon />
         </div>
 
         {/* Active Location Selection, Profile & Logout links */}
         <div className="flex items-center space-x-6 text-sm font-bold text-slate-650">
-          <div onClick={() => setShowLocationModal(true)} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1.5 transition">
+          <div onClick={startValuation} className="cursor-pointer hover:text-sellifyTeal-500 transition">
+            <span>Sell</span>
+          </div>
+          <div onClick={() => { setFooterModalType('About Us'); setShowFooterModal(true); }} className="cursor-pointer hover:text-sellifyTeal-500 transition">
+            <span>About</span>
+          </div>
+          <div onClick={() => { setFooterModalType('Contact Us'); setShowFooterModal(true); }} className="cursor-pointer hover:text-sellifyTeal-500 transition">
+            <span>Contact Us</span>
+          </div>
+          <div onClick={() => setShowLocationModal(true)} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
             <LocationIcon />
-            <span>{activeLocation} ▼</span>
+            <span>Location</span>
           </div>
 
           <div className="flex items-center space-x-4">
             {user.loggedIn ? (
               <>
-                <Link href="/profile" className="flex items-center space-x-1 hover:text-[#39b54a] transition">
+                <Link href="/profile" className="flex items-center space-x-1 hover:text-sellifyTeal-500 transition">
                   <ProfileIcon />
                   <span className="truncate max-w-[120px]">{user.name}</span>
                 </Link>
@@ -558,9 +569,9 @@ export default function CashifinLandingPage() {
             ) : (
               <button 
                 onClick={() => setShowLogin(true)} 
-                className="px-4 py-2 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-lg text-xs transition shadow-3xs cursor-pointer"
+                className="px-6 py-2 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white font-bold rounded-lg text-xs transition shadow-sm cursor-pointer"
               >
-                Login / Register
+                Login
               </button>
             )}
           </div>
@@ -569,137 +580,96 @@ export default function CashifinLandingPage() {
 
       {/* 2. Secondary Corporate Navigation Menu Bar */}
       <div className="bg-white border-b border-slate-100/60 px-4 md:px-12 lg:px-20 py-3 flex items-center space-x-8 text-sm font-bold text-slate-600 w-full overflow-x-auto whitespace-nowrap scrollbar-none">
-        <div onClick={startValuation} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={startValuation} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Phone</span>
         </div>
-        <div onClick={() => { setSelCategory('Sell Laptop'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={() => { setSelCategory('Sell Laptop'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Laptop</span>
         </div>
-        <div onClick={() => { setSelCategory('Sell Tablet'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={() => { setSelCategory('Sell Tablet'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Tablet</span>
         </div>
-        <div onClick={() => { setSelCategory('Sell TV'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={() => { setSelCategory('Sell TV'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell TV</span>
         </div>
-        <div onClick={() => { setSelCategory('Sell Smartwatch'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={() => { setSelCategory('Sell Smartwatch'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Smartwatch</span>
         </div>
-        <div onClick={() => { const el = document.getElementById('refurbished-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={() => { const el = document.getElementById('refurbished-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Buy Refurbished Devices</span>
         </div>
-        <div onClick={() => setShowStoresModal(true)} className="cursor-pointer hover:text-[#39b54a] flex items-center space-x-1 transition">
+        <div onClick={() => setShowStoresModal(true)} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Cashifin Store</span>
         </div>
       </div>
 
-      {/* 2.5. Cashifin Premium Hero Carousel Section */}
-      <div className="bg-white border-b border-slate-100 relative overflow-hidden">
-        {/* Subtle decorative grid lines background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none"></div>
-
+      {/* 2.5. Sellify Premium Hero Section */}
+      <div className="bg-gradient-to-r from-white via-slate-50/50 to-teal-50/30 border-b border-slate-100 relative overflow-hidden">
         {/* Carousel Slider Tracks */}
         {(bannersList.length > 0
           ? bannersList.map((b: any, index: number) => ({
-              tag: 'Featured Banner',
+              tag: 'Sellify - Sell Old Mobile Phones',
               title: b.title,
               desc: b.subtitle,
-              img: index % 3 === 0 
-                ? "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=400&auto=format&fit=crop" 
-                : index % 3 === 1 
-                  ? "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400" 
-                  : "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=400",
+              img1: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=300&auto=format&fit=crop",
+              img2: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=300&auto=format&fit=crop",
               action: startValuation,
-              btnText: b.btn || 'Get Valuation Now',
-              metricTag: 'BEST BUYBACK',
-              metricVal: 'Doorstep Evaluations'
+              btnText: b.btn || 'Sell Mobile',
             }))
           : [
               {
-                tag: 'Welcome to Cashifin Portal',
-                title: <>Sell with Cashifin. <br /> <span className="text-[#39b54a]">Earn More.</span> Recycled Together.</>,
-                desc: "Join India's trusted platform for selling old mobiles and electronic products. Start getting high valuations and instant doorstep cash payouts.",
-                img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=400&auto=format&fit=crop",
+                tag: 'Sellify - Sell Old Mobile Phones',
+                title: <>Get the Highest Price for <br /> <span className="text-sellifyTeal-500">Your Old Mobile Phone – Sell Now!</span></>,
+                desc: "Unlock the best resale value for your old smartphone. Quick, easy, and hasslefree!",
+                img1: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=300&auto=format&fit=crop",
+                img2: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=300&auto=format&fit=crop",
                 action: startValuation,
-                btnText: 'Sell Your Device Now',
-                metricTag: 'HIGHEST PAYOUT',
-                metricVal: 'Up to 10% Extra Bonus'
-              },
-              {
-                tag: 'Upgrade to MacBook',
-                title: <>Trade In Laptop. <br /> Get Up to <span className="text-[#39b54a]">₹80,000</span> Credit.</>,
-                desc: "Exchange your old laptop for the latest powerful Apple Silicon MacBooks. Free doorstep evaluations and military-grade secure data wipes.",
-                img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop",
-                action: () => { setSelCategory('Sell Laptop'); setBrandSelectorOpen(true); },
-                btnText: 'Evaluate Laptop Now',
-                metricTag: 'EXCHANGE BONUS',
-                metricVal: 'Add ₹3,00,000 Extra Value'
-              },
-              {
-                tag: 'Refurbished Device Deals',
-                title: <>Premium Refurbished. <br /> Up to <span className="text-[#39b54a]">50% OFF</span> Store Price.</>,
-                desc: "Own premium pre-owned flagship smartphones inspected via 34 quality checkpoints. Complete with a 6-month warranty and free delivery.",
-                img: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=400&auto=format&fit=crop",
-                action: () => { const el = document.getElementById('refurbished-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
-                btnText: 'Shop Refurbished Phones',
-                metricTag: 'CASHIFIN ASSURED',
-                metricVal: '6-Month Direct Warranty'
+                btnText: 'Sell Mobile',
               }
             ]
         ).map((slide, idx) => {
-          if (activeBannerSlide !== idx) return null;
+          if (activeBannerSlide !== idx && idx !== 0) return null; // Default fallback to first
           return (
-            <div key={idx} className="px-4 md:px-12 lg:px-20 py-12 md:py-16 flex flex-col md:flex-row justify-between items-center gap-12 min-h-[420px] transition-all duration-700 animate-fadeIn">
+            <div key={idx} className="px-4 md:px-12 lg:px-20 py-12 md:py-16 flex flex-col md:flex-row justify-between items-center gap-12 min-h-[440px] transition-all duration-700 animate-fadeIn">
               <div className="space-y-6 max-w-xl z-10">
-                <span className="bg-[#39b54a]/10 text-[#39b54a] px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+                <h2 className="text-sm font-black text-[#0c213a] uppercase tracking-wider">
                   {slide.tag}
-                </span>
+                </h2>
                 <h1 className="text-4xl md:text-5xl font-black text-[#0c213a] leading-tight">
                   {slide.title}
                 </h1>
-                <p className="text-slate-500 text-sm font-semibold leading-relaxed">
+                <p className="text-slate-500 text-sm font-medium leading-relaxed">
                   {slide.desc}
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <button 
                     onClick={slide.action} 
-                    className="px-6 py-3.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-xl text-sm shadow-md transition-all flex items-center space-x-2 cursor-pointer"
+                    className="px-8 py-3.5 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white font-bold rounded-full text-sm shadow-md transition-all flex items-center space-x-2 cursor-pointer"
                   >
                     <span>{slide.btnText}</span>
-                    <span>→</span>
                   </button>
-                  <button 
-                    onClick={() => { const el = document.getElementById('how-it-works'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
-                    className="px-5 py-3.5 border border-slate-200 hover:bg-slate-50 text-[#0c213a] font-bold rounded-xl text-sm transition cursor-pointer"
-                  >
-                    How it works
-                  </button>
-                </div>
-                <div className="flex items-center space-x-6 text-xs text-slate-400 font-bold pt-4 border-t border-slate-100">
-                  <div className="flex items-center space-x-1">
-                    <span className="text-emerald-500">✔</span>
-                    <span>Trusted by 10 Lakh+ Customers</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <span className="text-emerald-500">✔</span>
-                    <span>100% Safe Data Wipes</span>
-                  </div>
                 </div>
               </div>
 
-              {/* Hero image showcasing devices */}
-              <div className="relative w-full md:w-[450px] h-[300px] z-10 flex items-center justify-center shrink-0">
-                <div className="absolute w-[260px] h-[260px] rounded-full bg-[#39b54a]/5 -z-10 animate-pulse"></div>
-                <img 
-                  src={slide.img} 
-                  alt={slide.tag} 
-                  className="w-72 h-48 object-cover rounded-2xl shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition duration-300"
-                />
-                <div className="absolute top-10 right-4 bg-white px-3.5 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center space-x-2">
-                  <span className="text-xl">📈</span>
-                  <div>
-                    <p className="text-xs font-bold text-slate-400">{slide.metricTag}</p>
-                    <p className="text-sm font-black text-slate-800">{slide.metricVal}</p>
-                  </div>
+              {/* Hero circular backdrop and overlapping phones */}
+              <div className="relative w-full md:w-[480px] h-[340px] z-10 flex items-center justify-center shrink-0">
+                {/* Big circular green backdrop matching Sellify screenshot */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full bg-gradient-to-tr from-sellifyTeal-500 to-emerald-400 opacity-90 -z-10 shadow-2xl flex items-center justify-center overflow-hidden">
+                  <div className="w-[300px] h-[300px] rounded-full border border-white/20"></div>
+                </div>
+
+                {/* Overlapping floating mockups */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img 
+                    src={slide.img1} 
+                    alt="Phone 1" 
+                    className="w-36 h-auto object-contain rounded-[2rem] shadow-2xl border-4 border-slate-900 transform -rotate-12 translate-x-6 z-20 hover:scale-105 transition duration-300"
+                  />
+                  <img 
+                    src={slide.img2} 
+                    alt="Phone 2" 
+                    className="w-36 h-auto object-contain rounded-[2rem] shadow-2xl border-4 border-slate-900 transform rotate-12 -translate-x-6 z-10 hover:scale-105 transition duration-300"
+                  />
                 </div>
               </div>
             </div>
@@ -708,11 +678,11 @@ export default function CashifinLandingPage() {
 
         {/* Carousel Indicators */}
         <div className="flex justify-center space-x-2.5 pb-6">
-          {[0, 1, 2].map(idx => (
+          {[0].map(idx => (
             <button
               key={idx}
               onClick={() => setActiveBannerSlide(idx)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${activeBannerSlide === idx ? 'bg-[#39b54a] scale-110' : 'bg-slate-200 hover:bg-slate-300'}`}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${activeBannerSlide === idx ? 'bg-sellifyTeal-500 scale-110' : 'bg-slate-200 hover:bg-slate-300'}`}
             />
           ))}
         </div>
@@ -781,9 +751,9 @@ export default function CashifinLandingPage() {
         </div>
       </div>
 
-      {/* 4. Our Services Grid (Circular Badges Row) */}
-      <div className="px-4 md:px-12 lg:px-20 py-12 space-y-6 bg-slate-50">
-        <h2 className="text-lg font-black text-[#0c213a] text-center">Sell Your Old Device Now</h2>
+      {/* 4. Our Services Grid (Circular Badges Row - Sellify style) */}
+      <div className="px-4 md:px-12 lg:px-20 py-16 space-y-8 bg-slate-50">
+        <h2 className="text-3xl font-black text-[#0c213a] text-center">Our <span className="text-sellifyTeal-500">Categories</span></h2>
         <div className="grid grid-cols-2 md:grid-cols-7 gap-6 max-w-6xl mx-auto">
           {categoriesList.map((cat, idx) => (
             <div
@@ -792,62 +762,182 @@ export default function CashifinLandingPage() {
                 setSelCategory(cat.name);
                 setBrandSelectorOpen(true);
               }}
-              className="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-3xs hover:border-[#39b54a] hover:shadow-md cursor-pointer transition text-center flex flex-col items-center space-y-3 group"
+              className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-sellifyTeal-500 hover:shadow-md hover:scale-[1.02] cursor-pointer transition-all duration-300 text-center flex flex-col items-center space-y-4 group"
             >
-              <div className="w-12 h-12 rounded-full bg-[#39b54a]/10 flex items-center justify-center text-[#39b54a] transition group-hover:scale-110">
+              <div className="w-14 h-14 rounded-full bg-sellifyTeal-50 flex items-center justify-center text-sellifyTeal-600 transition duration-300 group-hover:bg-sellifyTeal-100">
                 {cat.component}
               </div>
               <div>
                 <span className="font-extrabold text-sm text-[#0c213a] block">{cat.name}</span>
-                <span className="text-xs text-slate-450 font-bold mt-0.5 block">{cat.desc}</span>
+                <span className="text-xs text-slate-400 font-semibold mt-1 block">{cat.desc}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Why Choose Cashifin Section (5 Column Cards Layout) */}
-      <div className="px-4 md:px-12 lg:px-20 py-16 bg-white space-y-12">
-        <h2 className="text-xl font-black text-[#0c213a] text-center">Why Choose Cashifin?</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {(whyChooseUsList.length > 0 ? whyChooseUsList : [
-            { tag: '💸 Payouts', title: 'Top Valuations', desc: 'Secure maximum appraised payout quotes based on our live diagnostics market benchmarks.' },
-            { tag: '⚡ Speed', title: 'Instant Doorstep Cash', desc: 'Get paid instantly via UPI, bank transfer, or hand-to-hand wallet transfer on diagnostic signup verification.' },
-            { tag: '📱 Scope', title: 'Wide Device Support', desc: 'We inspect and trade pre-owned phones, laptops, smartwatches, televisions, and gaming consoles.' },
-            { tag: '🔒 Security', title: 'Military-Grade Wipes', desc: 'Complete reassurance: every collected hardware client item undergoes 3-pass disk sanitization standard.' },
-            { tag: '🚚 Logistics', title: 'Free Home Pickups', desc: 'Enjoy zero evaluation costs or transportation fees. Our pickup agents visit your home for diagnostics.' }
-          ]).map((item: any, idx: number) => (
-            <div key={idx} className="bg-slate-50/50 p-5 rounded-2xl border border-slate-200/80 hover:border-[#39b54a] hover:bg-white transition flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="bg-[#39b54a]/15 text-[#39b54a] font-black text-xs px-2.5 py-1 rounded-full uppercase">{item.tag}</span>
-                <h4 className="font-extrabold text-sm text-[#0c213a] pt-1">{item.title}</h4>
-                <p className="text-sm text-slate-450 font-semibold leading-relaxed">{item.desc}</p>
+      {/* Why Choose Cashifin Section (Enjoy instant payments... - Sellify style) */}
+      <div className="px-4 md:px-12 lg:px-20 py-20 bg-white space-y-12">
+        <div className="max-w-6xl mx-auto text-center space-y-4">
+          <p className="text-slate-500 max-w-3xl mx-auto text-base font-semibold leading-relaxed">
+            Enjoy instant payments, free doorstep pickup, and the best market prices – all with zero hassle. 
+            Sellify makes selling your old phone fast, easy, and totally stress-free.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
+          {/* Left: 2x2 Grid of features */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: "🏷️",
+                title: "Instant Price Quote",
+                desc: "Get the highest value for your old phone with our platform comparisons."
+              },
+              {
+                icon: "💳",
+                title: "Fast & Secure Payments",
+                desc: "Get paid instantly via UPI, Wallet, or Bank Transfer with complete security."
+              },
+              {
+                icon: "🚚",
+                title: "Free Pickup from Your Location",
+                desc: "Stay in and relax while we collect your device for free."
+              },
+              {
+                icon: "♻️",
+                title: "Green & Responsible Recycling",
+                desc: "We recycle e-waste responsibly to protect the planet and promote a greener future."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-slate-50/50 p-6 rounded-2xl border border-slate-100 hover:border-sellifyTeal-500 hover:bg-white transition-all duration-300 flex flex-col space-y-4">
+                <div className="w-12 h-12 rounded-full bg-sellifyTeal-50 flex items-center justify-center text-xl text-sellifyTeal-600">
+                  {item.icon}
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-extrabold text-base text-[#0c213a]">{item.title}</h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right: Metric box + phone visual collage */}
+          <div className="lg:col-span-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+            {/* Metric Box */}
+            <div className="bg-sellifyTeal-50/30 p-8 rounded-3xl border border-sellifyTeal-100 flex flex-col justify-between relative overflow-hidden min-h-[280px]">
+              <div className="space-y-4">
+                <span className="text-6xl font-black text-sellifyTeal-500 block">95%</span>
+                <p className="text-sm font-bold text-[#0c213a] max-w-[200px] leading-snug">
+                  Of Sellify visitors find up selling their device
+                </p>
+              </div>
+              
+              {/* Floating screens graphic (represented with tilted screenshot divs or images) */}
+              <div className="absolute right-4 bottom-4 w-32 h-32 flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <div className="absolute top-2 left-2 w-16 h-28 bg-white rounded-lg shadow-lg border transform -rotate-12 overflow-hidden">
+                    <div className="h-4 bg-slate-100 border-b flex items-center px-1"><span className="text-[4px]">📶</span></div>
+                    <div className="p-1 space-y-1">
+                      <div className="w-full h-1 bg-sellifyTeal-100 rounded"></div>
+                      <div className="w-4/5 h-1 bg-slate-100 rounded"></div>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-2 right-2 w-16 h-28 bg-slate-900 rounded-lg shadow-lg border-2 border-white transform rotate-12 overflow-hidden flex flex-col justify-between p-1">
+                    <span className="text-[6px] text-white">💰</span>
+                    <span className="text-[6px] text-sellifyTeal-400 font-bold block text-right">Instant Payout</span>
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
-      {/* How it Works Section */}
-      <div id="how-it-works" className="px-4 md:px-12 lg:px-20 py-16 bg-slate-50 space-y-12">
-        <h2 className="text-xl font-black text-[#0c213a] text-center">How It Works</h2>
+      {/* How it Works Section (Sellify Style) */}
+      <div id="how-it-works" className="px-4 md:px-12 lg:px-20 py-20 bg-white space-y-16">
+        <h2 className="text-3xl font-black text-[#0c213a] text-center">How It <span className="text-sellifyTeal-500">Works</span></h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center relative">
-          {(howItWorksList.length > 0 ? howItWorksList : [
-            { step: '1', title: 'Check Price', desc: 'Select your device model and state conditions to get appraised valuation.' },
-            { step: '2', title: 'Schedule Pickup', desc: 'Choose a convenient date and doorstep evaluation time slot.' },
-            { step: '3', title: 'Instant Pickup', desc: 'Our trained pickup agent verifies conditions at your doorstep.' },
-            { step: '4', title: 'Instant Payment', desc: 'Get your full payout immediately in your preferred payment mode.' }
-          ]).map((item: any, idx: number) => (
-            <div key={idx} className="space-y-3 relative z-10 flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-[#39b54a] text-white flex items-center justify-center font-black text-sm shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-6xl mx-auto text-left relative">
+          {/* Arrow dotted lines to connect steps visually */}
+          <div className="hidden md:block absolute top-6 left-[20%] w-[12%] border-t-2 border-dashed border-sellifyTeal-200"></div>
+          <div className="hidden md:block absolute top-6 left-[45%] w-[12%] border-t-2 border-dashed border-sellifyTeal-200"></div>
+          <div className="hidden md:block absolute top-6 left-[70%] w-[12%] border-t-2 border-dashed border-sellifyTeal-200"></div>
+
+          {[
+            { step: '01', title: 'Select Your Smartphone', desc: 'Select your mobile brand and specify model criteria easily.' },
+            { step: '02', title: 'Instant Quote for Your Mobile', desc: 'Instant mobile price estimation based on brand, model & condition.' },
+            { step: '03', title: 'Schedule a Free Doorstep Pickup', desc: 'Get hassle-free doorstep evaluation and pickup service.' },
+            { step: '04', title: 'Instant Payout After Pickup', desc: 'Quick phone check and instant payout directly to your bank account or UPI.' }
+          ].map((item: any, idx: number) => (
+            <div key={idx} className="space-y-4 relative z-10 flex flex-col">
+              <span className="text-5xl font-black text-sellifyTeal-200/80 leading-none">
                 {item.step}
-              </div>
-              <h4 className="font-extrabold text-sm text-[#0c213a] pt-1">{item.title}</h4>
-              <p className="text-sm text-slate-400 font-semibold leading-relaxed max-w-[200px]">{item.desc}</p>
+              </span>
+              <h4 className="font-extrabold text-base text-[#0c213a]">{item.title}</h4>
+              <p className="text-xs text-slate-500 font-medium leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* 4.5. Sellify Hot Deals Section */}
+      <div className="px-4 md:px-12 lg:px-20 py-20 bg-slate-50 space-y-12">
+        <h2 className="text-3xl font-black text-[#0c213a] text-center">Hot <span className="text-sellifyTeal-500">Deals</span></h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Card 1 */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sellifyTeal-600 to-emerald-500 p-8 md:p-10 text-white flex flex-col justify-between min-h-[260px] shadow-lg group hover:scale-[1.01] transition-all duration-300">
+            {/* Radial glow pattern overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
+            
+            <div className="space-y-4 max-w-[65%] z-10">
+              <h3 className="text-2xl md:text-3xl font-black leading-tight">Sell Your Old Phone. Get Instant Cash</h3>
+              <p className="text-sm text-teal-100 font-medium">Door Pickup | Best Price Guaranteed | Fast Payment</p>
+            </div>
+            
+            <div className="pt-6 z-10">
+              <button 
+                onClick={startValuation}
+                className="px-6 py-3 bg-[#ffe4e6] hover:bg-[#fecdd3] text-slate-900 font-bold rounded-full text-xs shadow-md transition"
+              >
+                Sell Old Mobiles
+              </button>
+            </div>
+            
+            {/* Rupees image fan floating on the right */}
+            <img 
+              src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?q=80&w=300&auto=format&fit=crop" 
+              alt="Cash" 
+              className="absolute right-0 bottom-0 w-48 h-auto object-contain transform translate-x-4 translate-y-4 rotate-12 group-hover:scale-105 transition duration-300"
+            />
+          </div>
+
+          {/* Card 2 */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sellifyTeal-600 to-emerald-500 p-8 md:p-10 text-white flex flex-col justify-between min-h-[260px] shadow-lg group hover:scale-[1.01] transition-all duration-300">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
+            
+            <div className="space-y-4 max-w-[65%] z-10">
+              <h3 className="text-2xl md:text-3xl font-black leading-tight">Want to Upgrade Your iPhone?</h3>
+              <p className="text-sm text-teal-100 font-medium">Turn the Old One into instant Cash</p>
+            </div>
+            
+            <div className="pt-6 z-10">
+              <button 
+                onClick={() => { setSelCategory('Smartphones'); setBrandSelectorOpen(true); }}
+                className="px-6 py-3 bg-[#ffe4e6] hover:bg-[#fecdd3] text-slate-900 font-bold rounded-full text-xs shadow-md transition"
+              >
+                Click to See iPhone Value
+              </button>
+            </div>
+            
+            {/* iPhones floating on the right */}
+            <img 
+              src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=300&auto=format&fit=crop" 
+              alt="iPhones" 
+              className="absolute right-0 bottom-0 w-44 h-auto object-contain transform translate-x-4 translate-y-4 -rotate-12 group-hover:scale-105 transition duration-300"
+            />
+          </div>
         </div>
       </div>
 
@@ -868,11 +958,11 @@ export default function CashifinLandingPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
           {refurbishedPhones.map((phone: any) => (
-            <div key={phone.id} className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 hover:border-[#39b54a] transition flex flex-col justify-between relative overflow-hidden group">
-              <span className="absolute top-3 left-3 bg-[#39b54a]/10 text-[#39b54a] text-xs font-black px-2 py-0.5 rounded-full z-10 shadow-3xs">
+            <div key={phone.id} className="bg-white p-4 rounded-2xl border border-slate-200/60 hover:border-sellifyTeal-500 hover:shadow-md transition flex flex-col justify-between relative overflow-hidden group">
+              <span className="absolute top-3 left-3 bg-sellifyTeal-50 text-sellifyTeal-600 text-[10px] font-black px-2 py-0.5 rounded-full z-10 shadow-3xs">
                 CASHIFIN ASSURED
               </span>
-              <div className="h-44 w-full flex items-center justify-center mt-3 overflow-hidden rounded-xl bg-white border">
+              <div className="h-44 w-full flex items-center justify-center mt-3 overflow-hidden rounded-xl bg-slate-50/50 border">
                 <img 
                   src={phone.imageUrl} 
                   alt={phone.name} 
@@ -881,22 +971,22 @@ export default function CashifinLandingPage() {
               </div>
               <div className="mt-3.5 space-y-1">
                 <h4 className="font-extrabold text-sm text-[#0c213a] truncate">{phone.name}</h4>
-                <p className="text-xs text-slate-400 font-semibold truncate">{phone.desc}</p>
+                <p className="text-xs text-slate-400 font-medium truncate">{phone.desc}</p>
                 <div className="flex items-center space-x-1.5 pt-1">
-                  <span className="text-[#39b54a] font-bold text-xs uppercase bg-[#39b54a]/10 px-1 py-0.2 rounded">Pay Day Sale</span>
+                  <span className="text-sellifyTeal-600 font-bold text-[10px] uppercase bg-sellifyTeal-50 px-1.5 py-0.5 rounded">Pay Day Sale</span>
                   <span className="text-xs font-bold text-slate-400">⭐ {phone.rating}</span>
                 </div>
               </div>
-              <div className="mt-3.5 pt-2 border-t border-slate-200/60 flex items-center justify-between">
-                <div>
-                  <span className="text-sm font-black text-slate-800">{phone.price}</span>
-                  <span className="text-xs text-slate-405 line-through ml-1.5">{phone.oldPrice}</span>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex flex-col space-y-3">
+                <div className="flex items-baseline space-x-1">
+                  <span className="text-lg font-black text-sellifyTeal-600">{phone.price}</span>
+                  <span className="text-xs text-slate-400 line-through">{phone.oldPrice}</span>
                 </div>
                 <Link 
                   href={`/refurbished/${phone.id}`}
-                  className="px-2.5 py-1.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-bold rounded-lg text-xs shadow-3xs transition"
+                  className="py-2.5 bg-[#0c213a] hover:bg-[#1e293b] text-white font-bold rounded-lg text-xs transition shadow-sm text-center block"
                 >
-                  Buy Now
+                  Sell Now
                 </Link>
               </div>
             </div>
@@ -908,12 +998,12 @@ export default function CashifinLandingPage() {
       <div className="px-4 md:px-12 lg:px-20 py-16 bg-slate-50 border-t border-slate-100 space-y-8">
         <div className="flex justify-between items-baseline max-w-6xl mx-auto">
           <div>
-            <h2 className="text-lg font-black text-[#0c213a]">Refurbished Laptops</h2>
-            <p className="text-xs text-slate-450 font-bold mt-1 uppercase">100% Inspected • Free Accessories Included</p>
+            <h2 className="text-xl font-black text-[#0c213a]">Refurbished Laptops</h2>
+            <p className="text-xs text-slate-400 font-bold mt-1 uppercase">100% Inspected • Free Accessories Included</p>
           </div>
           <span 
             onClick={() => setRefurbishedCatalogScope('Laptops')} 
-            className="text-sm font-black text-[#39b54a] hover:underline cursor-pointer"
+            className="text-sm font-black text-sellifyTeal-600 hover:underline cursor-pointer"
           >
             View All
           </span>
@@ -921,8 +1011,8 @@ export default function CashifinLandingPage() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {refurbishedLaptops.map((lap, idx) => (
-            <div key={idx} className="bg-white p-4 rounded-2xl border border-slate-200/80 hover:border-[#39b54a] transition flex flex-col justify-between relative overflow-hidden group">
-              <span className="absolute top-3 left-3 bg-[#39b54a]/10 text-[#39b54a] text-xs font-black px-2 py-0.5 rounded-full z-10">
+            <div key={idx} className="bg-white p-4 rounded-2xl border border-slate-200/80 hover:border-sellifyTeal-500 hover:shadow-md transition flex flex-col justify-between relative overflow-hidden group">
+              <span className="absolute top-3 left-3 bg-sellifyTeal-50 text-sellifyTeal-600 text-[10px] font-black px-2 py-0.5 rounded-full z-10">
                 LAPTOP SALE
               </span>
               <div className="h-36 w-full flex items-center justify-center mt-3 overflow-hidden rounded-xl bg-slate-50 border">
@@ -937,22 +1027,22 @@ export default function CashifinLandingPage() {
               </div>
               <div className="mt-3.5 space-y-1">
                 <h4 className="font-extrabold text-sm text-[#0c213a] truncate">{lap.name}</h4>
-                <p className="text-xs text-slate-400 font-semibold truncate">{lap.desc}</p>
+                <p className="text-xs text-slate-400 font-medium truncate">{lap.desc}</p>
                 <div className="flex items-center space-x-1.5 pt-0.5">
-                  <span className="text-[#39b54a] font-bold text-xs uppercase bg-[#39b54a]/10 px-1 py-0.2 rounded">Laptop Sale</span>
+                  <span className="text-sellifyTeal-600 font-bold text-[10px] uppercase bg-sellifyTeal-50 px-1.5 py-0.5 rounded">Laptop Sale</span>
                   <span className="text-xs font-bold text-slate-400">⭐ {lap.rating}</span>
                 </div>
               </div>
-              <div className="mt-3.5 pt-2 border-t border-slate-200/60 flex items-center justify-between">
-                <div>
-                  <span className="text-sm font-black text-slate-800">{lap.price}</span>
-                  <span className="text-xs text-slate-405 line-through ml-1.5">{lap.oldPrice}</span>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex flex-col space-y-3">
+                <div className="flex items-baseline space-x-1">
+                  <span className="text-lg font-black text-sellifyTeal-600">{lap.price}</span>
+                  <span className="text-xs text-slate-400 line-through">{lap.oldPrice}</span>
                 </div>
                 <Link 
                   href={`/refurbished/${lap.id}`}
-                  className="px-2.5 py-1.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-bold rounded-lg text-xs shadow-3xs transition"
+                  className="py-2.5 bg-[#0c213a] hover:bg-[#1e293b] text-white font-bold rounded-lg text-xs transition shadow-sm text-center block"
                 >
-                  Buy Now
+                  Sell Now
                 </Link>
               </div>
             </div>
@@ -1716,6 +1806,19 @@ export default function CashifinLandingPage() {
           </div>
         </div>
       )}
+      {/* Floating WhatsApp Widget */}
+      <a 
+        href="https://wa.me/911234567890" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white px-5 py-3 rounded-full shadow-2xl flex items-center space-x-2 z-40 transition-all transform hover:scale-105"
+      >
+        <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.019-5.117-2.877-6.979C16.602 1.9 14.12 1.88 12.008 1.88c-5.435 0-9.858 4.42-9.862 9.864-.001 1.762.461 3.483 1.337 5.018L2.44 20.875l4.207-1.721z" />
+        </svg>
+        <span className="text-xs font-bold font-sans">Sell Your Phone</span>
+      </a>
+
       {/* Toast Alert Notification */}
       {toastMsg && (
         <div className="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center space-x-3.5 z-50 animate-bounce">
