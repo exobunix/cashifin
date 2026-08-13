@@ -518,7 +518,7 @@ export default function CashifinLandingPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
-      {/* 1. Global Navigation Bar Header (Sellify Style) */}
+      {/* 1. Global Navigation Bar Header (Cashifin Style) */}
       <div className="bg-white border-b border-slate-100 px-4 md:px-12 lg:px-20 py-4 flex items-center justify-between sticky top-0 z-40 w-full">
         {/* Original Cashifin Logo */}
         <div className="flex items-center space-x-2 cursor-pointer" onClick={() => window.location.reload()}>
@@ -602,12 +602,12 @@ export default function CashifinLandingPage() {
         </div>
       </div>
 
-      {/* 2.5. Sellify Premium Hero Section */}
+      {/* 2.5. Cashifin Premium Hero Section */}
       <div className="bg-gradient-to-r from-white via-slate-50/50 to-teal-50/30 border-b border-slate-100 relative overflow-hidden">
         {/* Carousel Slider Tracks */}
         {(bannersList.length > 0
           ? bannersList.map((b: any, index: number) => ({
-              tag: 'Sellify - Sell Old Mobile Phones',
+              tag: 'Cashifin - Sell Old Mobile Phones',
               title: b.title,
               desc: b.subtitle,
               img1: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=300&auto=format&fit=crop",
@@ -617,17 +617,44 @@ export default function CashifinLandingPage() {
             }))
           : [
               {
-                tag: 'Sellify - Sell Old Mobile Phones',
+                tag: 'Cashifin - Sell Old Mobile Phones',
                 title: <>Get the Highest Price for <br /> <span className="text-sellifyTeal-500">Your Old Mobile Phone – Sell Now!</span></>,
                 desc: "Unlock the best resale value for your old smartphone. Quick, easy, and hasslefree!",
                 img1: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=300&auto=format&fit=crop",
                 img2: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=300&auto=format&fit=crop",
                 action: startValuation,
                 btnText: 'Sell Mobile',
+              },
+              {
+                tag: 'Cashifin - Macbook & Laptop Trade In',
+                title: <>Trade In Your Old Laptop. <br /> <span className="text-sellifyTeal-500">Get Up to ₹80,000 Credit.</span></>,
+                desc: "Exchange your old laptop for the latest powerful MacBooks. Free doorstep evaluations and secure data wipes.",
+                img1: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=300&auto=format&fit=crop",
+                img2: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=300&auto=format&fit=crop",
+                action: () => { setSelCategory('Sell Laptop'); setBrandSelectorOpen(true); },
+                btnText: 'Evaluate Laptop',
+              },
+              {
+                tag: 'Cashifin - Refurbished Device Deals',
+                title: <>Premium Refurbished Devices. <br /> <span className="text-sellifyTeal-500">Up to 50% OFF Store Price.</span></>,
+                desc: "Own premium pre-owned flagship smartphones inspected via 34 quality checkpoints. Complete with a 6-month warranty.",
+                img1: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=300&auto=format&fit=crop",
+                img2: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=300&auto=format&fit=crop",
+                action: () => { const el = document.getElementById('refurbished-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
+                btnText: 'Shop Refurbished',
+              },
+              {
+                tag: 'Cashifin - Sell Tablets & TVs',
+                title: <>Recycle Old Tablets & Smart TVs. <br /> <span className="text-sellifyTeal-500">Get Paid Instantly.</span></>,
+                desc: "Clear up e-waste and get instant payouts. We evaluate and collect tablets, televisions, and consoles right from your home.",
+                img1: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=300&auto=format&fit=crop",
+                img2: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=300&auto=format&fit=crop",
+                action: () => { setSelCategory('Sell Tablet'); setBrandSelectorOpen(true); },
+                btnText: 'Evaluate Tablet',
               }
             ]
         ).map((slide, idx) => {
-          if (activeBannerSlide !== idx && idx !== 0) return null; // Default fallback to first
+          if (activeBannerSlide !== idx) return null;
           return (
             <div key={idx} className="px-4 md:px-12 lg:px-20 py-12 md:py-16 flex flex-col md:flex-row justify-between items-center gap-12 min-h-[440px] transition-all duration-700 animate-fadeIn">
               <div className="space-y-6 max-w-xl z-10">
@@ -652,7 +679,7 @@ export default function CashifinLandingPage() {
 
               {/* Hero circular backdrop and overlapping phones */}
               <div className="relative w-full md:w-[480px] h-[340px] z-10 flex items-center justify-center shrink-0">
-                {/* Big circular green backdrop matching Sellify screenshot */}
+                {/* Big circular green backdrop matching Cashifin screenshot */}
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full bg-gradient-to-tr from-sellifyTeal-500 to-emerald-400 opacity-90 -z-10 shadow-2xl flex items-center justify-center overflow-hidden">
                   <div className="w-[300px] h-[300px] rounded-full border border-white/20"></div>
                 </div>
@@ -677,7 +704,7 @@ export default function CashifinLandingPage() {
 
         {/* Carousel Indicators */}
         <div className="flex justify-center space-x-2.5 pb-6">
-          {[0].map(idx => (
+          {[0, 1, 2, 3].map(idx => (
             <button
               key={idx}
               onClick={() => setActiveBannerSlide(idx)}
@@ -750,7 +777,7 @@ export default function CashifinLandingPage() {
         </div>
       </div>
 
-      {/* 4. Our Services Grid (Circular Badges Row - Sellify style) */}
+      {/* 4. Our Services Grid (Circular Badges Row - Cashifin style) */}
       <div className="px-4 md:px-12 lg:px-20 py-16 space-y-8 bg-slate-50">
         <h2 className="text-3xl font-black text-[#0c213a] text-center">Our <span className="text-sellifyTeal-500">Categories</span></h2>
         <div className="grid grid-cols-2 md:grid-cols-7 gap-6 max-w-6xl mx-auto">
@@ -775,12 +802,12 @@ export default function CashifinLandingPage() {
         </div>
       </div>
 
-      {/* Why Choose Cashifin Section (Enjoy instant payments... - Sellify style) */}
+      {/* Why Choose Cashifin Section (Enjoy instant payments... - Cashifin style) */}
       <div className="px-4 md:px-12 lg:px-20 py-20 bg-white space-y-12">
         <div className="max-w-6xl mx-auto text-center space-y-4">
           <p className="text-slate-500 max-w-3xl mx-auto text-base font-semibold leading-relaxed">
             Enjoy instant payments, free doorstep pickup, and the best market prices – all with zero hassle. 
-            Sellify makes selling your old phone fast, easy, and totally stress-free.
+            Cashifin makes selling your old phone fast, easy, and totally stress-free.
           </p>
         </div>
 
@@ -828,7 +855,7 @@ export default function CashifinLandingPage() {
               <div className="space-y-4">
                 <span className="text-6xl font-black text-sellifyTeal-500 block">95%</span>
                 <p className="text-sm font-bold text-[#0c213a] max-w-[200px] leading-snug">
-                  Of Sellify visitors find up selling their device
+                  Of Cashifin visitors find up selling their device
                 </p>
               </div>
               
@@ -853,7 +880,7 @@ export default function CashifinLandingPage() {
         </div>
       </div>
 
-      {/* How it Works Section (Sellify Style) */}
+      {/* How it Works Section (Cashifin Style) */}
       <div id="how-it-works" className="px-4 md:px-12 lg:px-20 py-20 bg-white space-y-16">
         <h2 className="text-3xl font-black text-[#0c213a] text-center">How It <span className="text-sellifyTeal-500">Works</span></h2>
 
@@ -880,7 +907,7 @@ export default function CashifinLandingPage() {
         </div>
       </div>
 
-      {/* 4.5. Sellify Hot Deals Section */}
+      {/* 4.5. Cashifin Hot Deals Section */}
       <div className="px-4 md:px-12 lg:px-20 py-20 bg-slate-50 space-y-12">
         <h2 className="text-3xl font-black text-[#0c213a] text-center">Hot <span className="text-sellifyTeal-500">Deals</span></h2>
         
