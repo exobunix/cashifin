@@ -520,10 +520,9 @@ export default function CashifinLandingPage() {
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
       {/* 1. Global Navigation Bar Header (Sellify Style) */}
       <div className="bg-white border-b border-slate-100 px-4 md:px-12 lg:px-20 py-4 flex items-center justify-between sticky top-0 z-40 w-full">
-        {/* Sellify Inspired Logo */}
-        <div className="flex items-center space-x-1 cursor-pointer select-none" onClick={() => window.location.reload()}>
-          <span className="text-2xl font-black text-sellifyTeal-500">≫</span>
-          <span className="text-xl font-black tracking-wider text-[#0c213a]">SELLIFY</span>
+        {/* Original Cashifin Logo */}
+        <div className="flex items-center space-x-2 cursor-pointer" onClick={() => window.location.reload()}>
+          <img src={logoConfig.userLogo || '/logo.jpg'} alt="CASHIFIN" className="h-16 w-auto rounded-lg object-contain py-0.5" style={{ height: '64px', width: 'auto' }} />
         </div>
 
         {/* Global Search Bar */}
