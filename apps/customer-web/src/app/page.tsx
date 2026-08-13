@@ -537,9 +537,9 @@ export default function CashifinLandingPage() {
 
         {/* Active Location Selection, Profile & Logout links */}
         <div className="flex items-center space-x-6 text-sm font-bold text-slate-650">
-          <div onClick={startValuation} className="cursor-pointer hover:text-sellifyTeal-500 transition">
+          <Link href="/sell" className="hover:text-sellifyTeal-500 transition">
             <span>Sell</span>
-          </div>
+          </Link>
           <div onClick={() => { setFooterModalType('About Us'); setShowFooterModal(true); }} className="cursor-pointer hover:text-sellifyTeal-500 transition">
             <span>About</span>
           </div>
@@ -579,21 +579,21 @@ export default function CashifinLandingPage() {
 
       {/* 2. Secondary Corporate Navigation Menu Bar */}
       <div className="bg-white border-b border-slate-100/60 px-4 md:px-12 lg:px-20 py-3 flex items-center space-x-8 text-sm font-bold text-slate-600 w-full overflow-x-auto whitespace-nowrap scrollbar-none">
-        <div onClick={startValuation} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
+        <Link href="/sell/smartphones" className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Phone</span>
-        </div>
-        <div onClick={() => { setSelCategory('Sell Laptop'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
+        </Link>
+        <Link href="/sell/laptops" className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Laptop</span>
-        </div>
-        <div onClick={() => { setSelCategory('Sell Tablet'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
+        </Link>
+        <Link href="/sell/tablets" className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Tablet</span>
-        </div>
-        <div onClick={() => { setSelCategory('Sell TV'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
+        </Link>
+        <Link href="/sell/tvs" className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell TV</span>
-        </div>
-        <div onClick={() => { setSelCategory('Sell Smartwatch'); setBrandSelectorOpen(true); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
+        </Link>
+        <Link href="/sell/smartwatches" className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Sell Smartwatch</span>
-        </div>
+        </Link>
         <div onClick={() => { const el = document.getElementById('refurbished-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
           <span>Buy Refurbished Devices</span>
         </div>
@@ -720,9 +720,7 @@ export default function CashifinLandingPage() {
           {/* Sell Card */}
           <div 
             onClick={() => {
-              setSelCategory('Smartphones');
-              setShowWizard(true);
-              setWizardStep(1);
+              window.location.href = '/sell';
             }}
             className="relative overflow-hidden bg-gradient-to-br from-emerald-50 to-teal-50/50 p-6 rounded-2xl border border-emerald-100 hover:border-emerald-400 shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 group flex items-center justify-between"
           >
@@ -758,9 +756,7 @@ export default function CashifinLandingPage() {
           {/* Exchange Card */}
           <div 
             onClick={() => {
-              setSelCategory('Smartphones');
-              setShowWizard(true);
-              setWizardStep(1);
+              window.location.href = '/sell/smartphones';
             }}
             className="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50/50 p-6 rounded-2xl border border-amber-100 hover:border-amber-400 shadow-sm hover:shadow-md cursor-pointer transition-all duration-300 group flex items-center justify-between"
           >
@@ -785,8 +781,9 @@ export default function CashifinLandingPage() {
             <div
               key={idx}
               onClick={() => {
-                setSelCategory(cat.name);
-                setBrandSelectorOpen(true);
+                const pathName = cat.name.replace('Sell ', '').toLowerCase();
+                const cleanPath = pathName === 'phone' ? 'smartphones' : pathName === 'laptop' ? 'laptops' : pathName === 'tv' ? 'tvs' : pathName === 'tablet' ? 'tablets' : pathName === 'gaming consoles' ? 'gaming-consoles' : pathName === 'smartwatch' ? 'smartwatches' : pathName;
+                window.location.href = `/sell/${encodeURIComponent(cleanPath)}`;
               }}
               className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-sellifyTeal-500 hover:shadow-md hover:scale-[1.02] cursor-pointer transition-all duration-300 text-center flex flex-col items-center space-y-4 group"
             >

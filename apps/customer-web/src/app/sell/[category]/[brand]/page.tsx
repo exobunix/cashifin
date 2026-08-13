@@ -288,9 +288,9 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
       {/* Navigation Header */}
-      <div className="bg-white border-b border-slate-100 px-10 py-3 flex items-center justify-between shadow-3xs sticky top-0 z-40">
+      <header className="bg-white border-b border-slate-100 px-4 md:px-12 lg:px-20 py-4 flex items-center justify-between sticky top-0 z-40 w-full shadow-3xs">
         <Link href="/" className="flex items-center space-x-2 cursor-pointer">
-          <img src="/logo.jpg" alt="CASHIFIN" className="h-16 w-auto rounded-lg object-contain py-1" />
+          <img src="/logo.jpg" alt="CASHIFIN" className="h-16 w-auto rounded-lg object-contain py-0.5" style={{ height: '64px', width: 'auto' }} />
         </Link>
         <div className="flex-1 max-w-2xl mx-10 relative">
           <input
@@ -298,19 +298,24 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
             placeholder="Search for models..."
             value={modelSearch}
             onChange={e => setModelSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:outline-none focus:bg-white transition"
+            className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-xs bg-slate-50 focus:outline-none focus:bg-white focus:border-sellifyTeal-500 transition"
           />
           <span className="absolute left-3 top-2.5">🔍</span>
         </div>
         <div className="flex items-center space-x-6 text-xs font-bold text-slate-650">
-          <span><span className="cursor-pointer" onClick={() => setShowLocationModal(true)}>📍 {activeLocation} ▼</span></span>
-          <Link href="/profile" className="hover:text-[#39b54a]">👤 adarsh Deep Sachan</Link>
+          <Link href="/sell" className="hover:text-sellifyTeal-500 transition">Sell</Link>
+          <div onClick={() => setShowLocationModal(true)} className="cursor-pointer hover:text-sellifyTeal-500 flex items-center space-x-1 transition">
+            <span>📍 {activeLocation} ▼</span>
+          </div>
+          <Link href="/" className="px-6 py-2 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white font-bold rounded-lg text-xs transition shadow-sm text-center">
+            Go Home
+          </Link>
         </div>
-      </div>
+      </header>
 
       {/* Breadcrumbs */}
-      <div className="px-10 py-4 text-[10px] text-slate-400 font-semibold space-x-1.5 border-b bg-white">
-        <Link href="/" className="hover:text-[#39b54a]">Home</Link>
+      <div className="px-4 md:px-12 lg:px-20 py-3 text-[10px] text-slate-400 font-semibold space-x-1.5 border-b bg-white">
+        <Link href="/" className="hover:text-sellifyTeal-600">Home</Link>
         <span>&gt;</span>
         <span className="capitalize">Sell Old {decodedCategory}</span>
         <span>&gt;</span>
@@ -318,7 +323,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
       </div>
 
       {/* Main Container */}
-      <div className="px-10 py-8 space-y-6 flex-1 max-w-7xl mx-auto w-full">
+      <div className="px-4 md:px-12 lg:px-20 py-8 space-y-6 flex-1 max-w-7xl mx-auto w-full">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b pb-4">
           <div>
             <h1 className="text-xl font-black text-slate-850 capitalize">Sell Old {decodedBrand} {decodedCategory}</h1>
@@ -329,7 +334,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
             placeholder="Select Model"
             value={modelSearch}
             onChange={e => setModelSearch(e.target.value)}
-            className="w-full md:w-72 p-2.5 border rounded-xl text-xs bg-white focus:outline-none focus:border-[#39b54a]"
+            className="w-full md:w-72 p-2.5 border rounded-xl text-xs bg-white focus:outline-none focus:border-sellifyTeal-500"
           />
         </div>
 
@@ -341,14 +346,14 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
               <div
                 key={m.id}
                 onClick={() => handleStartSurvey(m)}
-                className="bg-white p-4 rounded-xl border border-slate-200 hover:border-[#39b54a] cursor-pointer text-center space-y-3 transition duration-200 shadow-3xs group flex flex-col justify-between"
+                className="bg-white p-4 rounded-xl border border-slate-200 hover:border-sellifyTeal-500 cursor-pointer text-center space-y-3 transition duration-200 shadow-3xs group flex flex-col justify-between"
               >
                 <div className="h-28 rounded-lg overflow-hidden bg-slate-50 flex items-center justify-center">
                   <img src={deviceUrl} alt={m.name} className="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
                 </div>
                 <div>
                   <h4 className="font-extrabold text-[11px] text-slate-800 line-clamp-2 leading-snug">{m.name}</h4>
-                  <p className="text-[9px] text-[#39b54a] font-black mt-1.5">{m.basePrice}</p>
+                  <p className="text-[9px] text-sellifyTeal-600 font-black mt-1.5">{m.basePrice}</p>
                 </div>
               </div>
             );
@@ -398,7 +403,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                                 onClick={() => handleSelectAnswer(q.text, opt === 'Faulty / Damaged' ? 'Cracked' : 'Perfect')}
                                 className={`py-2 text-xs font-bold rounded-lg border transition ${
                                   answers[q.text] === (opt === 'Faulty / Damaged' ? 'Cracked' : 'Perfect')
-                                    ? 'border-[#39b54a] bg-teal-50/10 text-[#39b54a]'
+                                    ? 'border-sellifyTeal-500 bg-sellifyTeal-50 text-sellifyTeal-600'
                                     : 'border-slate-200 bg-white'
                                 }`}
                               >
@@ -417,7 +422,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                     </div>
                     <button 
                       onClick={() => setWizardStep(2)}
-                      className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-bold"
+                      className="px-4 py-2 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-lg font-bold"
                     >
                       Continue to Checkout →
                     </button>
@@ -443,7 +448,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                       <input type="text" value={custAddress} onChange={e => setCustAddress(e.target.value)} className="p-2.5 border rounded bg-white" />
                     </div>
                     <div className="flex flex-col">
-                      <label className="font-bold text-[#39b54a] mb-1">Preferred Time Slot</label>
+                      <label className="font-bold text-sellifyTeal-600 mb-1">Preferred Time Slot</label>
                       <select value={custSlot} onChange={e => setCustSlot(e.target.value)} className="p-2.5 border rounded bg-white">
                         <option value="Tomorrow, 10:00 AM - 01:00 PM">Tomorrow, 10:00 AM - 01:00 PM</option>
                         <option value="Tomorrow, 02:00 PM - 05:00 PM">Tomorrow, 02:00 PM - 05:00 PM</option>
@@ -454,11 +459,11 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                   <div className="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between">
                     <div>
                       <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Final Resale Price</span>
-                      <p className="text-lg font-black text-[#39b54a]">₹{currentQuote.toLocaleString()}</p>
+                      <p className="text-lg font-black text-sellifyTeal-600">₹{currentQuote.toLocaleString()}</p>
                     </div>
                     <button 
                       onClick={handlePlaceOrder}
-                      className="px-5 py-2.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white rounded-lg font-bold"
+                      className="px-5 py-2.5 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-lg font-bold"
                     >
                       Book Doorstep Pickup
                     </button>
@@ -472,11 +477,11 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                   <span className="text-5xl block">🎉</span>
                   <h3 className="text-lg font-black text-slate-800">Booking Confirmed Successfully!</h3>
                   <p className="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
-                    Your buyback order has been registered at <strong className="text-teal-605">₹{currentQuote.toLocaleString()}</strong>. Our verified partner will contact you shortly to schedule doorstep inspection!
+                    Your buyback order has been registered at <strong className="text-sellifyTeal-600">₹{currentQuote.toLocaleString()}</strong>. Our verified partner will contact you shortly to schedule doorstep inspection!
                   </p>
                   <button 
                     onClick={() => setActiveModel(null)}
-                    className="px-5 py-2.5 bg-[#39b54a] text-white rounded-xl text-xs font-bold"
+                    className="px-5 py-2.5 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-xl text-xs font-bold"
                   >
                     Close
                   </button>
@@ -505,7 +510,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
             <button 
               onClick={handleDetectLocation}
               disabled={detectingLoc}
-              className="w-full py-2.5 bg-[#39b54a]/10 hover:bg-[#39b54a]/15 text-[#39b54a] font-black rounded-lg text-xs flex items-center justify-center space-x-2 border border-dashed border-[#39b54a] transition"
+              className="w-full py-2.5 bg-sellifyTeal-50 hover:bg-sellifyTeal-100 text-sellifyTeal-600 font-black rounded-lg text-xs flex items-center justify-center space-x-2 border border-dashed border-sellifyTeal-500 transition"
             >
               <span>📍</span>
               <span>{detectingLoc ? 'Detecting Location...' : 'Use Current Location'}</span>
@@ -518,7 +523,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                   <button 
                     key={city}
                     onClick={() => handleSelectCity(city)}
-                    className="p-2 border rounded-lg hover:border-[#39b54a] hover:bg-slate-50 transition"
+                    className="p-2 border rounded-lg hover:border-sellifyTeal-500 hover:bg-slate-50 transition"
                   >
                     {city}
                   </button>
