@@ -16,11 +16,14 @@ export default function SellCategoriesLandingPage() {
   const getCategoryImg = (catName: string) => {
     const name = catName.toLowerCase();
     if (name.includes('phone') || name.includes('smartphones')) return 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop';
-    if (name.includes('laptop')) return 'https://images.unsplash.com/photo-1496181130204-7552cc14ac1a?q=80&w=400&auto=format&fit=crop';
-    if (name.includes('tablet')) return 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('laptop') || name.includes('laptops')) return 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('tablet') || name.includes('tablets')) return 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=400&auto=format&fit=crop';
     if (name.includes('watch') || name.includes('smartwatches')) return 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=400&auto=format&fit=crop';
-    if (name.includes('tv')) return 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=400&auto=format&fit=crop';
-    if (name.includes('console')) return 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('tv') || name.includes('tvs')) return 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('console') || name.includes('gaming')) return 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('audio') || name.includes('speaker')) return 'https://images.unsplash.com/photo-1590608897129-79da98d15969?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('camera') || name.includes('dslr')) return 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop';
+    if (name.includes('home') || name.includes('smarthome')) return 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=400&auto=format&fit=crop';
     return 'https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=400&auto=format&fit=crop';
   };
 

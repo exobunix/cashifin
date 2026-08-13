@@ -35,7 +35,10 @@ export default function SellCategoryBrandsPage({ params }: { params: { category:
     if (name.includes('hp')) return 'https://images.unsplash.com/photo-1589561084283-930aa241560b?q=80&w=120&auto=format&fit=crop';
     if (name.includes('lenovo')) return 'https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?q=80&w=120&auto=format&fit=crop';
     if (name.includes('asus')) return 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=120&auto=format&fit=crop';
-    return 'https://images.unsplash.com/photo-1588508065123-287b28e013da?q=80&w=120&auto=format&fit=crop';
+    if (name.includes('sony')) return 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=120&auto=format&fit=crop';
+    if (name.includes('microsoft')) return 'https://images.unsplash.com/photo-1625014618427-fbc980b974f5?q=80&w=120&auto=format&fit=crop';
+    if (name.includes('xiaomi') || name.includes('mi')) return 'https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?q=80&w=120&auto=format&fit=crop';
+    return null;
   };
 
   // Filter brands based on URL route category and search term
@@ -107,24 +110,33 @@ export default function SellCategoryBrandsPage({ params }: { params: { category:
 
         {/* Brand Cards Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-          {filteredBrands.map((b: any) => (
-            <Link 
-              href={`/sell/${encodeURIComponent(decodedCategory)}/${encodeURIComponent(b.name)}`}
-              key={b.id}
-              className="bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-sellifyTeal-500 hover:shadow-md transition flex flex-col justify-between items-center group overflow-hidden h-[150px]"
-            >
-              <div className="w-full h-20 rounded-xl overflow-hidden bg-slate-50/50 flex items-center justify-center border border-slate-100/50">
-                <img 
-                  src={getBrandLogo(b.name)} 
-                  alt={b.name} 
-                  className="h-12 w-auto object-contain transform group-hover:scale-105 transition"
-                />
-              </div>
-              <span className="font-extrabold text-xs text-[#0c213a] mt-2 block text-center group-hover:text-sellifyTeal-600 transition">
-                {b.name}
-              </span>
-            </Link>
-          ))}
+          {filteredBrands.map((b: any) => {
+            const logoSrc = (b.logoUrl && b.logoUrl.startsWith('http')) ? b.logoUrl : getBrandLogo(b.name);
+            return (
+              <Link 
+                href={`/sell/${encodeURIComponent(decodedCategory)}/${encodeURIComponent(b.name)}`}
+                key={b.id}
+                className="bg-white p-6 rounded-2xl border border-slate-200/80 hover:border-sellifyTeal-500 hover:shadow-md transition flex flex-col justify-between items-center group overflow-hidden h-[150px]"
+              >
+                <div className="w-full h-20 rounded-xl overflow-hidden bg-slate-50/50 flex items-center justify-center border border-slate-100/50">
+                  {logoSrc ? (
+                    <img 
+                      src={logoSrc} 
+                      alt={b.name} 
+                      className="h-12 w-auto object-contain transform group-hover:scale-105 transition"
+                    />
+                  ) : (
+                    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-[#0c213a] font-black text-xs uppercase tracking-wider select-none p-1 text-center">
+                      {b.name}
+                    </div>
+                  )}
+                </div>
+                <span className="font-extrabold text-xs text-[#0c213a] mt-2 block text-center group-hover:text-sellifyTeal-600 transition">
+                  {b.name}
+                </span>
+              </Link>
+            );
+          })}
           {filteredBrands.length === 0 && (
             <div className="col-span-full py-16 text-center text-slate-400">
               <span className="text-4xl block mb-2">🔍</span>
