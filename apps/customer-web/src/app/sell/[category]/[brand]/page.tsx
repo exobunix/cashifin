@@ -341,7 +341,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
         {/* Dynamic Grid list with actual product images */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-5">
           {filteredModels.map((m, idx) => {
-            const deviceUrl = m.imageUrl || getDeviceImage(decodedBrand, decodedCategory, idx);
+            const deviceUrl = (m.imageUrl && m.imageUrl.startsWith('http')) ? m.imageUrl : getDeviceImage(decodedBrand, decodedCategory, idx);
             return (
               <div
                 key={m.id}
@@ -414,19 +414,6 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                         </div>
                       ))}
                   </div>
-
-                  <div className="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between mt-4">
-                    <div>
-                      <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Estimated Valuation</span>
-                      <p className="text-xl font-black text-emerald-400">₹{currentQuote.toLocaleString()}</p>
-                    </div>
-                    <button 
-                      onClick={() => setWizardStep(2)}
-                      className="px-4 py-2 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-lg font-bold"
-                    >
-                      Continue to Checkout →
-                    </button>
-                  </div>
                 </div>
               )}
 
@@ -455,19 +442,6 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                       </select>
                     </div>
                   </div>
-
-                  <div className="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between">
-                    <div>
-                      <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Final Resale Price</span>
-                      <p className="text-lg font-black text-sellifyTeal-600">₹{currentQuote.toLocaleString()}</p>
-                    </div>
-                    <button 
-                      onClick={handlePlaceOrder}
-                      className="px-5 py-2.5 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-lg font-bold"
-                    >
-                      Book Doorstep Pickup
-                    </button>
-                  </div>
                 </div>
               )}
 
@@ -488,6 +462,37 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
                 </div>
               )}
             </div>
+
+            {/* Fixed Bottom Valuation Bar (outside of scrollable region) */}
+            {wizardStep === 1 && (
+              <div className="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between mt-4 shrink-0">
+                <div>
+                  <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Estimated Valuation</span>
+                  <p className="text-xl font-black text-emerald-400">₹{currentQuote.toLocaleString()}</p>
+                </div>
+                <button 
+                  onClick={() => setWizardStep(2)}
+                  className="px-4 py-2 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-lg font-bold"
+                >
+                  Continue to Checkout →
+                </button>
+              </div>
+            )}
+
+            {wizardStep === 2 && (
+              <div className="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between mt-4 shrink-0">
+                <div>
+                  <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Final Resale Price</span>
+                  <p className="text-lg font-black text-sellifyTeal-600">₹{currentQuote.toLocaleString()}</p>
+                </div>
+                <button 
+                  onClick={handlePlaceOrder}
+                  className="px-5 py-2.5 bg-sellifyTeal-500 hover:bg-sellifyTeal-600 text-white rounded-lg font-bold"
+                >
+                  Book Doorstep Pickup
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

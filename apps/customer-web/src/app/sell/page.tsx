@@ -65,7 +65,7 @@ export default function SellCategoriesLandingPage() {
               >
                 <div className="w-full h-44 rounded-2xl overflow-hidden bg-slate-50 flex items-center justify-center border border-slate-100">
                   <img 
-                    src={cat.imageUrl || getCategoryImg(cat.name)} 
+                    src={(cat.imageUrl && cat.imageUrl.startsWith('http')) ? cat.imageUrl : getCategoryImg(cat.name)} 
                     alt={cat.name} 
                     className="h-36 w-auto object-contain transform group-hover:scale-105 transition duration-300"
                   />
