@@ -18,6 +18,21 @@ export default function BrandsPage() {
   const [editCat, setEditCat] = useState('');
   const [editLogoUrl, setEditLogoUrl] = useState('');
 
+  const handleImageFileChange = (e: React.ChangeEvent<HTMLInputElement>, isEdit: boolean) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        if (isEdit) {
+          setEditLogoUrl(reader.result as string);
+        } else {
+          setNewLogoUrl(reader.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const loadData = () => {
     fetch('/api/brands')
       .then(res => res.json())
@@ -187,7 +202,27 @@ export default function BrandsPage() {
               <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Brand Name</label><input type="text" value={newName} onChange={e => setNewName(e.target.value)} className="p-2 border rounded" required /></div>
               <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Slug</label><input type="text" value={newSlug} onChange={e => setNewSlug(e.target.value)} className="p-2 border rounded font-mono" placeholder="nothing" required /></div>
               <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Applicable Category</label><input type="text" value={newCat} onChange={e => setNewCat(e.target.value)} className="p-2 border rounded" placeholder="Smartphones" required /></div>
-              <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Logo URL</label><input type="text" value={newLogoUrl} onChange={e => setNewLogoUrl(e.target.value)} className="p-2 border rounded" placeholder="https://images.unsplash.com/..." /></div>
+              
+              <div className="flex flex-col">
+                <label className="font-bold text-slate-400 mb-1">Logo Preview & Upload</label>
+                <div className="flex items-center space-x-3 mt-1 mb-2">
+                  <div className="w-14 h-14 rounded-lg border bg-slate-50 flex items-center justify-center overflow-hidden shrink-0">
+                    {newLogoUrl ? (
+                      <img src={newLogoUrl} alt="Preview" className="max-h-full max-w-full object-contain" />
+                    ) : (
+                      <span className="text-[10px] text-slate-350">No Logo</span>
+                    )}
+                  </div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => handleImageFileChange(e, false)}
+                    className="text-xs text-slate-500 file:mr-2 file:py-1 file:px-2 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
+                  />
+                </div>
+                <input type="text" value={newLogoUrl} onChange={e => setNewLogoUrl(e.target.value)} className="p-2 border rounded text-[10px] text-slate-450" placeholder="Or paste logo URL" />
+              </div>
+
               <div className="flex justify-end space-x-2 pt-3"><button type="button" onClick={() => setShowAddModal(false)} className="px-3 py-1.5 bg-slate-100 rounded font-bold">Cancel</button><button type="submit" className="px-3 py-1.5 bg-emerald-500 text-white rounded font-bold">Save</button></div>
             </form>
           </div>
@@ -202,7 +237,27 @@ export default function BrandsPage() {
               <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Brand Name</label><input type="text" value={editName} onChange={e => setEditName(e.target.value)} className="p-2 border rounded" required /></div>
               <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Slug</label><input type="text" value={editSlug} onChange={e => setEditSlug(e.target.value)} className="p-2 border rounded font-mono" required /></div>
               <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Categories (Comma separated)</label><input type="text" value={editCat} onChange={e => setEditCat(e.target.value)} className="p-2 border rounded" required /></div>
-              <div className="flex flex-col"><label className="font-bold text-slate-400 mb-1">Logo URL</label><input type="text" value={editLogoUrl} onChange={e => setEditLogoUrl(e.target.value)} className="p-2 border rounded" required /></div>
+              
+              <div className="flex flex-col">
+                <label className="font-bold text-slate-400 mb-1">Logo Preview & Upload</label>
+                <div className="flex items-center space-x-3 mt-1 mb-2">
+                  <div className="w-14 h-14 rounded-lg border bg-slate-50 flex items-center justify-center overflow-hidden shrink-0">
+                    {editLogoUrl ? (
+                      <img src={editLogoUrl} alt="Preview" className="max-h-full max-w-full object-contain" />
+                    ) : (
+                      <span className="text-[10px] text-slate-350">No Logo</span>
+                    )}
+                  </div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => handleImageFileChange(e, true)}
+                    className="text-xs text-slate-500 file:mr-2 file:py-1 file:px-2 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
+                  />
+                </div>
+                <input type="text" value={editLogoUrl} onChange={e => setEditLogoUrl(e.target.value)} className="p-2 border rounded text-[10px] text-slate-450" placeholder="Or paste logo URL" />
+              </div>
+
               <div className="flex justify-end space-x-2 pt-3"><button type="button" onClick={() => setEditingBrand(null)} className="px-3 py-1.5 bg-slate-100 rounded font-bold">Cancel</button><button type="submit" className="px-3 py-1.5 bg-emerald-500 text-white rounded font-bold">Update</button></div>
             </form>
           </div>
