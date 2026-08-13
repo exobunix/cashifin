@@ -131,6 +131,13 @@ export default function RoutePage() {
   const totalGateway = gatewayPayments.reduce((acc: number, curr: any) => acc + (curr.amount || 0), 0);
   const totalBank = bankPayments.filter((p: any) => p.status === 'Success').reduce((acc: number, curr: any) => acc + (curr.amount || 0), 0);
 
+  const getScreenshotUrl = (screenshot: string) => {
+    if (screenshot && screenshot.startsWith('http') && !screenshot.startsWith('blob')) {
+      return screenshot;
+    }
+    return 'https://images.unsplash.com/photo-1628157582853-a796fa650a6a?q=80&w=300&auto=format&fit=crop';
+  };
+
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
@@ -247,7 +254,7 @@ export default function RoutePage() {
                         <td className="p-4">
                           {p.screenshot ? (
                             <button 
-                              onClick={() => setPreviewImage(p.screenshot)}
+                              onClick={() => setPreviewImage(getScreenshotUrl(p.screenshot))}
                               className="text-blue-500 hover:underline text-[10px] font-black cursor-pointer"
                             >
                               👁 Preview Receipt
@@ -303,10 +310,10 @@ export default function RoutePage() {
                       <div className="flex items-center gap-4 shrink-0">
                         {t.screenshot && (
                           <button 
-                            onClick={() => setPreviewImage(t.screenshot)}
+                            onClick={() => setPreviewImage(getScreenshotUrl(t.screenshot))}
                             className="p-1 border rounded-lg hover:border-[#39b54a] transition cursor-pointer"
                           >
-                            <img src={t.screenshot} alt="Receipt preview" className="h-14 w-20 object-cover rounded" />
+                            <img src={getScreenshotUrl(t.screenshot)} alt="Receipt preview" className="h-14 w-20 object-cover rounded" />
                           </button>
                         )}
                         
