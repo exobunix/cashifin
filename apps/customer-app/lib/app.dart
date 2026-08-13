@@ -28,8 +28,8 @@ class CashifyUserApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF39B54A),
-          primary: const Color(0xFF39B54A),
+          seedColor: const Color(0xFF0D9488),
+          primary: const Color(0xFF0D9488),
           secondary: const Color(0xFF0C213A),
           background: const Color(0xFFF8FAFC),
         ),
@@ -313,7 +313,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                       width: double.infinity,
                       height: 48,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                        style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                         onPressed: () {
                           if (phoneController.text.trim().length >= 10) {
                             setSheetState(() {
@@ -342,7 +342,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                       width: double.infinity,
                       height: 48,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                        style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                         onPressed: () async {
                           final phone = phoneController.text.trim();
                           setSheetState(() => errorMsg = '');
@@ -461,7 +461,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                     width: double.infinity,
                     height: 48,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                       onPressed: () async {
                         final name = nameController.text.trim();
                         final email = emailController.text.trim();
@@ -527,7 +527,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator(color: Color(0xFF39B54A))),
+        body: Center(child: CircularProgressIndicator(color: Color(0xFF0D9488))),
       );
     }
 
@@ -622,7 +622,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                 child: Container(
                   padding: const EdgeInsets.all(2),
                   decoration: const BoxDecoration(
-                    color: Color(0xFF39B54A),
+                    color: Color(0xFF0D9488),
                     shape: BoxShape.circle,
                   ),
                   constraints: const BoxConstraints(
@@ -661,7 +661,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
             _currentIndex = 2; // Direct Sell Flow
           });
         },
-        backgroundColor: const Color(0xFF39B54A),
+        backgroundColor: const Color(0xFF0D9488),
         shape: const CircleBorder(),
         child: const Icon(Icons.swap_horizontal_circle_outlined, color: Colors.white, size: 30),
       ),
@@ -705,14 +705,14 @@ class _MainTabContainerState extends State<MainTabContainer> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: isSelected ? const Color(0xFF39B54A) : Colors.grey, size: 22),
+            Icon(icon, color: isSelected ? const Color(0xFF0D9488) : Colors.grey, size: 22),
             const SizedBox(height: 2),
             Text(
               label,
               style: TextStyle(
                 fontSize: 9,
                 fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
-                color: isSelected ? const Color(0xFF39B54A) : Colors.grey,
+                color: isSelected ? const Color(0xFF0D9488) : Colors.grey,
               ),
             )
           ],
@@ -833,7 +833,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                           ),
                           children: [
                             TextSpan(text: 'Sell Your Device\nin '),
-                            TextSpan(text: '60 Seconds', style: TextStyle(color: Color(0xFF39B54A))),
+                            TextSpan(text: '60 Seconds', style: TextStyle(color: Color(0xFF0D9488))),
                           ],
                         ),
                       ),
@@ -1110,7 +1110,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                         _currentIndex = 2;
                       });
                     },
-                    child: const Text('View All >', style: TextStyle(color: Color(0xFF39B54A), fontSize: 11, fontWeight: FontWeight.bold)),
+                    child: const Text('View All >', style: TextStyle(color: Color(0xFF0D9488), fontSize: 11, fontWeight: FontWeight.bold)),
                   )
                 ],
               ),
@@ -1218,7 +1218,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.card_giftcard, color: Color(0xFF39B54A), size: 20),
+                  const Icon(Icons.card_giftcard, color: Color(0xFF0D9488), size: 20),
                   const SizedBox(width: 10),
                   const Expanded(
                     child: Column(
@@ -1234,7 +1234,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: const Color(0xFF39B54A), style: BorderStyle.solid),
+                      border: Border.all(color: const Color(0xFF0D9488), style: BorderStyle.solid),
                     ),
                     child: const Row(
                       children: [
@@ -1243,12 +1243,12 @@ class _MainTabContainerState extends State<MainTabContainer> {
                           style: TextStyle(
                             fontSize: 9,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF39B54A),
+                            color: Color(0xFF0D9488),
                             letterSpacing: 0.5,
                           ),
                         ),
                         SizedBox(width: 6),
-                        Icon(Icons.copy, color: Color(0xFF39B54A), size: 10),
+                        Icon(Icons.copy, color: Color(0xFF0D9488), size: 10),
                       ],
                     ),
                   )
@@ -1306,10 +1306,10 @@ class _MainTabContainerState extends State<MainTabContainer> {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: const Color(0xFF39B54A).withOpacity(0.08),
+                color: const Color(0xFF0D9488).withOpacity(0.08),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: const Color(0xFF39B54A), size: 18),
+              child: Icon(icon, color: const Color(0xFF0D9488), size: 18),
             ),
             Positioned(
               right: 0,
@@ -1351,7 +1351,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF39B54A))),
+              child: const Text('OK', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF0D9488))),
             )
           ],
         );
@@ -1429,8 +1429,8 @@ class _MainTabContainerState extends State<MainTabContainer> {
                 child: FilterChip(
                   label: Text(s, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11)),
                   selected: isSelected,
-                  selectedColor: const Color(0xFF39B54A).withOpacity(0.15),
-                  checkmarkColor: const Color(0xFF39B54A),
+                  selectedColor: const Color(0xFF0D9488).withOpacity(0.15),
+                  checkmarkColor: const Color(0xFF0D9488),
                   onSelected: (_) {
                     setState(() {
                       _refurbishedScope = s;
@@ -1480,7 +1480,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
             const SizedBox(height: 8),
             Text(m['name'] ?? '', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w900, color: Color(0xFF0C213A)), textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis),
             const SizedBox(height: 4),
-            Text(m['basePrice'] ?? '₹35,000', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w900, color: Color(0xFF39B54A))),
+            Text(m['basePrice'] ?? '₹35,000', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w900, color: Color(0xFF0D9488))),
           ],
         ),
       ),
@@ -1668,7 +1668,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
                             const SizedBox(height: 8),
                             Text(m['name'] ?? '', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w900, color: Color(0xFF0C213A)), textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis),
                             const SizedBox(height: 4),
-                            Text(m['basePrice'] ?? '₹35,000', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w900, color: Color(0xFF39B54A))),
+                            Text(m['basePrice'] ?? '₹35,000', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w900, color: Color(0xFF0D9488))),
                           ],
                         ),
                       ),
@@ -1729,8 +1729,8 @@ class _MainTabContainerState extends State<MainTabContainer> {
                     children: [
                       Container(
                         padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(color: const Color(0xFF39B54A).withOpacity(0.08), shape: BoxShape.circle),
-                        child: Icon(icon, color: const Color(0xFF39B54A), size: 28),
+                        decoration: BoxDecoration(color: const Color(0xFF0D9488).withOpacity(0.08), shape: BoxShape.circle),
+                        child: Icon(icon, color: const Color(0xFF0D9488), size: 28),
                       ),
                       const SizedBox(height: 10),
                       Text(catName, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w900, color: Color(0xFF0C213A))),
@@ -1761,7 +1761,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
               const Text('Log in with your phone number to check pending doorstep pickup orders.', style: TextStyle(color: Colors.grey, fontSize: 12), textAlign: TextAlign.center),
               const SizedBox(height: 16),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                 onPressed: _showLoginSheet,
                 child: const Text('Log In Now', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
               ),
@@ -1807,15 +1807,15 @@ class _MainTabContainerState extends State<MainTabContainer> {
                     Text(o['id'] ?? 'ORD-XXXX', style: const TextStyle(fontFamily: 'monospace', fontWeight: FontWeight.bold, fontSize: 12, color: Colors.grey)),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(color: const Color(0xFF39B54A).withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
-                      child: Text(o['status'] ?? 'Scheduled', style: const TextStyle(color: Color(0xFF39B54A), fontSize: 10, fontWeight: FontWeight.w900)),
+                      decoration: BoxDecoration(color: const Color(0xFF0D9488).withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
+                      child: Text(o['status'] ?? 'Scheduled', style: const TextStyle(color: Color(0xFF0D9488), fontSize: 10, fontWeight: FontWeight.w900)),
                     ),
                   ],
                 ),
                 const SizedBox(height: 8),
                 Text(o['device'] ?? '', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 14, color: Color(0xFF0C213A))),
                 const SizedBox(height: 4),
-                Text('Payout: ${o['price']}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Color(0xFF39B54A))),
+                Text('Payout: ${o['price']}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Color(0xFF0D9488))),
                 const Divider(height: 20),
                 Text('📅 Slot: ${o['slot'] ?? 'Tomorrow, 10:00 AM - 01:00 PM'}', style: const TextStyle(color: Colors.grey, fontSize: 10, fontWeight: FontWeight.bold)),
               ],
@@ -1831,7 +1831,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        const Icon(Icons.support_agent, size: 60, color: Color(0xFF39B54A)),
+        const Icon(Icons.support_agent, size: 60, color: Color(0xFF0D9488)),
         const SizedBox(height: 12),
         const Center(
           child: Text('Cashifin Support Center', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: Color(0xFF0C213A))),
@@ -1849,21 +1849,21 @@ class _MainTabContainerState extends State<MainTabContainer> {
             child: Column(
               children: [
                 ListTile(
-                  leading: const Icon(Icons.phone, color: Color(0xFF39B54A)),
+                  leading: const Icon(Icons.phone, color: Color(0xFF0D9488)),
                   title: const Text('Hotline Phone Support', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
                   subtitle: const Text('1800-123-4567 (Toll-Free)', style: TextStyle(fontSize: 11)),
                   onTap: () {},
                 ),
                 const Divider(),
                 ListTile(
-                  leading: const Icon(Icons.email, color: Color(0xFF39B54A)),
+                  leading: const Icon(Icons.email, color: Color(0xFF0D9488)),
                   title: const Text('Official Operations Support', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
                   subtitle: const Text('support@cashifin.in', style: TextStyle(fontSize: 11)),
                   onTap: () {},
                 ),
                 const Divider(),
                 ListTile(
-                  leading: const Icon(Icons.location_on, color: Color(0xFF39B54A)),
+                  leading: const Icon(Icons.location_on, color: Color(0xFF0D9488)),
                   title: const Text('Headquarters', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
                   subtitle: const Text('Sector 62, Noida, Uttar Pradesh, India', style: TextStyle(fontSize: 11)),
                   onTap: () {},
@@ -1892,7 +1892,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
               const Text('Save addresses and track instant circular payouts.', style: TextStyle(color: Colors.grey, fontSize: 12), textAlign: TextAlign.center),
               const SizedBox(height: 16),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                 onPressed: _showLoginSheet,
                 child: const Text('Access Account', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
               ),
@@ -1911,7 +1911,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
         Center(
           child: Column(
             children: [
-              CircleAvatar(radius: 35, backgroundColor: const Color(0xFF39B54A), child: Text(initials.isNotEmpty ? initials : 'AS', style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold))),
+              CircleAvatar(radius: 35, backgroundColor: const Color(0xFF0D9488), child: Text(initials.isNotEmpty ? initials : 'AS', style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold))),
               const SizedBox(height: 8),
               Text(name, style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16, color: Color(0xFF0C213A))),
               Text(_user!['phone'] ?? '', style: const TextStyle(color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w600)),
@@ -1947,7 +1947,7 @@ class _MainTabContainerState extends State<MainTabContainer> {
 
   Widget _buildProfileTile(IconData icon, String title, String val) {
     return ListTile(
-      leading: Icon(icon, color: const Color(0xFF39B54A)),
+      leading: Icon(icon, color: const Color(0xFF0D9488)),
       title: Text(title, style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 12, color: Color(0xFF0C213A))),
       subtitle: Text(val, style: const TextStyle(fontSize: 11, color: Colors.grey)),
     );
@@ -2256,12 +2256,12 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
                                   padding: const EdgeInsets.symmetric(horizontal: 4),
                                   child: OutlinedButton(
                                     style: OutlinedButton.styleFrom(
-                                      backgroundColor: active ? const Color(0xFF39B54A).withOpacity(0.1) : Colors.white,
-                                      side: BorderSide(color: active ? const Color(0xFF39B54A) : Colors.grey.shade300),
+                                      backgroundColor: active ? const Color(0xFF0D9488).withOpacity(0.1) : Colors.white,
+                                      side: BorderSide(color: active ? const Color(0xFF0D9488) : Colors.grey.shade300),
                                       padding: const EdgeInsets.symmetric(vertical: 4),
                                     ),
                                     onPressed: () => setState(() => _answers[text] = optText),
-                                    child: Text(optText, style: TextStyle(color: active ? const Color(0xFF39B54A) : Colors.black87, fontWeight: FontWeight.bold, fontSize: 10)),
+                                    child: Text(optText, style: TextStyle(color: active ? const Color(0xFF0D9488) : Colors.black87, fontWeight: FontWeight.bold, fontSize: 10)),
                                   ),
                                 ),
                               );
@@ -2289,7 +2289,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
                     ],
                   ),
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                     onPressed: () {
                       if (widget.flowMode == 'inspection') {
                         setState(() => _wizardStep = 4);
@@ -2315,7 +2315,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.calculate_outlined, size: 70, color: Color(0xFF39B54A)),
+            const Icon(Icons.calculate_outlined, size: 70, color: Color(0xFF0D9488)),
             const SizedBox(height: 16),
             const Text('Inspection Valuation', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Color(0xFF0C213A))),
             const SizedBox(height: 8),
@@ -2330,13 +2330,13 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
               decoration: BoxDecoration(
                 color: const Color(0xFFE8F5E9),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: const Color(0xFF39B54A)),
+                border: Border.all(color: const Color(0xFF0D9488)),
               ),
               child: Column(
                 children: [
                   const Text('ESTIMATED DEVICE VALUE', style: TextStyle(color: Colors.grey, fontSize: 10, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text('₹${_calculateQuote().toLocaleString()}', style: const TextStyle(color: Color(0xFF39B54A), fontSize: 24, fontWeight: FontWeight.w950)),
+                  Text('₹${_calculateQuote().toLocaleString()}', style: const TextStyle(color: Color(0xFF0D9488), fontSize: 24, fontWeight: FontWeight.w950)),
                 ],
               ),
             ),
@@ -2345,7 +2345,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
                 onPressed: () {
                   widget.onCancel(); // Reset flow back to home!
                 },
@@ -2426,7 +2426,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
                     ],
                   ),
                   ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A)),
+                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488)),
                     onPressed: _handlePlaceOrder,
                     child: const Text('Book Order', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                   )
@@ -2444,7 +2444,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.verified, size: 70, color: Color(0xFF39B54A)),
+          const Icon(Icons.verified, size: 70, color: Color(0xFF0D9488)),
           const SizedBox(height: 16),
           const Text('Evaluation Booked!', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Color(0xFF0C213A))),
           const SizedBox(height: 8),
@@ -2458,7 +2458,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
             width: double.infinity,
             height: 48,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
+              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
               onPressed: () {
                 widget.onComplete({
                   'id': 'ORD-CONFIRMED',
@@ -2631,7 +2631,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         width: _slideIndex == i ? 18 : 8,
                         height: 8,
                         decoration: BoxDecoration(
-                          color: _slideIndex == i ? const Color(0xFF39B54A) : Colors.grey.shade300,
+                          color: _slideIndex == i ? const Color(0xFF0D9488) : Colors.grey.shade300,
                           borderRadius: BorderRadius.circular(4),
                         ),
                       );
@@ -2649,7 +2649,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF39B54A),
+                      backgroundColor: const Color(0xFF0D9488),
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                       shape: RoundedRectangleBorder(
@@ -2807,7 +2807,7 @@ class _RefurbishedPurchaseWizardState extends State<RefurbishedPurchaseWizard> {
                   const SizedBox(height: 4),
                   Text(
                     widget.model['basePrice'] ?? widget.model['price'] ?? '₹18,500',
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Color(0xFF39B54A)),
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Color(0xFF0D9488)),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
@@ -2826,7 +2826,7 @@ class _RefurbishedPurchaseWizardState extends State<RefurbishedPurchaseWizard> {
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                 onPressed: () {
                   if (widget.user == null) {
                     widget.onLoginRequired();
@@ -2899,7 +2899,7 @@ class _RefurbishedPurchaseWizardState extends State<RefurbishedPurchaseWizard> {
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                 onPressed: _handlePlaceOrder,
                 child: const Text('Place Purchase Order', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
               ),
@@ -2915,7 +2915,7 @@ class _RefurbishedPurchaseWizardState extends State<RefurbishedPurchaseWizard> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.verified, size: 70, color: Color(0xFF39B54A)),
+          const Icon(Icons.verified, size: 70, color: Color(0xFF0D9488)),
           const SizedBox(height: 16),
           const Text('Purchase Ordered!', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Color(0xFF0C213A))),
           const SizedBox(height: 8),
@@ -2929,7 +2929,7 @@ class _RefurbishedPurchaseWizardState extends State<RefurbishedPurchaseWizard> {
             width: double.infinity,
             height: 48,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
+              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
               onPressed: () {
                 widget.onComplete({
                   'id': 'PUR-ORDER',
@@ -2952,7 +2952,7 @@ class _RefurbishedPurchaseWizardState extends State<RefurbishedPurchaseWizard> {
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         children: [
-          Icon(icon, color: const Color(0xFF39B54A), size: 18),
+          Icon(icon, color: const Color(0xFF0D9488), size: 18),
           const SizedBox(width: 8),
           Text(text, style: const TextStyle(fontSize: 12, color: Colors.black87, fontWeight: FontWeight.w500)),
         ],
