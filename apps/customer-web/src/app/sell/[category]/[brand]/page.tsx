@@ -254,10 +254,16 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
     const newOrder = {
       id: orderId,
       customer: custName,
+      customerName: custName,
+      customerPhone: custPhone,
+      customerAddress: custAddress,
+      phone: custPhone,
+      address: custAddress,
       device: `${activeModel.name} (${decodedBrand})`,
       price: `₹${currentQuote.toLocaleString()}`,
       status: 'Pending',
       partner: 'Rohit Sharma',
+      answers: answers,
       date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
     };
 

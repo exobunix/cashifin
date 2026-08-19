@@ -5045,7 +5045,7 @@
     {
       "id": "logos_config",
       "userLogo": "/logo.jpg",
-      "partnerLogo": "https://ik.imagekit.io/v8swalwfs/Cashifin/migrated_image_28_xjdNth8oo.jpg",
+      "partnerLogo": "/logo.jpg",
       "adminLogo": "/logo.jpg"
     }
   ],

@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://adarshsachan7071_db_user:toj0g2ENBYpIwXRG@cashifin.axlotxp.mongodb.net/?appName=cashifin';
 
 async function connectToMongo() {
   if (mongoose.connection.readyState >= 1) return true;
-  // Set a 3-second timeout for mongoose connection to fail fast and fall back
   await mongoose.connect(MONGODB_URI, {
     serverSelectionTimeoutMS: 3000,
     connectTimeoutMS: 3000,
@@ -16,14 +16,34 @@ async function connectToMongo() {
 }
 
 function getDbJsonPath() {
+  const tmpDir = os.tmpdir();
+  const tmpPath = path.join(tmpDir, 'cashify_db.json');
+  
+  if (fs.existsSync(tmpPath)) {
+    return tmpPath;
+  }
+
   const cwd = process.cwd();
-  let p = path.join(cwd, '../../db.json');
-  if (fs.existsSync(p)) return p;
-  p = path.join(cwd, '../db.json');
-  if (fs.existsSync(p)) return p;
-  p = path.join(cwd, 'db.json');
-  if (fs.existsSync(p)) return p;
-  return 'd:\\all apps\\Cashify\\db.json';
+  let originalPath = path.join(cwd, '../../db.json');
+  if (!fs.existsSync(originalPath)) {
+    originalPath = path.join(cwd, '../db.json');
+  }
+  if (!fs.existsSync(originalPath)) {
+    originalPath = path.join(cwd, 'db.json');
+  }
+  if (!fs.existsSync(originalPath)) {
+    originalPath = 'd:\\all apps\\Cashify\\db.json';
+  }
+
+  try {
+    if (fs.existsSync(originalPath)) {
+      fs.copyFileSync(originalPath, tmpPath);
+      return tmpPath;
+    }
+  } catch (e) {
+    console.error('Failed to copy to temp directory', e);
+  }
+  return originalPath;
 }
 
 function readFromDbJson(entity: string) {
@@ -58,7 +78,11 @@ function writeToDbJson(entity: string, action: string, payload: any) {
     }
   }
 
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch (e) {
+    console.error('Failed to write back to db file', e);
+  }
   return data[entity];
 }
 
@@ -85,7 +109,6 @@ export async function GET(
     const data = await collection.find({}).toArray();
     return NextResponse.json(data, { headers: corsHeaders() });
   } catch (err: any) {
-    // Fail-safe fallback to db.json
     try {
       const data = readFromDbJson(entity);
       return NextResponse.json(data, { headers: corsHeaders() });
@@ -131,7 +154,6 @@ export async function POST(
     const data = await collection.find({}).toArray();
     return NextResponse.json({ success: true, data }, { headers: corsHeaders() });
   } catch (err: any) {
-    // Fail-safe fallback to db.json
     try {
       const body = await req.json().catch(() => ({}));
       const action = body.action || 'create';

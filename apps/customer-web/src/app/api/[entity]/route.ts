@@ -1,12 +1,89 @@
 import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
 
-// Fallback URI if environment variable is not defined
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://adarshsachan7071_db_user:toj0g2ENBYpIwXRG@cashifin.axlotxp.mongodb.net/?appName=cashifin';
 
 async function connectToMongo() {
-  if (mongoose.connection.readyState >= 1) return;
-  await mongoose.connect(MONGODB_URI);
+  if (mongoose.connection.readyState >= 1) return true;
+  await mongoose.connect(MONGODB_URI, {
+    serverSelectionTimeoutMS: 3000,
+    connectTimeoutMS: 3000,
+  } as any);
+  return true;
+}
+
+function getDbJsonPath() {
+  const tmpDir = os.tmpdir();
+  const tmpPath = path.join(tmpDir, 'cashify_db.json');
+  
+  if (fs.existsSync(tmpPath)) {
+    return tmpPath;
+  }
+
+  const cwd = process.cwd();
+  let originalPath = path.join(cwd, '../../db.json');
+  if (!fs.existsSync(originalPath)) {
+    originalPath = path.join(cwd, '../db.json');
+  }
+  if (!fs.existsSync(originalPath)) {
+    originalPath = path.join(cwd, 'db.json');
+  }
+  if (!fs.existsSync(originalPath)) {
+    originalPath = 'd:\\all apps\\Cashify\\db.json';
+  }
+
+  try {
+    if (fs.existsSync(originalPath)) {
+      fs.copyFileSync(originalPath, tmpPath);
+      return tmpPath;
+    }
+  } catch (e) {
+    console.error('Failed to copy to temp directory', e);
+  }
+  return originalPath;
+}
+
+function readFromDbJson(entity: string) {
+  const filePath = getDbJsonPath();
+  if (!fs.existsSync(filePath)) return [];
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(fileContent);
+  return data[entity] || [];
+}
+
+function writeToDbJson(entity: string, action: string, payload: any) {
+  const filePath = getDbJsonPath();
+  if (!fs.existsSync(filePath)) return [];
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(fileContent);
+  if (!data[entity]) data[entity] = [];
+
+  if (action === 'create') {
+    data[entity].push(payload);
+  } else if (action === 'update') {
+    const filterKey = payload.id !== undefined ? 'id' : payload.code !== undefined ? 'code' : null;
+    if (filterKey) {
+      const idx = data[entity].findIndex((item: any) => item[filterKey] === payload[filterKey]);
+      if (idx !== -1) {
+        data[entity][idx] = { ...data[entity][idx], ...payload };
+      }
+    }
+  } else if (action === 'delete') {
+    const idToDelete = payload.id || payload.code;
+    if (idToDelete) {
+      data[entity] = data[entity].filter((item: any) => item.id !== idToDelete && item.code !== idToDelete);
+    }
+  }
+
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch (e) {
+    console.error('Failed to write back to db file', e);
+  }
+  return data[entity];
 }
 
 function corsHeaders() {
@@ -32,7 +109,12 @@ export async function GET(
     const data = await collection.find({}).toArray();
     return NextResponse.json(data, { headers: corsHeaders() });
   } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500, headers: corsHeaders() });
+    try {
+      const data = readFromDbJson(entity);
+      return NextResponse.json(data, { headers: corsHeaders() });
+    } catch (fallbackErr: any) {
+      return NextResponse.json({ error: err.message, fallbackError: fallbackErr.message }, { status: 500, headers: corsHeaders() });
+    }
   }
 }
 
@@ -72,6 +154,15 @@ export async function POST(
     const data = await collection.find({}).toArray();
     return NextResponse.json({ success: true, data }, { headers: corsHeaders() });
   } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500, headers: corsHeaders() });
+    try {
+      const body = await req.json().catch(() => ({}));
+      const action = body.action || 'create';
+      const payload = action === 'delete' ? { id: body.id } : body.item;
+      const data = writeToDbJson(entity, action, payload);
+      return NextResponse.json({ success: true, data }, { headers: corsHeaders() });
+    } catch (fallbackErr: any) {
+      return NextResponse.json({ error: err.message, fallbackError: fallbackErr.message }, { status: 500, headers: corsHeaders() });
+    }
   }
 }
+export const dynamic = 'force-dynamic';
