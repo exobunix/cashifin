@@ -12,7 +12,7 @@ export default function IncomingOrders() {
     fetch('/api/orders')
       .then(res => res.json())
       .then(data => {
-        if (Array.isArray(data) && !data.error) {
+        if (Array.isArray(data)) {
           // Filter for all orders assigned to MobileHub Store (any suffix) regardless of status
           const partnerOrders = data.filter(o => 
             (o.partner && o.partner.toLowerCase().includes('mobilehub store'))
