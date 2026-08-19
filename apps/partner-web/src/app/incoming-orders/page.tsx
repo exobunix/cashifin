@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function IncomingOrders() {
   const [orders, setOrders] = useState<any[]>([]);
@@ -11,11 +12,10 @@ export default function IncomingOrders() {
     fetch('/api/orders')
       .then(res => res.json())
       .then(data => {
-        if (Array.isArray(data)) {
-          // Filter for orders assigned to MobileHub Store (any suffix) and status is Pending or Assigned
+        if (Array.isArray(data) && !data.error) {
+          // Filter for all orders assigned to MobileHub Store (any suffix) regardless of status
           const partnerOrders = data.filter(o => 
-            (o.partner && o.partner.toLowerCase().includes('mobilehub store')) && 
-            ['Pending', 'Assigned'].includes(o.status)
+            (o.partner && o.partner.toLowerCase().includes('mobilehub store'))
           );
           
           setOrders(partnerOrders);
@@ -51,7 +51,7 @@ export default function IncomingOrders() {
       });
       const data = await res.json();
       if (data.success) {
-        alert(`Order ${id} has been ${action}ed!`);
+        alert(`Order ${id} has been ${action}ed successfully!`);
         fetchOrders();
       }
     } catch (e) {
@@ -60,12 +60,34 @@ export default function IncomingOrders() {
     }
   };
 
+  const handleUpdateStatus = async (orderId: string, newStatus: string) => {
+    const orderToUpdate = orders.find(o => o.id === orderId);
+    if (!orderToUpdate) return;
+    const updatedOrder = { ...orderToUpdate, status: newStatus };
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'update', item: updatedOrder })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setOrders(prev => prev.map(o => o.id === orderId ? updatedOrder : o));
+        setSelectedOrderDetails(updatedOrder);
+        alert(`Status updated to ${newStatus}!`);
+      }
+    } catch (e) {
+      console.error(e);
+      alert('Failed to update status.');
+    }
+  };
+
   return (
     <div className="p-6 md:p-8 space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-xl font-black text-slate-800">📥 Incoming Doorstep Pickup Requests</h1>
-          <p className="text-xs text-slate-400 font-semibold mt-1">Accept inspection leads in your assigned region pincodes.</p>
+          <h1 className="text-xl font-black text-slate-800">📥 Partner Order List & Doorstep Pickups</h1>
+          <p className="text-xs text-slate-400 font-semibold mt-1">Manage all assigned, active, and completed leads here.</p>
         </div>
         <button 
           onClick={fetchOrders}
@@ -77,7 +99,7 @@ export default function IncomingOrders() {
 
       {loading ? (
         <div className="flex justify-center items-center py-20">
-          <p className="text-sm font-bold text-slate-500 animate-pulse">Loading requests...</p>
+          <p className="text-sm font-bold text-slate-500 animate-pulse">Loading orders...</p>
         </div>
       ) : (
         <div className="bg-white rounded-2xl border border-slate-200/80 shadow-3xs overflow-hidden">
@@ -89,19 +111,18 @@ export default function IncomingOrders() {
                 <th className="p-4">Device Details</th>
                 <th className="p-4">Offered Price</th>
                 <th className="p-4">Preferred Slot</th>
-                <th className="p-4">Distance</th>
+                <th className="p-4">Current Status</th>
                 <th className="p-4 text-center">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-bold text-slate-700">
               {orders.map((o) => {
                 const clientName = o.client || o.customer || o.customerName || 'N/A';
-                const clientDistance = o.distance || '1.5 KM';
-                const clientPincode = o.pincode || '110016';
                 const deviceName = o.device || o.name || 'N/A';
+                const isActiveInspection = ['Scheduled', 'In Inspection', 'Under Inspection', 'Verification Pending'].includes(o.status);
 
                 return (
-                  <tr key={o.id} className="hover:bg-slate-100 transition-all cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>
+                  <tr key={o.id} className="hover:bg-slate-100 transition-all cursor-pointer animate-fade-in" onClick={() => setSelectedOrderDetails(o)}>
                     <td className="p-4">
                       <span className="bg-slate-100 px-2.5 py-1 rounded text-slate-800 hover:bg-[#39b54a] hover:text-white transition-all">{o.id}</span>
                     </td>
@@ -109,17 +130,40 @@ export default function IncomingOrders() {
                     <td className="p-4">{deviceName}</td>
                     <td className="p-4 text-[#39b54a] font-black">{o.price}</td>
                     <td className="p-4 text-slate-500">{o.slot || o.date}</td>
-                    <td className="p-4 font-mono text-slate-550">{clientDistance} ({clientPincode})</td>
+                    <td className="p-4">
+                      <span className={`px-2 py-0.5 rounded-full font-bold text-[9px] ${
+                        o.status === 'Completed' || o.status === 'Delivered'
+                          ? 'bg-emerald-50 text-emerald-600'
+                          : o.status === 'Pending' || o.status === 'Assigned'
+                          ? 'bg-amber-50 text-amber-600'
+                          : 'bg-teal-50 text-teal-600'
+                      }`}>
+                        {o.status}
+                      </span>
+                    </td>
                     <td className="p-4 text-center space-x-2" onClick={(e) => e.stopPropagation()}>
-                      <button onClick={() => handleAction(o.id, 'accept')} className="px-3.5 py-1.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-lg text-[10px] shadow-3xs transition cursor-pointer">Accept</button>
-                      <button onClick={() => handleAction(o.id, 'decline')} className="px-3.5 py-1.5 bg-rose-50 text-rose-500 border border-rose-100 hover:bg-rose-100 font-black rounded-lg text-[10px] transition cursor-pointer">Decline</button>
+                      {o.status === 'Assigned' || o.status === 'Pending' ? (
+                        <>
+                          <button onClick={() => handleAction(o.id, 'accept')} className="px-3 py-1 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-lg text-[10px] shadow-3xs transition cursor-pointer">Accept</button>
+                          <button onClick={() => handleAction(o.id, 'decline')} className="px-3 py-1 bg-rose-50 text-rose-500 border border-rose-100 hover:bg-rose-100 font-black rounded-lg text-[10px] transition cursor-pointer">Decline</button>
+                        </>
+                      ) : isActiveInspection ? (
+                        <Link 
+                          href={`/inspection?orderId=${o.id}&name=${encodeURIComponent(deviceName)}&client=${encodeURIComponent(clientName)}&price=${encodeURIComponent(o.price)}`}
+                          className="inline-block px-3.5 py-1 bg-teal-500 hover:bg-teal-600 text-white font-black rounded-lg text-[10px] shadow-3xs transition cursor-pointer"
+                        >
+                          Start Inspection
+                        </Link>
+                      ) : (
+                        <span className="text-[10px] text-slate-400 font-semibold italic">No actions needed</span>
+                      )}
                     </td>
                   </tr>
                 );
               })}
               {orders.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-slate-400">No active incoming jobs assigned to you. When the admin assigns you a new order, it will appear here!</td>
+                  <td colSpan={7} className="p-8 text-center text-slate-400">No orders assigned to you yet. When the admin assigns you an order, it will appear here!</td>
                 </tr>
               )}
             </tbody>
@@ -134,7 +178,7 @@ export default function IncomingOrders() {
             <div className="flex justify-between items-center border-b pb-3">
               <div>
                 <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{selectedOrderDetails.id}</span>
-                <h4 className="font-black text-slate-800 text-sm mt-1">Order Details</h4>
+                <h4 className="font-black text-slate-800 text-sm mt-1">Order Complete Details</h4>
               </div>
               <button 
                 onClick={() => setSelectedOrderDetails(null)}
@@ -145,6 +189,7 @@ export default function IncomingOrders() {
             </div>
 
             <div className="space-y-4">
+              {/* Customer details */}
               <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-100 font-semibold text-slate-650">
                 <div>
                   <span className="text-[10px] text-slate-400 block uppercase">Client Name</span>
@@ -160,6 +205,7 @@ export default function IncomingOrders() {
                 </div>
               </div>
 
+              {/* Device and status details */}
               <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-100 font-semibold text-slate-650">
                 <div>
                   <span className="text-[10px] text-slate-400 block uppercase">Device Model</span>
@@ -170,13 +216,47 @@ export default function IncomingOrders() {
                   <span className="text-emerald-600 font-black">{selectedOrderDetails.price}</span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 block uppercase">Preferred Slot</span>
-                  <span className="text-slate-800 font-bold">{selectedOrderDetails.slot || selectedOrderDetails.date}</span>
+                  <span className="text-[10px] text-slate-450 block uppercase font-bold text-[#39b54a]">Change Status (Dynamic)</span>
+                  <select
+                    value={selectedOrderDetails.status}
+                    onChange={(e) => handleUpdateStatus(selectedOrderDetails.id, e.target.value)}
+                    className="mt-1 px-2 py-1 rounded-lg font-bold text-[10px] bg-white border border-slate-200 focus:outline-none cursor-pointer text-slate-700 focus:border-[#39b54a]"
+                  >
+                    <option value="Pending">Pending</option>
+                    <option value="Assigned">Assigned</option>
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="In Inspection">In Inspection</option>
+                    <option value="Under Inspection">Under Inspection</option>
+                    <option value="Verification Pending">Verification Pending</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 block uppercase">Distance / Region</span>
-                  <span className="text-slate-800 font-bold">{selectedOrderDetails.distance || 'N/A'} ({selectedOrderDetails.pincode || 'N/A'})</span>
+                  <span className="text-[10px] text-slate-400 block uppercase">Assigned Vendor</span>
+                  <span className="text-slate-800 font-bold">{selectedOrderDetails.partner || 'N/A'}</span>
                 </div>
+              </div>
+
+              {/* Diagnostic Answers */}
+              <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-2">
+                <span className="text-[10px] text-slate-400 block uppercase font-bold">Diagnostic Appraisal Answers</span>
+                {selectedOrderDetails.answers && Object.keys(selectedOrderDetails.answers).length > 0 ? (
+                  <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                    {Object.keys(selectedOrderDetails.answers).map((qText) => (
+                      <div key={qText} className="flex justify-between border-b pb-1 last:border-b-0">
+                        <span className="text-slate-500 font-semibold">{qText}</span>
+                        <span className={`font-black uppercase text-[9px] px-2 py-0.5 rounded ${
+                          selectedOrderDetails.answers[qText] === 'Perfect' ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600'
+                        }`}>{selectedOrderDetails.answers[qText]}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-[10px] text-slate-450 italic font-semibold">No diagnostic assessment answers recorded yet.</p>
+                )}
               </div>
             </div>
 
