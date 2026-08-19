@@ -125,6 +125,12 @@ export default function InspectionPage() {
     return matchesBrand && matchesCategory && matchesSearch;
   });
 
+  // Helper to filter questions based on category
+  const categoryFilteredQuestions = questions.filter(q => {
+    if (!selectedCategory) return true;
+    return q.categories && q.categories.some((cat: string) => cat.toLowerCase() === selectedCategory.toLowerCase());
+  });
+
   return (
     <div className="p-6 md:p-8 space-y-6 bg-slate-50 text-slate-800 min-h-screen">
       {loading ? (
@@ -288,10 +294,10 @@ export default function InspectionPage() {
           </div>
 
           <div className="space-y-4">
-            {questions.length === 0 ? (
-              <p className="text-xs text-slate-400 text-center py-10 font-bold">No inspection questions found.</p>
+            {categoryFilteredQuestions.length === 0 ? (
+              <p className="text-xs text-slate-400 text-center py-10 font-bold">No inspection questions found for this category.</p>
             ) : (
-              questions.slice(0, 4).map((q) => (
+              categoryFilteredQuestions.map((q) => (
                 <div key={q.id} className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-3xs space-y-3">
                   <p className="font-extrabold text-slate-800 text-xs">{q.text || q.title}</p>
                   <div className="grid grid-cols-2 gap-3 text-xs">
@@ -325,9 +331,9 @@ export default function InspectionPage() {
             </div>
             <button 
               onClick={handleCompleteInspection}
-              disabled={Object.keys(answers).length < Math.min(questions.length, 4)}
+              disabled={Object.keys(answers).length < categoryFilteredQuestions.length}
               className={`px-6 py-3 font-black rounded-xl text-xs shadow-md transition ${
-                Object.keys(answers).length < Math.min(questions.length, 4)
+                Object.keys(answers).length < categoryFilteredQuestions.length
                   ? 'bg-slate-700 text-slate-400 cursor-not-allowed'
                   : 'bg-[#39b54a] hover:bg-[#2fa03e] text-white cursor-pointer'
               }`}

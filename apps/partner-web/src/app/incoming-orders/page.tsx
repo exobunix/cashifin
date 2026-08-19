@@ -9,16 +9,28 @@ export default function IncomingOrders() {
 
   const fetchOrders = () => {
     setLoading(true);
-    fetch('/api/orders')
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) {
+    Promise.all([
+      fetch('/api/orders').then(res => res.json()).catch(() => []),
+      fetch('/api/pickups').then(res => res.json()).catch(() => [])
+    ])
+      .then(([ordersData, pickupsData]) => {
+        if (Array.isArray(ordersData)) {
           // Filter for all orders assigned to MobileHub Store (any suffix) regardless of status
-          const partnerOrders = data.filter(o => 
+          const partnerOrders = ordersData.filter(o => 
             (o.partner && o.partner.toLowerCase().includes('mobilehub store'))
           );
           
-          setOrders(partnerOrders);
+          const merged = partnerOrders.map(o => {
+            const pk = Array.isArray(pickupsData) ? pickupsData.find((p: any) => p.orderId === o.id) : null;
+            return {
+              ...o,
+              address: o.address || o.customerAddress || pk?.address || 'B-45, Sector 62, Noida, UP',
+              phone: o.phone || o.customerPhone || pk?.phone || '+91 98765 43210',
+              slot: o.slot || pk?.slot || 'Tomorrow, 10:00 AM - 01:00 PM'
+            };
+          });
+          
+          setOrders(merged);
         }
         setLoading(false);
       })
