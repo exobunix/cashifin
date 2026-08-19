@@ -138,7 +138,7 @@ export async function POST(
       if (updatedItem.id !== undefined) filter.id = updatedItem.id;
       else if (updatedItem.code !== undefined) filter.code = updatedItem.code;
       
-      const { _id, ...updateFields = {} } = updatedItem;
+      const { _id, ...updateFields } = updatedItem;
       await collection.updateOne(filter, { $set: updateFields });
     } else if (action === 'delete') {
       const idToDelete = body.id;

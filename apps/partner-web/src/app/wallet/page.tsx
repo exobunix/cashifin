@@ -274,8 +274,12 @@ export default function Wallet() {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       setScreenshotFile(file);
-      // Generate a object URL to display preview
-      setScreenshotUrl(URL.createObjectURL(file));
+      
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setScreenshotUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -286,12 +290,20 @@ export default function Wallet() {
           <h1 className="text-xl font-black text-slate-800">💳 Wallet Payouts & Settlement Balance</h1>
           <p className="text-xs text-slate-400 font-semibold mt-1">Track your wallet balances, disburse client payouts, and trigger bank withdrawals.</p>
         </div>
-        <button
-          onClick={() => setShowAddFundsModal(true)}
-          className="px-5 py-3 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-xl text-xs shadow-md transition cursor-pointer flex items-center gap-1.5"
-        >
-          ➕ Request Add Funds
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={fetchWalletData}
+            className="px-4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black rounded-xl text-xs transition cursor-pointer"
+          >
+            🔄 Refresh
+          </button>
+          <button
+            onClick={() => setShowAddFundsModal(true)}
+            className="px-5 py-3 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-xl text-xs shadow-md transition cursor-pointer flex items-center gap-1.5"
+          >
+            ➕ Request Add Funds
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

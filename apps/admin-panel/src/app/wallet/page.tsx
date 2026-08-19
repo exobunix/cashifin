@@ -132,7 +132,7 @@ export default function RoutePage() {
   const totalBank = bankPayments.filter((p: any) => p.status === 'Success').reduce((acc: number, curr: any) => acc + (curr.amount || 0), 0);
 
   const getScreenshotUrl = (screenshot: string) => {
-    if (screenshot && screenshot.startsWith('http') && !screenshot.startsWith('blob')) {
+    if (screenshot && (screenshot.startsWith('http') || screenshot.startsWith('data:image')) && !screenshot.startsWith('blob')) {
       return screenshot;
     }
     return 'https://images.unsplash.com/photo-1628157582853-a796fa650a6a?q=80&w=300&auto=format&fit=crop';
