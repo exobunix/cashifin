@@ -1096,13 +1096,23 @@ export default function OrdersPage() {
       .then(r => r.json())
       .then(data => {
         if (Array.isArray(data)) {
-          // Prepend dynamic api orders before mock orders list so newest ones are on top
-          const combined = [...data.reverse()];
+          const combined = [...data];
           ordersList.forEach(mockOrder => {
             if (!combined.some(o => o.id === mockOrder.id)) {
               combined.push(mockOrder);
             }
           });
+          
+          // Sort: newest first based on timestamp (fallback to ID compare for mock data)
+          combined.sort((a, b) => {
+            const timeA = a.timestamp || 0;
+            const timeB = b.timestamp || 0;
+            if (timeA && timeB) return timeB - timeA;
+            if (timeA) return -1;
+            if (timeB) return 1;
+            return b.id.localeCompare(a.id);
+          });
+
           setOrders(combined);
         } else {
           setOrders(ordersList);

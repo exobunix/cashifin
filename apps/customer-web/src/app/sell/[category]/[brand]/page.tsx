@@ -262,9 +262,10 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
       device: `${activeModel.name} (${decodedBrand})`,
       price: `₹${currentQuote.toLocaleString()}`,
       status: 'Pending',
-      partner: 'Rohit Sharma',
+      partner: '',
       answers: answers,
-      date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+      date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+      timestamp: Date.now()
     };
 
     await fetch('/api/orders', {
@@ -278,7 +279,7 @@ export default function SellBrandModelsPage({ params }: { params: { category: st
       slot: custSlot,
       address: custAddress,
       distance: '3.8 KM',
-      partner: 'Rohit Sharma',
+      partner: '',
       status: 'Scheduled'
     };
 

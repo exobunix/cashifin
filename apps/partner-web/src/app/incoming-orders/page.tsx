@@ -30,6 +30,16 @@ export default function IncomingOrders() {
             };
           });
           
+          // Sort strictly by timestamp descending (newest first)
+          merged.sort((a, b) => {
+            const timeA = a.timestamp || 0;
+            const timeB = b.timestamp || 0;
+            if (timeA && timeB) return timeB - timeA;
+            if (timeA) return -1;
+            if (timeB) return 1;
+            return b.id.localeCompare(a.id);
+          });
+          
           setOrders(merged);
         }
         setLoading(false);
@@ -229,22 +239,37 @@ export default function IncomingOrders() {
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-450 block uppercase font-bold text-[#39b54a]">Change Status (Dynamic)</span>
-                  <select
-                    value={selectedOrderDetails.status}
-                    onChange={(e) => handleUpdateStatus(selectedOrderDetails.id, e.target.value)}
-                    className="mt-1 px-2 py-1 rounded-lg font-bold text-[10px] bg-white border border-slate-200 focus:outline-none cursor-pointer text-slate-700 focus:border-[#39b54a]"
-                  >
-                    <option value="Pending">Pending</option>
-                    <option value="Assigned">Assigned</option>
-                    <option value="Scheduled">Scheduled</option>
-                    <option value="In Inspection">In Inspection</option>
-                    <option value="Under Inspection">Under Inspection</option>
-                    <option value="Verification Pending">Verification Pending</option>
-                    <option value="Shipped">Shipped</option>
-                    <option value="Delivered">Delivered</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Cancelled">Cancelled</option>
-                  </select>
+                  {selectedOrderDetails.status === 'Assigned' || selectedOrderDetails.status === 'Pending' ? (
+                    <span className="mt-1 inline-block px-2 py-0.5 rounded bg-amber-50 text-amber-600 border border-amber-100 font-bold text-[10px]">
+                      Pending Acceptance
+                    </span>
+                  ) : selectedOrderDetails.status === 'Scheduled' ? (
+                    <span className="mt-1 inline-block px-2 py-0.5 rounded bg-blue-50 text-blue-600 border border-blue-100 font-bold text-[10px]">
+                      Scheduled (Inspect to Progress)
+                    </span>
+                  ) : ['In Inspection', 'Under Inspection', 'Verification Pending'].includes(selectedOrderDetails.status) ? (
+                    <select
+                      value={selectedOrderDetails.status}
+                      onChange={(e) => handleUpdateStatus(selectedOrderDetails.id, e.target.value)}
+                      className="mt-1 px-2 py-1 rounded-lg font-bold text-[10px] bg-white border border-slate-200 focus:outline-none cursor-pointer text-slate-700 focus:border-[#39b54a]"
+                    >
+                      <option value="Under Inspection">Under Inspection</option>
+                      <option value="Shipped">Shipped</option>
+                    </select>
+                  ) : selectedOrderDetails.status === 'Shipped' ? (
+                    <select
+                      value={selectedOrderDetails.status}
+                      onChange={(e) => handleUpdateStatus(selectedOrderDetails.id, e.target.value)}
+                      className="mt-1 px-2 py-1 rounded-lg font-bold text-[10px] bg-white border border-slate-200 focus:outline-none cursor-pointer text-slate-700 focus:border-[#39b54a]"
+                    >
+                      <option value="Shipped">Shipped</option>
+                      <option value="Completed">Completed</option>
+                    </select>
+                  ) : (
+                    <span className="mt-1 inline-block px-2 py-0.5 rounded bg-emerald-50 text-emerald-600 border border-emerald-100 font-bold text-[10px]">
+                      {selectedOrderDetails.status}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-400 block uppercase">Assigned Vendor</span>
