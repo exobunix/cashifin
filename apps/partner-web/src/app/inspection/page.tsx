@@ -11,6 +11,9 @@ export default function InspectionPage() {
   const client = searchParams.get('client') || 'Arjun Reddy';
   const rawPrice = searchParams.get('price') || '₹1,25,000';
 
+  // Original Order details from database
+  const [originalOrder, setOriginalOrder] = useState<any>(null);
+
   // Device selection states
   const [categories, setCategories] = useState<any[]>([]);
   const [brands, setBrands] = useState<any[]>([]);
@@ -33,20 +36,26 @@ export default function InspectionPage() {
   const [wizardStep, setWizardStep] = useState(0);
 
   useEffect(() => {
-    // Load categories, brands, models, and questions
+    // Load categories, brands, models, questions, and the original order details
     Promise.all([
       fetch('/api/categories').then(res => res.json()).catch(() => []),
       fetch('/api/brands').then(res => res.json()).catch(() => []),
       fetch('/api/models').then(res => res.json()).catch(() => []),
-      fetch('/api/questions').then(res => res.json()).catch(() => [])
-    ]).then(([catData, brandData, modelData, qData]) => {
+      fetch('/api/questions').then(res => res.json()).catch(() => []),
+      fetch('/api/orders').then(res => res.json()).catch(() => [])
+    ]).then(([catData, brandData, modelData, qData, orderData]) => {
       setCategories(catData || []);
       setBrands(brandData || []);
       setModels(modelData || []);
       setQuestions(qData || []);
+
+      if (Array.isArray(orderData)) {
+        const ord = orderData.find(o => o.id === orderId);
+        if (ord) setOriginalOrder(ord);
+      }
       setLoading(false);
     }).catch(() => setLoading(false));
-  }, []);
+  }, [orderId]);
 
   const handleSelectAnswer = (qText: string, option: string) => {
     setAnswers(prev => ({
@@ -56,7 +65,6 @@ export default function InspectionPage() {
   };
 
   const calculateFinalPrice = () => {
-    // If selected model is set, use its rawBase or basePrice as base
     let base = selectedModel 
       ? (selectedModel.rawBase || parseInt(selectedModel.basePrice?.replace(/[^\d]/g, '')) || 50000) 
       : (parseInt(rawPrice.replace(/[^\d]/g, '')) || 85000);
@@ -73,17 +81,21 @@ export default function InspectionPage() {
   const finalPrice = calculateFinalPrice();
 
   const handleCompleteInspection = async () => {
-    // Update active_jobs collection with new device details, final price and In Inspection status
+    // Update order with new device details, final price and status
     const updatedJob = {
+      ...originalOrder,
       id: orderId,
-      name: selectedModel ? `${selectedModel.brand} ${selectedModel.name}` : name,
+      device: selectedModel ? `${selectedModel.brand} ${selectedModel.name}` : (originalOrder?.device || name),
       price: `₹${finalPrice.toLocaleString()}`,
-      client: client,
-      status: 'Verification Pending'
+      status: 'Under Inspection',
+      answers: answers,
+      category: selectedCategory,
+      brand: selectedBrand,
+      model: selectedModel?.name
     };
 
     try {
-      await fetch('/api/active_jobs', {
+      await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'update', item: updatedJob })
@@ -269,7 +281,7 @@ export default function InspectionPage() {
             </div>
             <button
               onClick={() => setWizardStep(0)}
-              className="text-xs font-black text-slate-500 hover:text-slate-800 bg-slate-100 px-3 py-1.5 rounded-full transition"
+              className="text-xs font-black text-slate-500 hover:text-slate-800 bg-slate-100 px-3 py-1.5 rounded-full transition cursor-pointer"
             >
               ← Back to Device
             </button>

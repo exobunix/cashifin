@@ -1087,8 +1087,11 @@ const ordersList = [
 export default function OrdersPage() {
   const [search, setSearch] = useState('');
   const [orders, setOrders] = useState<any[]>([]);
+  const [partners, setPartners] = useState<any[]>([]);
+  const [selectedOrder, setSelectedOrder] = useState<any>(null);
+  const [selectedPartnerName, setSelectedPartnerName] = useState<string>('');
 
-  useEffect(() => {
+  const loadData = () => {
     fetch('/api/orders')
       .then(r => r.json())
       .then(data => {
@@ -1109,6 +1112,19 @@ export default function OrdersPage() {
         console.log('Error loading dynamic orders:', err);
         setOrders(ordersList);
       });
+
+    fetch('/api/partners')
+      .then(r => r.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setPartners(data);
+        }
+      })
+      .catch(() => {});
+  };
+
+  useEffect(() => {
+    loadData();
   }, []);
 
   const handleUpdateStatus = async (orderId: string, newStatus: string) => {
@@ -1127,6 +1143,9 @@ export default function OrdersPage() {
       
       if (data.success) {
         setOrders(prev => prev.map(o => o.id === orderId ? updatedOrder : o));
+        if (selectedOrder?.id === orderId) {
+          setSelectedOrder(updatedOrder);
+        }
         
         // Notify Customer & Partner of status change
         const targetPhone = orderToUpdate.customerPhone || orderToUpdate.phone || '+91 98765 43210';
@@ -1168,10 +1187,69 @@ export default function OrdersPage() {
         const createData = await createRes.json();
         if (createData.success) {
           setOrders(prev => prev.map(o => o.id === orderId ? updatedOrder : o));
+          if (selectedOrder?.id === orderId) {
+            setSelectedOrder(updatedOrder);
+          }
         }
       }
     } catch (err) {
       console.error('Failed to update order status:', err);
+    }
+  };
+
+  const handleAssignPartner = async () => {
+    if (!selectedOrder || !selectedPartnerName) return;
+
+    const updatedOrder = { 
+      ...selectedOrder, 
+      partner: selectedPartnerName, 
+      status: 'Assigned' 
+    };
+
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'update', item: updatedOrder })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setOrders(prev => prev.map(o => o.id === selectedOrder.id ? updatedOrder : o));
+        setSelectedOrder(updatedOrder);
+        alert(`Order successfully assigned to ${selectedPartnerName}!`);
+        
+        // Notify partner
+        await fetch('/api/notifications', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'create',
+            item: {
+              id: `NTF-${Date.now()}-assign`,
+              target: 'partner',
+              message: `New buyback pickup assigned: ${selectedOrder.id} for ${selectedOrder.device}`,
+              read: false,
+              date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+            }
+          })
+        });
+      } else {
+        // Create if it doesn't exist
+        const createRes = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'create', item: updatedOrder })
+        });
+        const createData = await createRes.json();
+        if (createData.success) {
+          setOrders(prev => prev.map(o => o.id === selectedOrder.id ? updatedOrder : o));
+          setSelectedOrder(updatedOrder);
+          alert(`Order successfully assigned to ${selectedPartnerName}!`);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to assign partner:', e);
+      alert('Error assigning partner.');
     }
   };
 
@@ -1188,13 +1266,21 @@ export default function OrdersPage() {
           <h3 className="text-base font-bold text-slate-800">Buyback & Refurbished Orders ({filtered.length} Total)</h3>
           <p className="text-xs text-slate-400 font-bold">Manage device buybacks and refurbished purchase dispatch statuses</p>
         </div>
-        <input
-          type="text"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          placeholder="Search orders..."
-          className="p-2 border rounded text-xs w-64 bg-white"
-        />
+        <div className="flex gap-2">
+          <button 
+            onClick={loadData}
+            className="p-2 border rounded text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition cursor-pointer"
+          >
+            🔄 Refresh
+          </button>
+          <input
+            type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search orders..."
+            className="p-2 border rounded text-xs w-64 bg-white"
+          />
+        </div>
       </div>
       <div className="bg-white rounded-xl border shadow-sm overflow-x-auto">
         <table className="w-full text-left border-collapse text-xs">
@@ -1218,19 +1304,21 @@ export default function OrdersPage() {
               
               return (
                 <tr key={i} className="hover:bg-slate-50">
-                  <td className="p-3 font-bold text-slate-900">{o.id}</td>
-                  <td className="p-3 font-bold">{customerName}</td>
-                  <td className="p-3 text-slate-500">{o.device}</td>
-                  <td className="p-3 font-black text-slate-700">{o.price}</td>
-                  <td className="p-3">
+                  <td className="p-3 font-bold text-slate-900 cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>
+                    <span className="hover:underline text-blue-600">{o.id}</span>
+                  </td>
+                  <td className="p-3 font-bold cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>{customerName}</td>
+                  <td className="p-3 text-slate-500 cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>{o.device}</td>
+                  <td className="p-3 font-black text-slate-700 cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>{o.price}</td>
+                  <td className="p-3 cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>
                     <span className={`px-2 py-0.5 rounded-full font-bold text-[9px] ${
                       orderType === 'Refurbished' ? 'bg-blue-50 text-blue-600' : 'bg-purple-50 text-purple-600'
                     }`}>
                       {orderType}
                     </span>
                   </td>
-                  <td className="p-3 text-slate-500">{partnerName}</td>
-                  <td className="p-3 text-slate-400">{o.date}</td>
+                  <td className="p-3 text-slate-500 cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>{partnerName}</td>
+                  <td className="p-3 text-slate-400 cursor-pointer" onClick={() => { setSelectedOrder(o); setSelectedPartnerName(o.partner || ''); }}>{o.date}</td>
                   <td className="p-3 text-center">
                     <select
                       value={o.status}
@@ -1260,6 +1348,158 @@ export default function OrdersPage() {
           </tbody>
         </table>
       </div>
+
+      {/* Admin Order Details Modal */}
+      {selectedOrder && (
+        <div className="fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
+          <div className="bg-white p-6 rounded-3xl w-full max-w-xl shadow-2xl border border-slate-100 space-y-5 animate-scale-up text-xs text-slate-700">
+            <div className="flex justify-between items-center border-b pb-3">
+              <div>
+                <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{selectedOrder.id}</span>
+                <h4 className="font-black text-slate-800 text-sm mt-1">Admin Order Control Panel</h4>
+              </div>
+              <button 
+                onClick={() => setSelectedOrder(null)}
+                className="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 font-bold transition flex items-center justify-center cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="space-y-4">
+              {/* Customer Details */}
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 font-semibold space-y-2">
+                <span className="text-[10px] text-slate-400 block uppercase font-bold">Customer Contact Info</span>
+                <div className="grid grid-cols-2 gap-2">
+                  <div>
+                    <span className="text-slate-400 text-[10px]">Customer Name</span>
+                    <p className="text-slate-800 font-black">{selectedOrder.customer || selectedOrder.customerName || 'N/A'}</p>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 text-[10px]">Phone Number</span>
+                    <p className="text-slate-800 font-bold">{selectedOrder.customerPhone || selectedOrder.phone || '+91 98765 43210'}</p>
+                  </div>
+                  <div className="col-span-2">
+                    <span className="text-slate-400 text-[10px]">Full Address</span>
+                    <p className="text-slate-800 font-bold">📍 {selectedOrder.customerAddress || selectedOrder.address || 'No address details provided.'}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Order & Status Info */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 font-semibold space-y-2">
+                  <span className="text-[10px] text-slate-400 block uppercase font-bold">Device Details</span>
+                  <div>
+                    <span className="text-slate-400 text-[10px]">Model Name</span>
+                    <p className="text-slate-800 font-black">{selectedOrder.device || selectedOrder.name}</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <span className="text-slate-400 text-[10px]">Price / Quote</span>
+                      <p className="text-emerald-600 font-black">{selectedOrder.price}</p>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 text-[10px]">Date Created</span>
+                      <p className="text-slate-800 font-bold">{selectedOrder.date}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 font-semibold space-y-2 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] text-slate-400 block uppercase font-bold">Assignment & Status</span>
+                    <div className="mt-2">
+                      <span className="text-slate-400 text-[10px]">Current Status</span>
+                      <div className="mt-1">
+                        <select
+                          value={selectedOrder.status}
+                          onChange={(e) => handleUpdateStatus(selectedOrder.id, e.target.value)}
+                          className="px-2 py-1 rounded-lg font-bold text-[10px] bg-white border border-slate-200 focus:outline-none cursor-pointer"
+                        >
+                          <option value="Pending">Pending</option>
+                          <option value="Pending Verification">Pending Verification</option>
+                          <option value="Assigned">Assigned</option>
+                          <option value="Picked Up">Picked Up</option>
+                          <option value="Under Inspection">Under Inspection</option>
+                          <option value="Shipped">Shipped</option>
+                          <option value="Delivered">Delivered</option>
+                          <option value="Completed">Completed</option>
+                          <option value="Cancelled">Cancelled</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="text-slate-400 text-[10px]">Assigned Partner / Vendor</span>
+                    <p className="text-slate-800 font-black">{selectedOrder.partner || 'N/A (Standard Delivery)'}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Vendor Assignment Panel */}
+              <div className="bg-emerald-50/40 p-4 rounded-2xl border border-emerald-100 font-semibold space-y-2">
+                <span className="text-[10px] text-[#39b54a] block uppercase font-black">Direct Vendor Assignment Panel</span>
+                <div className="flex gap-3 items-end">
+                  <div className="flex-1">
+                    <span className="text-slate-400 text-[10px] block mb-1">Select Partner/Vendor</span>
+                    <select
+                      value={selectedPartnerName}
+                      onChange={(e) => setSelectedPartnerName(e.target.value)}
+                      className="w-full p-2 bg-white border rounded-xl text-xs focus:outline-none focus:border-[#39b54a]"
+                    >
+                      <option value="">-- Choose Partner/Vendor --</option>
+                      {partners.map(p => (
+                        <option key={p.id} value={p.name}>{p.name} ({p.location || 'Unknown location'})</option>
+                      ))}
+                    </select>
+                  </div>
+                  <button
+                    onClick={handleAssignPartner}
+                    disabled={!selectedPartnerName}
+                    className={`px-5 py-2.5 rounded-xl font-black text-xs shadow-3xs transition-all ${
+                      !selectedPartnerName 
+                        ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                        : 'bg-[#39b54a] hover:bg-[#2fa03e] text-white cursor-pointer'
+                    }`}
+                  >
+                    Assign Partner
+                  </button>
+                </div>
+              </div>
+
+              {/* User Diagnostics Appraisal Details */}
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 font-semibold space-y-2">
+                <span className="text-[10px] text-slate-400 block uppercase font-bold">User Diagnostics Appraisal Answers</span>
+                {selectedOrder.answers && Object.keys(selectedOrder.answers).length > 0 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5 max-h-36 overflow-y-auto pr-1">
+                    {Object.keys(selectedOrder.answers).map((qText) => (
+                      <div key={qText} className="flex justify-between border-b pb-1 last:border-b-0 text-[10px]">
+                        <span className="text-slate-500 font-semibold truncate max-w-[160px]" title={qText}>{qText}</span>
+                        <span className={`font-black uppercase text-[8px] px-1.5 py-0.2 rounded shrink-0 ${
+                          selectedOrder.answers[qText] === 'Perfect' ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600'
+                        }`}>{selectedOrder.answers[qText]}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-[10px] text-slate-450 italic font-semibold">No diagnostic assessment answers recorded yet.</p>
+                )}
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <button 
+                onClick={() => setSelectedOrder(null)}
+                className="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black rounded-xl text-center transition cursor-pointer"
+              >
+                Close Panel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -6,45 +6,67 @@ export default function ActiveJobs() {
   const [jobs, setJobs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeCall, setActiveCall] = useState<any>(null);
+  const [selectedJobDetails, setSelectedJobDetails] = useState<any>(null);
 
-  useEffect(() => {
-    fetch('/api/active_jobs')
+  const fetchJobs = () => {
+    setLoading(true);
+    fetch('/api/orders')
       .then(res => res.json())
       .then(data => {
-        if (data && data.length > 0 && !data.error) {
-          setJobs(data);
-        } else {
-          // Seed the initial jobs if database is empty or returns error
-          const initialJobs = [
-            { id: 'ORD-8711', name: 'MacBook Pro M3 16-Inch', price: '₹1,25,000', client: 'Arjun Reddy', phone: '+91 99887 76655', address: 'B-102, DLF Phase 3, Gurgaon', status: 'Scheduled' },
-            { id: 'ORD-8705', name: 'OnePlus 11 5G 128GB', price: '₹28,500', client: 'Neha Gupta', phone: '+91 98112 23344', address: 'Plot 45, Sector 44, Noida', status: 'In Inspection' },
-            { id: 'ORD-8692', name: 'Apple iPad Pro M2', price: '₹48,000', client: 'Kunal Kapoor', phone: '+91 97223 34455', address: 'Apartment 4B, GK-2, New Delhi', status: 'Verification Pending' }
-          ];
+        if (Array.isArray(data) && !data.error) {
+          // Filter for orders assigned to MobileHub Store and in active statuses
+          const partnerJobs = data.filter(o => 
+            (o.partner === 'MobileHub Store' || o.partner === 'Rohit Sharma') && 
+            ['Scheduled', 'In Inspection', 'Under Inspection', 'Verification Pending'].includes(o.status)
+          );
+          
+          // Fallback seeding if no active jobs found in the dynamic db
+          if (partnerJobs.length === 0) {
+            const initialJobs = [
+              { id: 'ORD-8711', name: 'MacBook Pro M3 16-Inch', device: 'MacBook Pro M3 16-Inch', price: '₹1,25,000', client: 'Arjun Reddy', customer: 'Arjun Reddy', phone: '+91 99887 76655', address: 'B-102, DLF Phase 3, Gurgaon', customerAddress: 'B-102, DLF Phase 3, Gurgaon', status: 'Scheduled', partner: 'MobileHub Store' },
+              { id: 'ORD-8705', name: 'OnePlus 11 5G 128GB', device: 'OnePlus 11 5G 128GB', price: '₹28,500', client: 'Neha Gupta', customer: 'Neha Gupta', phone: '+91 98112 23344', address: 'Plot 45, Sector 44, Noida', customerAddress: 'Plot 45, Sector 44, Noida', status: 'In Inspection', partner: 'MobileHub Store' },
+              { id: 'ORD-8692', name: 'Apple iPad Pro M2', device: 'Apple iPad Pro M2', price: '₹48,000', client: 'Kunal Kapoor', customer: 'Kunal Kapoor', phone: '+91 97223 34455', address: 'Apartment 4B, GK-2, New Delhi', customerAddress: 'Apartment 4B, GK-2, New Delhi', status: 'Verification Pending', partner: 'MobileHub Store' }
+            ];
 
-          Promise.all(initialJobs.map(job =>
-            fetch('/api/active_jobs', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ action: 'create', item: job })
-            })
-          )).then(() => {
-            setJobs(initialJobs);
-          }).catch(() => {
-            setJobs(initialJobs); // local fallback if write fails
-          });
+            Promise.all(initialJobs.map(job =>
+              fetch('/api/orders', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'create', item: job })
+              })
+            )).then(() => {
+              setJobs(initialJobs);
+            }).catch(() => {
+              setJobs(initialJobs);
+            });
+          } else {
+            setJobs(partnerJobs);
+          }
         }
         setLoading(false);
       })
       .catch(() => {
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchJobs();
   }, []);
 
   return (
     <div className="p-6 md:p-8 space-y-6 relative">
-      <div>
-        <h1 className="text-xl font-black text-slate-800">📦 Active Inspection Routes</h1>
-        <p className="text-xs text-slate-400 font-semibold mt-1">Manage accepted doorstep collection routes & start diagnosis checks.</p>
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-xl font-black text-slate-800">📦 Active Inspection Routes</h1>
+          <p className="text-xs text-slate-400 font-semibold mt-1">Manage accepted doorstep collection routes & start diagnosis checks.</p>
+        </div>
+        <button 
+          onClick={fetchJobs}
+          className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black rounded-xl text-xs transition cursor-pointer"
+        >
+          🔄 Refresh
+        </button>
       </div>
 
       {loading ? (
@@ -53,33 +75,40 @@ export default function ActiveJobs() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {jobs.map((job) => (
-            <div key={job.id} className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-3xs flex flex-col justify-between h-52">
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{job.id}</span>
-                  <span className="text-[9px] bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded font-black uppercase tracking-wider">{job.status}</span>
+          {jobs.map((job) => {
+            const clientName = job.client || job.customer || job.customerName || 'Client';
+            const clientPhone = job.phone || job.customerPhone || '+91 99999 88888';
+            const clientAddress = job.address || job.customerAddress || 'Address details missing';
+            const deviceName = job.device || job.name || 'Device';
+
+            return (
+              <div key={job.id} className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-3xs flex flex-col justify-between h-52">
+                <div className="space-y-2 cursor-pointer" onClick={() => setSelectedJobDetails(job)}>
+                  <div className="flex justify-between items-center">
+                    <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{job.id}</span>
+                    <span className="text-[9px] bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded font-black uppercase tracking-wider">{job.status}</span>
+                  </div>
+                  <h4 className="font-extrabold text-sm text-slate-800 line-clamp-1 hover:text-[#39b54a] transition-all">{deviceName}</h4>
+                  <p className="text-[10px] text-slate-450 font-bold">Client: {clientName} | {job.price}</p>
+                  <p className="text-[10px] text-slate-400 leading-normal font-semibold line-clamp-2">📍 {clientAddress}</p>
                 </div>
-                <h4 className="font-extrabold text-sm text-slate-800 line-clamp-1">{job.name}</h4>
-                <p className="text-[10px] text-slate-450 font-bold">Client: {job.client} | {job.price}</p>
-                <p className="text-[10px] text-slate-400 leading-normal font-semibold">📍 {job.address}</p>
+                <div className="flex gap-2 pt-4">
+                  <Link 
+                    href={`/inspection?orderId=${job.id}&name=${encodeURIComponent(deviceName)}&client=${encodeURIComponent(clientName)}&price=${encodeURIComponent(job.price)}`} 
+                    className="flex-1 text-center py-2.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white rounded-xl text-[10px] font-black shadow-3xs transition-all cursor-pointer flex items-center justify-center"
+                  >
+                    Start Inspection
+                  </Link>
+                  <button 
+                    onClick={() => setActiveCall({ name: clientName, phone: clientPhone })}
+                    className="px-3.5 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-650 rounded-xl text-[10px] font-black transition cursor-pointer"
+                  >
+                    📞 Call
+                  </button>
+                </div>
               </div>
-              <div className="flex gap-2 pt-4">
-                <Link 
-                  href={`/inspection?orderId=${job.id}&name=${encodeURIComponent(job.name)}&client=${encodeURIComponent(job.client)}&price=${encodeURIComponent(job.price)}`} 
-                  className="flex-1 text-center py-2.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white rounded-xl text-[10px] font-black shadow-3xs transition-all cursor-pointer flex items-center justify-center"
-                >
-                  Start Inspection
-                </Link>
-                <button 
-                  onClick={() => setActiveCall({ name: job.client, phone: job.phone })}
-                  className="px-3.5 py-2.5 border border-slate-200 hover:bg-slate-50 text-slate-650 rounded-xl text-[10px] font-black transition cursor-pointer"
-                >
-                  📞 Call
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 
@@ -107,6 +136,93 @@ export default function ActiveJobs() {
           </div>
         </div>
       )}
+
+      {/* Order Details Modal */}
+      {selectedJobDetails && (
+        <div className="fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
+          <div className="bg-white p-6 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-100 space-y-5 animate-scale-up text-xs">
+            <div className="flex justify-between items-center border-b pb-3">
+              <div>
+                <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{selectedJobDetails.id}</span>
+                <h4 className="font-black text-slate-800 text-sm mt-1">Order Complete Details</h4>
+              </div>
+              <button 
+                onClick={() => setSelectedJobDetails(null)}
+                className="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 font-bold transition flex items-center justify-center cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="space-y-4">
+              {/* Customer details */}
+              <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-100 font-semibold text-slate-650">
+                <div>
+                  <span className="text-[10px] text-slate-400 block uppercase">Client Name</span>
+                  <span className="text-slate-800 font-black">{selectedJobDetails.client || selectedJobDetails.customer || selectedJobDetails.customerName || 'N/A'}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 block uppercase">Phone Number</span>
+                  <span className="text-slate-800 font-bold">{selectedJobDetails.phone || selectedJobDetails.customerPhone || 'N/A'}</span>
+                </div>
+                <div className="col-span-2">
+                  <span className="text-[10px] text-slate-400 block uppercase">Collection Address</span>
+                  <span className="text-slate-800 font-bold leading-normal">📍 {selectedJobDetails.address || selectedJobDetails.customerAddress || 'N/A'}</span>
+                </div>
+              </div>
+
+              {/* Device and status details */}
+              <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-100 font-semibold text-slate-650">
+                <div>
+                  <span className="text-[10px] text-slate-400 block uppercase">Device Model</span>
+                  <span className="text-slate-800 font-black">{selectedJobDetails.device || selectedJobDetails.name || 'N/A'}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 block uppercase">Offered Value</span>
+                  <span className="text-emerald-600 font-black">{selectedJobDetails.price}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 block uppercase">Current Status</span>
+                  <span className="text-slate-800 font-bold">{selectedJobDetails.status}</span>
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 block uppercase">Assigned Vendor</span>
+                  <span className="text-slate-800 font-bold">{selectedJobDetails.partner || 'N/A'}</span>
+                </div>
+              </div>
+
+              {/* Diagnostic Answers */}
+              <div className="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-2">
+                <span className="text-[10px] text-slate-400 block uppercase font-bold">Diagnostic Appraisal Answers</span>
+                {selectedJobDetails.answers && Object.keys(selectedJobDetails.answers).length > 0 ? (
+                  <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                    {Object.keys(selectedJobDetails.answers).map((qText) => (
+                      <div key={qText} className="flex justify-between border-b pb-1 last:border-b-0">
+                        <span className="text-slate-500 font-semibold">{qText}</span>
+                        <span className={`font-black uppercase text-[9px] px-2 py-0.5 rounded ${
+                          selectedJobDetails.answers[qText] === 'Perfect' ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600'
+                        }`}>{selectedJobDetails.answers[qText]}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-[10px] text-slate-450 italic font-semibold">No diagnostic assessment answers recorded yet.</p>
+                )}
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <button 
+                onClick={() => setSelectedJobDetails(null)}
+                className="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black rounded-xl text-center transition cursor-pointer"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+export const dynamic = 'force-dynamic';
