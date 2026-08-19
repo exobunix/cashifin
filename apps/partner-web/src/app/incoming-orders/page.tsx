@@ -12,35 +12,13 @@ export default function IncomingOrders() {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && !data.error) {
-          // Filter for orders assigned to MobileHub Store and status is Pending or Assigned
+          // Filter for orders assigned to MobileHub Store (any suffix) and status is Pending or Assigned
           const partnerOrders = data.filter(o => 
-            (o.partner === 'MobileHub Store' || o.partner === 'Rohit Sharma') && 
+            (o.partner && o.partner.toLowerCase().includes('mobilehub store')) && 
             ['Pending', 'Assigned'].includes(o.status)
           );
           
-          // Seed fallback if no incoming orders found in dynamic database
-          if (partnerOrders.length === 0) {
-            const initialOrders = [
-              { id: 'ORD-8921', client: 'Aman Sharma', customer: 'Aman Sharma', device: 'iPhone 14 Pro Max 256GB', price: '₹72,999', slot: 'Tomorrow, 10:00 AM', pincode: '110016', distance: '1.2 KM', status: 'Assigned', partner: 'MobileHub Store', customerAddress: 'H-52, Hauz Khas, New Delhi', customerPhone: '+91 99554 43322' },
-              { id: 'ORD-8918', client: 'Priya Patel', customer: 'Priya Patel', device: 'MacBook Air M2 8/256GB', price: '₹68,500', slot: 'Tomorrow, 02:00 PM', pincode: '110024', distance: '3.4 KM', status: 'Assigned', partner: 'MobileHub Store', customerAddress: 'A-21, Lajpat Nagar 4, New Delhi', customerPhone: '+91 98123 45678' },
-              { id: 'ORD-8915', client: 'Vikram Singh', customer: 'Vikram Singh', device: 'Samsung Galaxy S23 Ultra', price: '₹55,000', slot: '08 May, 11:30 AM', pincode: '110502', distance: '4.8 KM', status: 'Assigned', partner: 'MobileHub Store', customerAddress: 'C-2, Sector 50, Noida', customerPhone: '+91 97112 23344' },
-              { id: 'ORD-8902', client: 'Ritu Sen', customer: 'Ritu Sen', device: 'Sony PlayStation 5 Slim', price: '₹34,000', slot: '09 May, 04:00 PM', pincode: '110016', distance: '2.1 KM', status: 'Assigned', partner: 'MobileHub Store', customerAddress: 'E-45, Green Park, New Delhi', customerPhone: '+91 96112 23344' }
-            ];
-
-            Promise.all(initialOrders.map(o =>
-              fetch('/api/orders', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'create', item: o })
-              })
-            )).then(() => {
-              setOrders(initialOrders);
-            }).catch(() => {
-              setOrders(initialOrders);
-            });
-          } else {
-            setOrders(partnerOrders);
-          }
+          setOrders(partnerOrders);
         }
         setLoading(false);
       })
@@ -123,16 +101,16 @@ export default function IncomingOrders() {
                 const deviceName = o.device || o.name || 'N/A';
 
                 return (
-                  <tr key={o.id} className="hover:bg-slate-50">
-                    <td className="p-4 cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>
+                  <tr key={o.id} className="hover:bg-slate-100 transition-all cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>
+                    <td className="p-4">
                       <span className="bg-slate-100 px-2.5 py-1 rounded text-slate-800 hover:bg-[#39b54a] hover:text-white transition-all">{o.id}</span>
                     </td>
-                    <td className="p-4 text-slate-900 cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>{clientName}</td>
-                    <td className="p-4 cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>{deviceName}</td>
-                    <td className="p-4 text-[#39b54a] font-black cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>{o.price}</td>
-                    <td className="p-4 text-slate-500 cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>{o.slot || o.date}</td>
-                    <td className="p-4 font-mono text-slate-550 cursor-pointer" onClick={() => setSelectedOrderDetails(o)}>{clientDistance} ({clientPincode})</td>
-                    <td className="p-4 text-center space-x-2">
+                    <td className="p-4 text-slate-900">{clientName}</td>
+                    <td className="p-4">{deviceName}</td>
+                    <td className="p-4 text-[#39b54a] font-black">{o.price}</td>
+                    <td className="p-4 text-slate-500">{o.slot || o.date}</td>
+                    <td className="p-4 font-mono text-slate-550">{clientDistance} ({clientPincode})</td>
+                    <td className="p-4 text-center space-x-2" onClick={(e) => e.stopPropagation()}>
                       <button onClick={() => handleAction(o.id, 'accept')} className="px-3.5 py-1.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white font-black rounded-lg text-[10px] shadow-3xs transition cursor-pointer">Accept</button>
                       <button onClick={() => handleAction(o.id, 'decline')} className="px-3.5 py-1.5 bg-rose-50 text-rose-500 border border-rose-100 hover:bg-rose-100 font-black rounded-lg text-[10px] transition cursor-pointer">Decline</button>
                     </td>
@@ -141,7 +119,7 @@ export default function IncomingOrders() {
               })}
               {orders.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-slate-400">No active incoming jobs. We will notify you when new requests arrive!</td>
+                  <td colSpan={7} className="p-8 text-center text-slate-400">No active incoming jobs assigned to you. When the admin assigns you a new order, it will appear here!</td>
                 </tr>
               )}
             </tbody>
@@ -151,8 +129,8 @@ export default function IncomingOrders() {
 
       {/* Order Details Modal */}
       {selectedOrderDetails && (
-        <div className="fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
-          <div className="bg-white p-6 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-100 space-y-5 animate-scale-up text-xs">
+        <div className="fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-xs" onClick={() => setSelectedOrderDetails(null)}>
+          <div className="bg-white p-6 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-100 space-y-5 animate-scale-up text-xs text-slate-700" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between items-center border-b pb-3">
               <div>
                 <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{selectedOrderDetails.id}</span>

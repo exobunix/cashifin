@@ -14,34 +14,13 @@ export default function ActiveJobs() {
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data) && !data.error) {
-          // Filter for orders assigned to MobileHub Store and in active statuses
+          // Filter for orders assigned to MobileHub Store (any suffix) and in active statuses
           const partnerJobs = data.filter(o => 
-            (o.partner === 'MobileHub Store' || o.partner === 'Rohit Sharma') && 
+            (o.partner && o.partner.toLowerCase().includes('mobilehub store')) && 
             ['Scheduled', 'In Inspection', 'Under Inspection', 'Verification Pending'].includes(o.status)
           );
           
-          // Fallback seeding if no active jobs found in the dynamic db
-          if (partnerJobs.length === 0) {
-            const initialJobs = [
-              { id: 'ORD-8711', name: 'MacBook Pro M3 16-Inch', device: 'MacBook Pro M3 16-Inch', price: '₹1,25,000', client: 'Arjun Reddy', customer: 'Arjun Reddy', phone: '+91 99887 76655', address: 'B-102, DLF Phase 3, Gurgaon', customerAddress: 'B-102, DLF Phase 3, Gurgaon', status: 'Scheduled', partner: 'MobileHub Store' },
-              { id: 'ORD-8705', name: 'OnePlus 11 5G 128GB', device: 'OnePlus 11 5G 128GB', price: '₹28,500', client: 'Neha Gupta', customer: 'Neha Gupta', phone: '+91 98112 23344', address: 'Plot 45, Sector 44, Noida', customerAddress: 'Plot 45, Sector 44, Noida', status: 'In Inspection', partner: 'MobileHub Store' },
-              { id: 'ORD-8692', name: 'Apple iPad Pro M2', device: 'Apple iPad Pro M2', price: '₹48,000', client: 'Kunal Kapoor', customer: 'Kunal Kapoor', phone: '+91 97223 34455', address: 'Apartment 4B, GK-2, New Delhi', customerAddress: 'Apartment 4B, GK-2, New Delhi', status: 'Verification Pending', partner: 'MobileHub Store' }
-            ];
-
-            Promise.all(initialJobs.map(job =>
-              fetch('/api/orders', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'create', item: job })
-              })
-            )).then(() => {
-              setJobs(initialJobs);
-            }).catch(() => {
-              setJobs(initialJobs);
-            });
-          } else {
-            setJobs(partnerJobs);
-          }
+          setJobs(partnerJobs);
         }
         setLoading(false);
       })
@@ -53,6 +32,28 @@ export default function ActiveJobs() {
   useEffect(() => {
     fetchJobs();
   }, []);
+
+  const handleUpdateStatus = async (orderId: string, newStatus: string) => {
+    const jobToUpdate = jobs.find(j => j.id === orderId);
+    if (!jobToUpdate) return;
+    const updatedJob = { ...jobToUpdate, status: newStatus };
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'update', item: updatedJob })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setJobs(prev => prev.map(j => j.id === orderId ? updatedJob : j));
+        setSelectedJobDetails(updatedJob);
+        alert(`Status updated to ${newStatus}!`);
+      }
+    } catch (e) {
+      console.error(e);
+      alert('Failed to update status.');
+    }
+  };
 
   return (
     <div className="p-6 md:p-8 space-y-6 relative">
@@ -82,17 +83,17 @@ export default function ActiveJobs() {
             const deviceName = job.device || job.name || 'Device';
 
             return (
-              <div key={job.id} className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-3xs flex flex-col justify-between h-52">
-                <div className="space-y-2 cursor-pointer" onClick={() => setSelectedJobDetails(job)}>
+              <div key={job.id} className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-3xs flex flex-col justify-between h-52 hover:border-[#39b54a] transition-all cursor-pointer" onClick={() => setSelectedJobDetails(job)}>
+                <div className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{job.id}</span>
                     <span className="text-[9px] bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded font-black uppercase tracking-wider">{job.status}</span>
                   </div>
-                  <h4 className="font-extrabold text-sm text-slate-800 line-clamp-1 hover:text-[#39b54a] transition-all">{deviceName}</h4>
+                  <h4 className="font-extrabold text-sm text-slate-800 line-clamp-1">{deviceName}</h4>
                   <p className="text-[10px] text-slate-450 font-bold">Client: {clientName} | {job.price}</p>
                   <p className="text-[10px] text-slate-400 leading-normal font-semibold line-clamp-2">📍 {clientAddress}</p>
                 </div>
-                <div className="flex gap-2 pt-4">
+                <div className="flex gap-2 pt-4" onClick={(e) => e.stopPropagation()}>
                   <Link 
                     href={`/inspection?orderId=${job.id}&name=${encodeURIComponent(deviceName)}&client=${encodeURIComponent(clientName)}&price=${encodeURIComponent(job.price)}`} 
                     className="flex-1 text-center py-2.5 bg-[#39b54a] hover:bg-[#2fa03e] text-white rounded-xl text-[10px] font-black shadow-3xs transition-all cursor-pointer flex items-center justify-center"
@@ -109,6 +110,11 @@ export default function ActiveJobs() {
               </div>
             );
           })}
+          {jobs.length === 0 && (
+            <div className="col-span-3 bg-white border p-10 rounded-2xl text-center text-slate-400 font-bold text-xs">
+              No active routes assigned. Go to incoming requests to accept orders!
+            </div>
+          )}
         </div>
       )}
 
@@ -139,12 +145,12 @@ export default function ActiveJobs() {
 
       {/* Order Details Modal */}
       {selectedJobDetails && (
-        <div className="fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
-          <div className="bg-white p-6 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-100 space-y-5 animate-scale-up text-xs">
+        <div className="fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-xs" onClick={() => setSelectedJobDetails(null)}>
+          <div className="bg-white p-6 rounded-3xl w-full max-w-lg shadow-2xl border border-slate-100 space-y-5 animate-scale-up text-xs text-slate-700" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between items-center border-b pb-3">
               <div>
                 <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded">{selectedJobDetails.id}</span>
-                <h4 className="font-black text-slate-800 text-sm mt-1">Order Complete Details</h4>
+                <h4 className="font-black text-slate-800 text-sm mt-1">Order Details</h4>
               </div>
               <button 
                 onClick={() => setSelectedJobDetails(null)}
@@ -182,8 +188,21 @@ export default function ActiveJobs() {
                   <span className="text-emerald-600 font-black">{selectedJobDetails.price}</span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 block uppercase">Current Status</span>
-                  <span className="text-slate-800 font-bold">{selectedJobDetails.status}</span>
+                  <span className="text-[10px] text-slate-400 block uppercase font-bold text-[#39b54a]">Change Status (Dynamic)</span>
+                  <select
+                    value={selectedJobDetails.status}
+                    onChange={(e) => handleUpdateStatus(selectedJobDetails.id, e.target.value)}
+                    className="mt-1 px-2 py-1 rounded-lg font-bold text-[10px] bg-white border border-slate-200 focus:outline-none cursor-pointer text-slate-700 focus:border-[#39b54a]"
+                  >
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="In Inspection">In Inspection</option>
+                    <option value="Under Inspection">Under Inspection</option>
+                    <option value="Verification Pending">Verification Pending</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
                 </div>
                 <div>
                   <span className="text-[10px] text-slate-400 block uppercase">Assigned Vendor</span>
