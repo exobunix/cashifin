@@ -2336,7 +2336,7 @@ class _AppraisalWizardState extends State<AppraisalWizard> {
                 children: [
                   const Text('ESTIMATED DEVICE VALUE', style: TextStyle(color: Colors.grey, fontSize: 10, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 4),
-                  Text('₹${_calculateQuote().toLocaleString()}', style: const TextStyle(color: Color(0xFF0D9488), fontSize: 24, fontWeight: FontWeight.w950)),
+                  Text('₹${_calculateQuote().toLocaleString()}', style: const TextStyle(color: Color(0xFF0D9488), fontSize: 24, fontWeight: FontWeight.w900)),
                 ],
               ),
             ),

@@ -27,8 +27,8 @@ class CashifyPartnerApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF39B54A),
-          primary: const Color(0xFF39B54A),
+          seedColor: const Color(0xFF0D9488),
+          primary: const Color(0xFF0D9488),
           secondary: const Color(0xFF0C213A),
           surface: const Color(0xFFF8FAFC),
         ),
@@ -176,7 +176,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
     if (_isLoading) {
       return const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(color: Color(0xFF39B54A)),
+          child: CircularProgressIndicator(color: Color(0xFF0D9488)),
         ),
       );
     }
@@ -266,7 +266,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                   label: Text(_partnerStatus.toUpperCase()),
                   backgroundColor: _partnerStatus == 'Online' ? Colors.green.shade50 : Colors.red.shade50,
                   labelStyle: TextStyle(
-                    color: _partnerStatus == 'Online' ? const Color(0xFF39B54A) : Colors.red,
+                    color: _partnerStatus == 'Online' ? const Color(0xFF0D9488) : Colors.red,
                     fontWeight: FontWeight.bold,
                     fontSize: 10,
                   ),
@@ -344,12 +344,12 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                     elevation: 0,
                     child: ListTile(
                       leading: const CircleAvatar(
-                        backgroundColor: Color(0xFF39B54A),
+                        backgroundColor: Color(0xFF0D9488),
                         child: Icon(Icons.location_on, color: Colors.white),
                       ),
                       title: Text(pickup['address'] ?? 'Gurgaon', maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.bold)),
                       subtitle: Text(pickup['slot'] ?? '10:00 AM - 1:00 PM', style: const TextStyle(fontSize: 11)),
-                      trailing: Text(pickup['status'] ?? 'Scheduled', style: const TextStyle(color: Color(0xFF39B54A), fontWeight: FontWeight.bold)),
+                      trailing: Text(pickup['status'] ?? 'Scheduled', style: const TextStyle(color: Color(0xFF0D9488), fontWeight: FontWeight.bold)),
                       onTap: () {
                         setState(() {
                           _currentIndex = 1; // Go to pickups tab
@@ -436,7 +436,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                               child: Text(
                                 pickup['status'] ?? 'Assigned',
                                 style: TextStyle(
-                                  color: isCompleted ? const Color(0xFF39B54A) : Colors.blue,
+                                  color: isCompleted ? const Color(0xFF0D9488) : Colors.blue,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 10,
                                 ),
@@ -501,7 +501,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                                     });
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xFF39B54A),
+                                    backgroundColor: const Color(0xFF0D9488),
                                     foregroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                   ),
@@ -551,7 +551,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                 },
                 icon: const Icon(Icons.playlist_add_check),
                 label: const Text('Select a Pickup'),
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF39B54A), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0D9488), foregroundColor: Colors.white, padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
               ),
               const SizedBox(height: 12),
               OutlinedButton.icon(
@@ -567,8 +567,8 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                 icon: const Icon(Icons.calculate_outlined),
                 label: const Text('Quick Valuation Simulator'),
                 style: OutlinedButton.styleFrom(
-                  foregroundColor: const Color(0xFF39B54A),
-                  side: const BorderSide(color: Color(0xFF39B54A)),
+                  foregroundColor: const Color(0xFF0D9488),
+                  side: const BorderSide(color: Color(0xFF0D9488)),
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 ),
               ),
@@ -607,7 +607,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                 const Text('Live Valuation:', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 Text(
                   '₹${_inspectedValuation.toStringAsFixed(0)}',
-                  style: const TextStyle(color: Color(0xFF39B54A), fontWeight: FontWeight.w900, fontSize: 18),
+                  style: const TextStyle(color: Color(0xFF0D9488), fontWeight: FontWeight.w900, fontSize: 18),
                 ),
               ],
             ),
@@ -687,7 +687,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                   _submitInspectionReport();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF39B54A),
+                  backgroundColor: const Color(0xFF0D9488),
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
@@ -748,7 +748,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Inspection completed! Commission ₹${(_inspectedValuation * 0.05).toStringAsFixed(0)} credited to wallet!'),
-            backgroundColor: const Color(0xFF39B54A),
+            backgroundColor: const Color(0xFF0D9488),
           ),
         );
 
@@ -781,7 +781,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
               padding: const EdgeInsets.all(24),
               width: double.infinity,
               decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [Color(0xFF39B54A), Color(0xFF2FA03E)]),
+                gradient: const LinearGradient(colors: [Color(0xFF0D9488), Color(0xFF14B8A6)]),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [BoxShadow(color: Colors.green.shade200, blurRadius: 10, offset: const Offset(0, 4))],
               ),
@@ -841,7 +841,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text('Payout request of ₹${_walletBalance.toStringAsFixed(0)} submitted successfully!'),
-                              backgroundColor: const Color(0xFF39B54A),
+                              backgroundColor: const Color(0xFF0D9488),
                             ),
                           );
                           setState(() {
@@ -849,7 +849,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                           });
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF39B54A),
+                          backgroundColor: const Color(0xFF0D9488),
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         ),
@@ -920,7 +920,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
           const ListTile(
             title: Text('Push Notifications', style: TextStyle(fontWeight: FontWeight.bold)),
             subtitle: Text('Receive sound alerts for assigned doorstep pickups'),
-            trailing: Icon(Icons.notifications_active, color: Color(0xFF39B54A)),
+            trailing: Icon(Icons.notifications_active, color: Color(0xFF0D9488)),
           ),
           const Divider(),
           const ListTile(
@@ -993,7 +993,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.phone_iphone, size: 40, color: Color(0xFF39B54A)),
+                    const Icon(Icons.phone_iphone, size: 40, color: Color(0xFF0D9488)),
                     const SizedBox(height: 12),
                     Text(
                       cat['name'] ?? '',
@@ -1122,7 +1122,7 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                 const Text('Est. Value:', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 Text(
                   '₹${curValuation.toStringAsFixed(0)}',
-                  style: const TextStyle(color: Color(0xFF39B54A), fontWeight: FontWeight.w900, fontSize: 18),
+                  style: const TextStyle(color: Color(0xFF0D9488), fontWeight: FontWeight.w900, fontSize: 18),
                 ),
               ],
             ),
@@ -1167,15 +1167,15 @@ class _PartnerTabContainerState extends State<PartnerTabContainer> {
                                     });
                                   },
                                   style: OutlinedButton.styleFrom(
-                                    backgroundColor: active ? const Color(0xFF39B54A).withValues(alpha: 0.12) : Colors.white,
-                                    side: BorderSide(color: active ? const Color(0xFF39B54A) : Colors.grey.shade300),
+                                    backgroundColor: active ? const Color(0xFF0D9488).withValues(alpha: 0.12) : Colors.white,
+                                    side: BorderSide(color: active ? const Color(0xFF0D9488) : Colors.grey.shade300),
                                     padding: const EdgeInsets.symmetric(vertical: 10),
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                                   ),
                                   child: Text(
                                     text,
                                     style: TextStyle(
-                                      color: active ? const Color(0xFF39B54A) : Colors.black87,
+                                      color: active ? const Color(0xFF0D9488) : Colors.black87,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 11,
                                     ),
@@ -1219,13 +1219,13 @@ class _SparklinePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFF39B54A)
+      ..color = const Color(0xFF0D9488)
       ..strokeWidth = 3.5
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     final fillPaint = Paint()
-      ..color = const Color(0xFF39B54A).withValues(alpha: 0.12)
+      ..color = const Color(0xFF0D9488).withValues(alpha: 0.12)
       ..style = PaintingStyle.fill;
 
     final path = Path()
@@ -1383,7 +1383,7 @@ class _PartnerOnboardingScreenState extends State<PartnerOnboardingScreen> {
                         width: _slideIndex == i ? 18 : 8,
                         height: 8,
                         decoration: BoxDecoration(
-                          color: _slideIndex == i ? const Color(0xFF39B54A) : Colors.grey.shade300,
+                          color: _slideIndex == i ? const Color(0xFF0D9488) : Colors.grey.shade300,
                           borderRadius: BorderRadius.circular(4),
                         ),
                       );
@@ -1401,7 +1401,7 @@ class _PartnerOnboardingScreenState extends State<PartnerOnboardingScreen> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF39B54A),
+                      backgroundColor: const Color(0xFF0D9488),
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                       shape: RoundedRectangleBorder(
