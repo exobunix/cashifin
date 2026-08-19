@@ -13,7 +13,7 @@ export default function ActiveJobs() {
     fetch('/api/orders')
       .then(res => res.json())
       .then(data => {
-        if (Array.isArray(data) && !data.error) {
+        if (Array.isArray(data)) {
           // Filter for orders assigned to MobileHub Store (any suffix) and in active statuses
           const partnerJobs = data.filter(o => 
             (o.partner && o.partner.toLowerCase().includes('mobilehub store')) && 
