@@ -33,6 +33,8 @@ export default function InventoryPage() {
   const [activePhotoViewer, setActivePhotoViewer] = useState<string[] | null>(null);
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
   const [sharingItem, setSharingItem] = useState<any>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [showMultiShareModal, setShowMultiShareModal] = useState(false);
 
   const loadData = async () => {
     try {
@@ -88,11 +90,39 @@ export default function InventoryPage() {
         const reader = new FileReader();
         reader.onloadend = () => {
           if (reader.result) {
-            if (isEdit) {
-              setEditPhotos(prev => [...prev, reader.result as string]);
-            } else {
-              setNewPhotos(prev => [...prev, reader.result as string]);
-            }
+            const img = new Image();
+            img.src = reader.result as string;
+            img.onload = () => {
+              const canvas = document.createElement('canvas');
+              const MAX_WIDTH = 800;
+              const MAX_HEIGHT = 800;
+              let width = img.width;
+              let height = img.height;
+
+              if (width > height) {
+                if (width > MAX_WIDTH) {
+                  height *= MAX_WIDTH / width;
+                  width = MAX_WIDTH;
+                }
+              } else {
+                if (height > MAX_HEIGHT) {
+                  width *= MAX_HEIGHT / height;
+                  height = MAX_HEIGHT;
+                }
+              }
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext('2d');
+              if (ctx) {
+                ctx.drawImage(img, 0, 0, width, height);
+                const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                if (isEdit) {
+                  setEditPhotos(prev => [...prev, compressedDataUrl]);
+                } else {
+                  setNewPhotos(prev => [...prev, compressedDataUrl]);
+                }
+              }
+            };
           }
         };
         reader.readAsDataURL(file);
@@ -299,6 +329,20 @@ export default function InventoryPage() {
         <table className="w-full text-left border-collapse text-xs">
           <thead>
             <tr className="bg-slate-50 text-slate-400 font-bold border-b">
+              <th className="p-3 w-8">
+                <input 
+                  type="checkbox"
+                  checked={filtered.length > 0 && selectedIds.length === filtered.length}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setSelectedIds(filtered.map(i => i.id));
+                    } else {
+                      setSelectedIds([]);
+                    }
+                  }}
+                  className="rounded border-slate-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer"
+                />
+              </th>
               <th className="p-3">INV ID</th>
               <th className="p-3">Device Model</th>
               <th className="p-3">Photos</th>
@@ -317,6 +361,20 @@ export default function InventoryPage() {
               const isLowStock = (item.stock || 0) <= (item.minStock || 5);
               return (
                 <tr key={item.id} className="hover:bg-slate-50">
+                  <td className="p-3 w-8">
+                    <input 
+                      type="checkbox"
+                      checked={selectedIds.includes(item.id)}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedIds(prev => [...prev, item.id]);
+                        } else {
+                          setSelectedIds(prev => prev.filter(id => id !== item.id));
+                        }
+                      }}
+                      className="rounded border-slate-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer"
+                    />
+                  </td>
                   <td className="p-3 font-bold text-slate-500 font-mono">{item.id}</td>
                   <td className="p-3 font-bold text-slate-800">
                     <span className="block">{item.modelName}</span>
@@ -671,6 +729,81 @@ export default function InventoryPage() {
                 className="w-full py-2 bg-blue-500 text-white rounded text-xs font-bold hover:bg-blue-600 flex items-center justify-center space-x-2 shadow-sm"
               >
                 <span>✉️ Share via Email</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Selection Bar */}
+      {selectedIds.length > 0 && (
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center space-x-6 z-40 border border-slate-800 animate-bounce-short">
+          <span className="text-xs font-bold">{selectedIds.length} items selected</span>
+          <div className="h-4 w-px bg-slate-700" />
+          <div className="flex space-x-2">
+            <button 
+              onClick={() => setShowMultiShareModal(true)}
+              className="px-4 py-1.5 bg-emerald-500 text-white rounded-full text-xs font-bold hover:bg-emerald-600 transition"
+            >
+              Share Selected
+            </button>
+            <button 
+              onClick={() => setSelectedIds([])}
+              className="px-3 py-1.5 bg-slate-800 text-slate-300 rounded-full text-xs font-bold hover:bg-slate-700 transition"
+            >
+              Deselect All
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Multi Share Modal */}
+      {showMultiShareModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white p-6 rounded-2xl w-96 shadow-2xl space-y-4 text-slate-800 animate-fade-in">
+            <div className="flex justify-between items-center border-b pb-2">
+              <h3 className="font-bold text-sm">Share Selected Inventory ({selectedIds.length} Devices)</h3>
+              <button onClick={() => setShowMultiShareModal(false)} className="text-slate-400 font-bold">✕</button>
+            </div>
+            
+            <div className="space-y-1 text-xs">
+              <label className="block text-slate-400 font-bold">Shareable Catalog Link</label>
+              <div className="bg-slate-50 p-3 rounded-lg border font-mono break-all select-all text-[11px] text-blue-600">
+                {`${window.location.origin}/share?ids=${selectedIds.join(',')}`}
+              </div>
+            </div>
+
+            <div className="space-y-2 pt-2">
+              <button 
+                onClick={() => {
+                  const shareText = `${window.location.origin}/share?ids=${selectedIds.join(',')}`;
+                  navigator.clipboard.writeText(shareText);
+                  alert('Shareable link copied to clipboard!');
+                }}
+                className="w-full py-2 bg-emerald-50 text-emerald-600 rounded text-xs font-bold hover:bg-emerald-100 flex items-center justify-center space-x-2 border border-emerald-200"
+              >
+                <span>📋 Copy Catalog Link</span>
+              </button>
+              
+              <button 
+                onClick={() => {
+                  const shareText = encodeURIComponent(`Check out our electronic device inventory catalog here: ${window.location.origin}/share?ids=${selectedIds.join(',')}`);
+                  window.open(`https://api.whatsapp.com/send?text=${shareText}`, '_blank');
+                }}
+                className="w-full py-2 bg-green-500 text-white rounded text-xs font-bold hover:bg-green-600 flex items-center justify-center space-x-2 shadow-sm"
+              >
+                <span>💬 Share Link on WhatsApp</span>
+              </button>
+
+              <button 
+                onClick={() => {
+                  const subject = encodeURIComponent(`Shared Device Catalog - ${selectedIds.length} Items`);
+                  const body = encodeURIComponent(`Here is the link to view the details of our shared electronic device catalog:\n\n${window.location.origin}/share?ids=${selectedIds.join(',')}`);
+                  window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
+                }}
+                className="w-full py-2 bg-blue-500 text-white rounded text-xs font-bold hover:bg-blue-600 flex items-center justify-center space-x-2 shadow-sm"
+              >
+                <span>✉️ Send Catalog via Email</span>
               </button>
             </div>
           </div>
